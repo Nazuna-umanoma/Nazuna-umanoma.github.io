@@ -1,0 +1,121 @@
+/* blog-post.css - Blog post page styling */
+
+.blog-post-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post-header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 20px;
+}
+
+.blog-post-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.blog-post-meta {
+    color: #999;
+    font-size: 0.95rem;
+}
+
+.blog-post-meta span {
+    margin-right: 20px;
+}
+
+.blog-post-content {
+    line-height: 1.8;
+    color: #444;
+    font-size: 1.1rem;
+}
+
+.blog-post-content h2 {
+    font-size: 1.8rem;
+    color: #667eea;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.blog-post-content h3 {
+    font-size: 1.3rem;
+    color: #764ba2;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.blog-post-content p {
+    margin-bottom: 15px;
+}
+
+.blog-post-content ul, .blog-post-content ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.blog-post-content li {
+    margin-bottom: 8px;
+}
+
+.blog-post-content code {
+    background-color: #f4f4f4;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    color: #d63384;
+}
+
+.blog-post-content pre {
+    background-color: #2d3748;
+    color: #e2e8f0;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+.blog-post-content pre code {
+    color: inherit;
+    background-color: transparent;
+    padding: 0;
+}
+
+.blog-post-footer {
+    margin-top: 40px;
+    text-align: center;
+    border-top: 2px solid #e0e0e0;
+    padding-top: 20px;
+}
+
+.blog-post-footer a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #667eea;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.blog-post-footer a:hover {
+    background-color: #764ba2;
+}
+
+@media (max-width: 768px) {
+    .blog-post-container {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+    .blog-post-header h1 {
+        font-size: 1.8rem;
+    }
+    .blog-post-content {
+        font-size: 1rem;
+    }
+}
