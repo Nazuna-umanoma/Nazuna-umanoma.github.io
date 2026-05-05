@@ -10,7 +10,7 @@
         .header { background-color: #f0f0f0; padding: 20px; text-align: center; }
         .profile-photo { width: 150px; height: 150px; border-radius: 50%; }
         .container { width: 80%; margin: auto; }
-        .about, .sns, .blog-preview { padding: 20px; border: 1px solid #ccc; margin: 20px 0; border-radius: 5px; }
+        .about, .sns, .interest-section { padding: 20px; border: 1px solid #ccc; margin: 20px 0; border-radius: 5px; }
         
         /* SNS欄のスタイル */
         .sns-links {
@@ -32,12 +32,24 @@
             background-color: #764ba2;
         }
         
-        .blog-preview article { margin-bottom: 10px; }
+        /* 好きなもの欄のスタイル */
+        .interest-section {
+            background-color: #fafafa;
+            border-left: 4px solid #667eea;
+        }
+        .interest-section h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .interest-section p {
+            line-height: 1.6;
+            color: #555;
+        }
     </style>
 </head>
 <body>
     <header class="header">
-        <img src="nazuna.png" alt="Profile Photo" class="profile-photo"> 
+        <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
         <h1>凪不凪（ナズナ）</h1>
         <p>凡人です</p>
     </header>
@@ -58,19 +70,71 @@
                 <a href="https://x.com/nazuna_shamrock" target="_blank">リサゆき狂人用X</a>
                 <a href="https://www.pixiv.net/users/109788346" target="_blank">pixiv</a>                
                 <a href="https://note.com/fenrir_umanoma" target="_blank">note</a>
-               
             </div>
         </section>
 
-        <section class="blog-preview">
-            <h2>Blog Preview</h2>
-            <article>
-                <h3>Blog Title 1</h3>
-                <p>A short description of your blog post goes here.</p>
+        <!-- 好きなもの紹介セクション -->
+        <section>
+            <h2 style="text-align: center; color: #667eea; margin-top: 30px;">オタクはかく語りき</h2>
+            
+            <article class="interest-section">
+                <h3>競馬</h3>
+                <p>
+                    好きな馬→エフフォーリア、シンボリルドルフ、ドルチェモア、レッドラディエンス、リバティアイランドなど多数
+                    好きなレース3選→2021天皇賞秋、2022天皇賞秋、2021ジャパンカップ
+                </p>
             </article>
-            <article>
-                <h3>Blog Title 2</h3>
-                <p>A short description of your blog post goes here.</p>
+
+            <article class="interest-section">
+                <h3>女性声優</h3>
+                <p>
+                    好きな声優（敬称略）→田所あずさ、Roseliaメンバー（相羽あいな、工藤晴香、中島由貴、櫻川めぐ、志崎樺音）
+                </p>
+            </article>
+
+            <article class="interest-section">
+                <h3>バンドリ（Roselia）</h3>
+                <p>
+                    Roseliaに脳を焼かれている（現在進行形）
+                    全曲好き。リサゆき狂人
+                    
+                    次回参戦予定→Lehre der Rose DAY1,2
+                    以下過去の現地参戦ライブ(Roseliaがいるライブ)↓
+                    Sei stark
+                    アニサマ2025 ThanXX!
+                    Neuweltfahrt 東京 DAY1,2
+                    
+                </p>
+            </article>
+
+            <article class="interest-section">
+                <h3>ウマ娘</h3>
+                <p>
+                    永遠の推し→シンボリルドルフ
+                    好き→シンコウウインディ、ゴールドシチー、ヴィルシーナ、ジェンティルドンナ、ナリタトップロード、ラッキーライラック
+                    ゆるーくプレイはしています
+                </p>
+            </article>
+
+            <article class="interest-section">
+                <h3>スタァライト</h3>
+                <p>
+                    2025年にスタァライトされました。
+                    西條クロディーヌが好き。真矢クロはいいぞ。
+                    劇場版に脳を焼かれた。
+                </p>
+            </article>
+
+            <article class="interest-section">
+                <h3>その他作品</h3>
+                <p>
+                    学園アイドルマスター→十王星南担当
+                    NARUTO→人生の教科書
+                    ハイキュー→生きていく姿勢の教科書
+                    SLAM DUNK→人生を変えてくれた伝説のマンガ
+                    東方Project→自分をオタクに変えた元凶
+                    都市伝説解体センター→無事に怪異化したからみんなやれ
+                </p>
             </article>
         </section>
     </div>
