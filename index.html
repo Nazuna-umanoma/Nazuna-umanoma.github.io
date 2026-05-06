@@ -84,6 +84,23 @@
         <!-- 好きなもの紹介セクション -->
         <section>
             <h2 style="text-align: center; color: #667eea; margin-top: 30px;">オタクはかく語りき</h2>
+
+            <article class="interest-section">
+                <h3>Roselia（BanG Dream!）</h3>
+                <p>
+                    Roseliaに脳を焼かれている（現在進行形）<br>
+                    全曲好き。リサゆき狂人<br>
+                    次回参戦予定→Lehre der Rose DAY1,2<br>
+                    以下過去の現地参戦ライブ(Roseliaがいるライブ)
+                </p>
+                <ul>
+                <li>Sei stark</li>
+                <li>アニサマ2025 ThanXX!</li>
+                <li>Neuweltfahrt 東京 DAY1,2</li>
+                </ul>
+            </article>
+
+            
             
             <article class="interest-section">
                 <h3>競馬</h3>
@@ -101,28 +118,18 @@
                 <ul>
                 <li>田所あずさ</li>
                 <p>声優にハマったきっかけの人。演技と声と歌と本人の性格が好き。ラジオがめちゃおもろい。アーティストとしての曲も良いのでぜひ。</p>
-                <li>Roseliaメンバー</li>
-                <p>かっこいよくてかわいい芸人集団（以下各メンバー）</p>
-                <li>相羽あいな</li>
-                <li>工藤晴香</li>
-                <li>中島由貴</li>
-                <li>櫻川めぐ</li>
-                <li>志崎樺音</li>
-                </ul>
-            </article>
-
-            <article class="interest-section">
-                <h3>Roselia（BanG Dream!）</h3>
-                <p>
-                    Roseliaに脳を焼かれている（現在進行形）<br>
-                    全曲好き。リサゆき狂人<br>
-                    次回参戦予定→Lehre der Rose DAY1,2<br>
-                    以下過去の現地参戦ライブ(Roseliaがいるライブ)
-                </p>
-                    <ul>
-                <li>Sei stark</li>
-                <li>アニサマ2025 ThanXX!</li>
-                <li>Neuweltfahrt 東京 DAY1,2</li>
+                <li>Roseliaメンバー(相羽あいな、工藤晴香、中島由貴、櫻川めぐ、志崎樺音)</li>
+                <p>かっこいよくてかわいい芸人集団バンド。一度でいいからRoseliaのライブには行ってほしい。</p>
+                <li>愛美</li>
+                <p>かっこいい系がはまり役だと思います。アーティスト活動のときの歌声が好きすぎる。</p>
+                <li>藤原夏海</li>
+                <p>少年ボイスをやらせたらこの人が現代トップクラスだと思ってる。</p>
+                <li>佐倉綾音</li>
+                <p>ラジオ「佐倉綾音論理×ロンリー」はぜひとも聴いてほしい。物事に対する考え方、言語化が素晴らしい人です。</p>
+                <li>藤本侑里</li>
+                <p>懸命に演技をする姿に心を動かされます。「ウマ娘プリティーダービー新時代の扉」は名作。</p>
+                <li>月城日花</li>
+                <p>次に来る声優は絶対この人です。予言します。</p>
                 </ul>
             </article>
 
@@ -147,6 +154,8 @@
             <article class="interest-section">
                 <h3>その他作品</h3>
                 <p>
+                    ポケモン→ゲッコウガがイチオシ<br>
+                    モンスターハンター→4GとXXは少し触れた。シャガルマガラが好き<br>
                     学園アイドルマスター→十王星南担当<br>
                     NARUTO→人生の教科書<br>
                     ハイキュー→生きていく姿勢の教科書<br>
@@ -160,6 +169,38 @@
 
     <footer style="text-align: center; padding: 20px; background-color: #333; color: white;">
         <p>&copy; 2026 凪不凪（ナズナ）. All rights reserved.</p>
+        <p id="last-updated" style="font-size: 0.9em; color: #ccc;">最終更新日: 取得中...</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // GitHub APIから最終更新日を取得
+        fetch('https://api.github.com/repos/Nazuna-umanoma/Nazuna-umanoma.github.io/commits?path=index.html&per_page=1')
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0) {
+                    const lastUpdate = new Date(data[0].commit.committer.date);
+                    const formattedDate = lastUpdate.toLocaleDateString('ja-JP', {
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit'
+                    });
+                    document.getElementById('last-updated').textContent = `最終更新日: ${formattedDate}`;
+                }
+            })
+            .catch(error => {
+                console.log('更新日の取得に失敗しました');
+                // フォールバック：今日の日付を表示
+                const today = new Date().toLocaleDateString('ja-JP', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit'
+                });
+                document.getElementById('last-updated').textContent = `最終更新日: ${today}`;
+            });
+    </script>
+</body>
+</html>
     </footer>
 
     <script src="script.js"></script>
