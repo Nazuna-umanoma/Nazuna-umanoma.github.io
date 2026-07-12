@@ -2,39 +2,15 @@
   "musics": [
     {
       "id": 1,
-      "title": "BanG Dream!",
-      "artist": "Roselia",
+      "title": "",
+      "artist": "BLACK SHOUT",
       "releaseYear": "2017",
-      "description": "Roseliaの代表曲。バンドリのテーマ曲として知られています。力強いボーカルと疾走感のあるサウンドが特徴。",
-      "tags": ["BanG Dream!", "バンドリ", "推し曲"],
+      "description": "Roseliaのデビュー曲。",
+      "tags": [""バンドリ", "Roselia"],
       "links": {
-        "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        "spotify": "https://open.spotify.com/track/",
-        "apple": "https://music.apple.com/"
-      }
-    },
-    {
-      "id": 2,
-      "title": "Ringing Bell",
-      "artist": "Roselia",
-      "releaseYear": "2019",
-      "description": "ウマ娘のオープニングテーマ。透き通ったボーカルと壮大なサウンドスケープが心に響きます。",
-      "tags": ["ウマ娘", "OP", "好き"],
-      "links": {
-        "youtube": "https://www.youtube.com/watch?v=",
-        "spotify": "https://open.spotify.com/track/"
-      }
-    },
-    {
-      "id": 3,
-      "title": "天ノ弱",
-      "artist": "2ND (from Roselia)",
-      "releaseYear": "2020",
-      "description": "少女歌劇レヴュースタァライトの劇場版主題歌。西條クロディーヌの名曲。",
-      "tags": ["スタァライト", "劇場版", "神曲"],
-      "links": {
-        "youtube": "https://www.youtube.com/watch?v=",
-        "spotify": "https://open.spotify.com/track/"
+        "youtube": "https://youtu.be/pzbtfG2OfIk?si=lZG9jXNCXKqz3TrT",
+        "spotify": "https://open.spotify.com/intl-ja/track/0lyksFxgIElnSO5yS132Hk?si=8264cacd6038436b",
+        "apple": "https://music.apple.com/jp/song/black-shout/1798425901"
       }
     }
   ]
