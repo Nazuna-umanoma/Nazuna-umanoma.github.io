@@ -1,0 +1,13 @@
+,
+    { 
+      "id": 0,
+      "title": "",
+      "artist": "",
+      "description": "",
+      "tags": ["", ""],
+      "links": {
+        "youtube": "",
+        "spotify": "",
+        "apple": ""
+      }
+    }

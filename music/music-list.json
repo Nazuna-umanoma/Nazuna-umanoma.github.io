@@ -23,6 +23,18 @@
         "spotify": "https://open.spotify.com/intl-ja/track/0asJiqD3Xwvjxhjzxe2XmZ?si=1ceafc5b6e554431",
         "apple": "https://music.apple.com/jp/song/fire-bird/1799152490"
       }
+    },
+    {
+      "id": 3,
+      "title": "Numb",
+      "artist": "LINKIN PARK",
+      "description": "LINKIN PARKの代表曲の一つ。ボーカルのチェスター自身の苦しみが投影されている歌詞で、現実に抗うでもなくただ吐き出すような歌詞が自分に刺さった。「Meteora」は必聴アルバム",
+      "tags": ["洋楽", "LINKIN PARK"],
+      "links": {
+        "youtube": "https://youtu.be/kXYiU_JCYtU?si=vfjBJLb_Uwz6mPsl",
+        "spotify": "https://open.spotify.com/intl-ja/track/2nLtzopw4rPReszdYBJU6h?si=2fa489956e864e94",
+        "apple": "https://music.apple.com/jp/song/numb/528437514"
+      }
     }
   ]
 }
