@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小説 | 凪不凪</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .story-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .story-header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .story-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .story-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .story-content-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .story-toc {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .story-toc h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .toc-list a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc-list a:hover {
+            text-decoration: underline;
+        }
+
+        .chapter-content {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px;
+            line-height: 1.8;
+            font-size: 1.05em;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .chapter-title {
+            text-align: center;
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .chapter-body {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .chapter-nav a,
+        .chapter-nav button {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #667eea;
+            background-color: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .chapter-nav a:hover,
+        .chapter-nav button:hover {
+            background-color: #667eea;
+            color: white;
+        }
+
+        .chapter-nav button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            padding: 15px;
+            color: #721c24;
+            text-align: center;
+            margin: 40px auto;
+            max-width: 600px;
+        }
+
+        @media (max-width: 768px) {
+            .story-header h1 {
+                font-size: 1.5em;
+            }
+
+            .story-meta {
+                gap: 15px;
+            }
+
+            .chapter-content {
+                padding: 20px;
+                font-size: 1em;
+            }
+
+            .chapter-nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-nav">
+            <a href="../" class="logo">凪不凪</a>
+            <nav>
+                <a href="../">プロフィール</a>
+                <a href="./" class="active">小説</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="story-content-container">
+        <a href="./" class="back-link">← 作品一覧に戻る</a>
+
+        <div id="story-header" class="story-header" style="display: none;">
+            <h1 id="story-title"></h1>
+            <div class="story-meta">
+                <span>✍️ <span id="story-author"></span></span>
+                <span>📚 <span id="story-genre"></span></span>
+                <span>📊 <span id="story-wordcount"></span></span>
+                <span>📅 <span id="story-date"></span></span>
+            </div>
+        </div>
+
+        <div id="story-toc" class="story-toc" style="display: none;">
+            <h3>目次</h3>
+            <ul class="toc-list" id="toc-list"></ul>
+        </div>
+
+        <div id="chapter-content" class="chapter-content" style="display: none;">
+            <h2 class="chapter-title" id="chapter-title"></h2>
+            <div class="chapter-body" id="chapter-body"></div>
+        </div>
+
+        <div class="chapter-nav" style="display: none;" id="chapter-nav">
+            <button id="prev-btn" onclick="goToPrevChapter()">← 前章</button>
+            <button id="next-btn" onclick="goToNextChapter()">次章 →</button>
+        </div>
+
+        <div id="error-container"></div>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; background-color: #333; color: white;">
+        <p>&copy; 2026 凪不凪（ナズナ）. All rights reserved.</p>
+    </footer>
+
+    <script src="story-script.js"></script>
+</body>
+</html>

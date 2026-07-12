@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小説投稿サイト | 凪不凪</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-nav">
+            <a href="../" class="logo">凪不凪</a>
+            <nav>
+                <a href="../">プロフィール</a>
+                <a href="./" class="active">小説</a>
+            </nav>
+        </div>
+        <div class="header-title">
+            <h1>小説投稿サイト</h1>
+            <p>創作の世界へようこそ</p>
+        </div>
+    </header>
+
+    <div class="container novels-container">
+        <section class="novels-section">
+            <h2>投稿作品一覧</h2>
+            <div id="novels-list" class="novels-grid">
+                <!-- JavaScriptで動的に生成 -->
+                <div class="loading">読み込み中...</div>
+            </div>
+        </section>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; background-color: #333; color: white;">
+        <p>&copy; 2026 凪不凪（ナズナ）. All rights reserved.</p>
+        <p id="last-updated" style="font-size: 0.9em; color: #ccc;">最終更新日: 取得中...</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // GitHub APIから最終更新日を取得
+        fetch('https://api.github.com/repos/Nazuna-umanoma/Nazuna-umanoma.github.io/commits?path=novels/index.html&per_page=1')
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0) {
+                    const lastUpdate = new Date(data[0].commit.committer.date);
+                    const formattedDate = lastUpdate.toLocaleDateString('ja-JP', {
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit'
+                    });
+                    document.getElementById('last-updated').textContent = `最終更新日: ${formattedDate}`;
+                }
+            })
+            .catch(error => {
+                console.log('更新日の取得に失敗しました');
+                const today = new Date().toLocaleDateString('ja-JP', {
+                    year: 'numeric',
+                    month: '2-digit',
+                    day: '2-digit'
+                });
+                document.getElementById('last-updated').textContent = `最終更新日: ${today}`;
+            });
+    </script>
+</body>
+</html>
