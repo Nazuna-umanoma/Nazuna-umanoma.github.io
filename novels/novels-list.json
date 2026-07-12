@@ -17,6 +17,11 @@
           "title": "第一章",
           "fileName": "story-001-ch1.txt"
         }
+        {
+          "id": 2,
+          "title": "第二章",
+          "fileName": "story-001-ch2.txt"
+        }
       ]
     }
   ]
