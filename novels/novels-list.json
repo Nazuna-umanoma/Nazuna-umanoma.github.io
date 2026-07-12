@@ -2,15 +2,15 @@
   "novels": [
     {
       "id": 1,
-      "title": "ここにタイトルが入ります",
+      "title": "template",
       "author": "凪不凪",
-      "description": "短編の説明がここに入ります。最初の数行で物語の魅力を伝えましょう。",
-      "genre": "ファンタジー",
-      "tags": ["オリジナル", "ファンタジー"],
-      "wordCount": 5000,
+      "description": "これはテスト投稿です",
+      "genre": "その他",
+      "tags": ["その他"],
+      "wordCount": 100,
       "publishedDate": "2026-07-12",
       "updatedDate": "2026-07-12",
-      "status": "完結",
+      "status": "単発",
       "chapters": [
         {
           "id": 1,
@@ -19,24 +19,5 @@
         }
       ]
     },
-    {
-      "id": 2,
-      "title": "テスト投稿",
-      "author": "凪不凪",
-      "description": "サイト動作確認用の短いテスト作品です。表示や改行の確認を目的としています。",
-      "genre": "その他",
-      "tags": ["テスト", "短編"],
-      "wordCount": 120,
-      "publishedDate": "2026-07-12",
-      "updatedDate": "2026-07-12",
-      "status": "完結",
-      "chapters": [
-        {
-          "id": 1,
-          "title": "第一章　試験投稿",
-          "fileName": "story-002-ch1.txt"
-        }
-      ]
-    }
   ]
 }
