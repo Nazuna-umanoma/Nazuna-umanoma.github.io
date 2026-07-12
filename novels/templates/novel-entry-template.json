@@ -1,0 +1,19 @@
+{
+  "id": {{id}},
+  "title": "作品タイトルを入れてください",
+  "author": "作者名",
+  "description": "短い説明（1〜2行）",
+  "genre": "ジャンル",
+  "tags": ["タグ1", "タグ2"],
+  "wordCount": 1234,
+  "publishedDate": "2026-07-12",
+  "updatedDate": "2026-07-12",
+  "status": "完結",
+  "chapters": [
+    {
+      "id": 1,
+      "title": "第一章　章タイトル",
+      "fileName": "story-00X-ch1.txt"
+    }
+  ]
+}
