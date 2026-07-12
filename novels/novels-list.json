@@ -1,0 +1,23 @@
+{
+  "novels": [
+    {
+      "id": 1,
+      "title": "ここにタイトルが入ります",
+      "author": "凪不凪",
+      "description": "短編の説明がここに入ります。最初の数行で物語の魅力を伝えましょう。",
+      "genre": "ファンタジー",
+      "tags": ["オリジナル", "ファンタジー"],
+      "wordCount": 5000,
+      "publishedDate": "2026-07-12",
+      "updatedDate": "2026-07-12",
+      "status": "完結",
+      "chapters": [
+        {
+          "id": 1,
+          "title": "第一章",
+          "fileName": "story-001-ch1.html"
+        }
+      ]
+    }
+  ]
+}
