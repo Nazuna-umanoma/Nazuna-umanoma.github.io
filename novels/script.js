@@ -37,7 +37,7 @@ function getStatusClass(status) {
 // 小説一覧を取得して表示する
 async function loadNovels() {
     try {
-        const response = await fetch('./novels-list.json');
+const response = await fetch('https://raw.githubusercontent.com/Nazuna-umanoma/Nazuna-umanoma.github.io/main/novels/novels-list.json');
         const data = await response.json();
         displayNovels(data.novels);
     } catch (error) {
