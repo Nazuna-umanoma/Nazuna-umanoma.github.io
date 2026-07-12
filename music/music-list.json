@@ -4,12 +4,9 @@
       "id": 1,
       "title": "BanG Dream!",
       "artist": "Roselia",
-      "genre": "アニメ",
       "releaseYear": "2017",
-      "duration": "3:47",
       "description": "Roseliaの代表曲。バンドリのテーマ曲として知られています。力強いボーカルと疾走感のあるサウンドが特徴。",
       "tags": ["BanG Dream!", "バンドリ", "推し曲"],
-      "youtubeEmbed": "dQw4w9WgXcQ",
       "links": {
         "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         "spotify": "https://open.spotify.com/track/",
@@ -20,9 +17,7 @@
       "id": 2,
       "title": "Ringing Bell",
       "artist": "Roselia",
-      "genre": "バンド",
       "releaseYear": "2019",
-      "duration": "3:52",
       "description": "ウマ娘のオープニングテーマ。透き通ったボーカルと壮大なサウンドスケープが心に響きます。",
       "tags": ["ウマ娘", "OP", "好き"],
       "links": {
@@ -34,9 +29,7 @@
       "id": 3,
       "title": "天ノ弱",
       "artist": "2ND (from Roselia)",
-      "genre": "ロック",
       "releaseYear": "2020",
-      "duration": "4:10",
       "description": "少女歌劇レヴュースタァライトの劇場版主題歌。西條クロディーヌの名曲。",
       "tags": ["スタァライト", "劇場版", "神曲"],
       "links": {
