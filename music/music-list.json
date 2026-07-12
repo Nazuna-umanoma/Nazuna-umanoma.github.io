@@ -2,9 +2,8 @@
   "musics": [
     {
       "id": 1,
-      "title": "",
-      "artist": "BLACK SHOUT",
-      "releaseYear": "2017",
+      "title": "BLACK SHOUT",
+      "artist": "Roselia",
       "description": "Roseliaのデビュー曲。",
       "tags": ["バンドリ", "Roselia"],
       "links": {
