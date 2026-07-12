@@ -4,12 +4,24 @@
       "id": 1,
       "title": "BLACK SHOUT",
       "artist": "Roselia",
-      "description": "Roseliaのデビュー曲。",
+      "description": "Roseliaのデビュー曲。YouTubeのリンクは実際のライブ映像。割とRoselia全曲の基礎というか、ロック、ゴシック調はアニメ系なのは全曲共通なので、これが好きならほかの曲も絶対好き（個人の感想）",
       "tags": ["バンドリ", "Roselia"],
       "links": {
         "youtube": "https://youtu.be/pzbtfG2OfIk?si=lZG9jXNCXKqz3TrT",
         "spotify": "https://open.spotify.com/intl-ja/track/0lyksFxgIElnSO5yS132Hk?si=8264cacd6038436b",
         "apple": "https://music.apple.com/jp/song/black-shout/1798425901"
+      }
+    },
+    {
+      "id": 2,
+      "title": "FIRE BIRD",
+      "artist": "Roselia",
+      "description": "Roseliaのライブで100%やるから、とりあえず聴いておけ。人気ナンバーワンだと思う。メロスピ強め、速い、熱い（ライブの演出が）。ようつべリンクはライブ映像。ツアーラストでのマイクトラブルをファンが歌って乗り切るのスゴすぎないか",
+      "tags": ["バンドリ", "Roselia"],
+      "links": {
+        "youtube": "https://youtu.be/59kPRviWjAo?si=S_-dlMEsnkJ6umDx",
+        "spotify": "https://open.spotify.com/intl-ja/track/0asJiqD3Xwvjxhjzxe2XmZ?si=1ceafc5b6e554431",
+        "apple": "https://music.apple.com/jp/song/fire-bird/1799152490"
       }
     }
   ]
