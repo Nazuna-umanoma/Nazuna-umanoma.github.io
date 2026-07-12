@@ -1,0 +1,271 @@
+/* 音楽紹介サイト用スタイル */
+
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --accent-color: #f093fb;
+    --dark-bg: #1a1a2e;
+    --light-bg: #fafafa;
+    --border-color: #ddd;
+    --text-color: #333;
+    --text-light: #666;
+}
+
+.music-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.music-section h2 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* フィルターボタン */
+.music-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.filter-btn {
+    background-color: white;
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    font-size: 0.95em;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* 音楽グリッド */
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+/* 音楽カード */
+.music-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.music-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(102, 126, 234, 0.3);
+}
+
+.music-card-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.music-card-album-art {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+}
+
+.music-card-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    word-break: break-word;
+}
+
+.music-card-artist {
+    font-size: 0.95em;
+    opacity: 0.95;
+    margin: 0;
+}
+
+.music-card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.music-card-description {
+    font-size: 0.95em;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.music-card-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    font-size: 0.85em;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.music-card-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.music-card-genre {
+    display: inline-block;
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.music-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+
+/* リンクセクション */
+.music-card-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.music-link {
+    flex: 1;
+    min-width: 100px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 12px;
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.music-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.music-link-icon {
+    font-size: 1.1em;
+}
+
+/* プレイリスト埋め込み */
+.music-card-embed {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.music-card-embed iframe {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+/* ローディング状態 */
+.loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: var(--text-light);
+    font-size: 1.1em;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-light);
+}
+
+.empty-state h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .music-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .music-filter {
+        justify-content: center;
+    }
+
+    .filter-btn {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+
+    .music-card-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .music-link {
+        min-width: 80px;
+        font-size: 0.85em;
+        padding: 8px 10px;
+    }
+}
