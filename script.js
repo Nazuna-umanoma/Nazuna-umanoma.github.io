@@ -34,6 +34,6 @@ sections.forEach(section => {
 
 // Interactive features: Example button for demonstration
 const button = document.createElement('button');
-button.innerText = 'ワァ';
-button.onclick = () => alert('ワァァァァァ');
+button.innerText = '何が好きー？';
+button.onclick = () => alert('リサゆきリサゆきリサゆきリサゆきリサゆきリサゆきリサゆきリサゆきリサゆきリサゆきリサゆきリサゆきリサゆきリサゆきリサゆき');
 document.body.appendChild(button);

@@ -6,12 +6,63 @@
     <title>プロフィール | 凪不凪</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        .header { background-color: #f0f0f0; padding: 20px; text-align: center; }
-        .profile-photo { width: 150px; height: 150px; border-radius: 50%; }
+        :root {
+            --bg: #ffffff;
+            --bg-card: #fafafa;
+            --red: #e50914;
+            --red-dark: #a8060f;
+            --black: #111111;
+            --violet: #7c3aed;
+            --violet-dark: #5b21b6;
+            --text: #1a1a1a;
+            --text-muted: #666666;
+            --border: #e2e2e2;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        .header {
+            background: var(--black);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--red);
+        }
+        .header h1 { margin: 15px 0 5px; letter-spacing: 0.05em; color: #ffffff; }
+        .header p { color: #b3b3b3; margin: 0; }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--red);
+        }
+
         .container { width: 80%; margin: auto; }
-        .about, .sns, .interest-section { padding: 20px; border: 1px solid #ccc; margin: 20px 0; border-radius: 5px; }
-        
+
+        .about, .sns, .interest-section {
+            padding: 20px;
+            border: 1px solid var(--border);
+            margin: 20px 0;
+            border-radius: 5px;
+            background-color: var(--bg-card);
+        }
+
+        .about h2, .sns h2 {
+            color: var(--black);
+            border-left: 4px solid var(--red);
+            padding-left: 10px;
+        }
+
+        .about li, .sns p { color: var(--text); }
+
         /* SNS欄のスタイル */
         .sns-links {
             display: flex;
@@ -22,16 +73,19 @@
         .sns-links a {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #667eea;
-            color: white;
+            background-color: var(--violet);
+            color: #ffffff;
             text-decoration: none;
+            border: 1px solid var(--violet);
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
         }
         .sns-links a:hover {
-            background-color: #764ba2;
+            background-color: var(--violet-dark);
+            border-color: var(--violet-dark);
+            color: #ffffff;
         }
-        
+
         /* セクションリンク */
         .section-links {
             display: flex;
@@ -43,30 +97,31 @@
         .section-link-btn {
             display: inline-block;
             padding: 12px 24px;
-            background-color: #667eea;
-            color: white;
+            background-color: var(--red);
+            color: #ffffff;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s;
             font-weight: 500;
         }
         .section-link-btn:hover {
-            background-color: #764ba2;
+            background-color: var(--black);
         }
-        
+
         /* 好きなもの欄のスタイル */
         .interest-section {
-            background-color: #fafafa;
-            border-left: 4px solid #667eea;
+            background-color: var(--bg-card);
+            border-left: 4px solid var(--red);
         }
         .interest-section h3 {
-            color: #667eea;
+            color: var(--red);
             margin-top: 0;
         }
         .interest-section p {
             line-height: 1.6;
-            color: #555;
+            color: var(--text-muted);
         }
+        .interest-section li { color: var(--text); }
     </style>
 </head>
 <body>
@@ -109,7 +164,7 @@
 
         <!-- 好きなもの紹介セクション -->
         <section>
-            <h2 style="text-align: center; color: #667eea; margin-top: 30px;">オタクはかく語りき</h2>
+            <h2 style="text-align: center; color: var(--red); margin-top: 30px;">オタクはかく語りき</h2>
 
             <article class="interest-section">
                 <h3>Roselia（BanG Dream!）</h3>
@@ -125,8 +180,7 @@
                 <li>Neuweltfahrt 東京 DAY1,2</li>
                 <li>Lehre der Rose DAY1,2</li>
                 </ul>
-            </article>
-                                   
+            </article>                                   
             <article class="interest-section">
                 <h3>競馬</h3>
                 <p>
@@ -182,9 +236,9 @@
         </section>
     </div>
 
-    <footer style="text-align: center; padding: 20px; background-color: #333; color: white;">
+    <footer style="text-align: center; padding: 20px; background-color: #000; color: #ececec; border-top: 2px solid #e50914;">
         <p>&copy; 2026 凪不凪（ナズナ）. All rights reserved.</p>
-        <p id="last-updated" style="font-size: 0.9em; color: #ccc;">最終更新日: 取得中...</p>
+        <p id="last-updated" style="font-size: 0.9em; color: #9a9a9a;">最終更新日: 取得中...</p>
     </footer>
 
     <script src="script.js"></script>
