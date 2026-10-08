@@ -33,6 +33,6 @@ const RESULT = {
     ],
     work: 'BanG Dream!（Roselia）',
     catchphrase: 'あなたの推しCPは......',
-    description: 'もちろんこの二人。みんなもリサゆき（ゆきリサ）の良さを広めよう！',
+    description: 'もちろんこの二人。公式も大好きなCPです。(偏向報道)みんなもリサゆき（ゆきリサ）の良さを広めよう！',
     traits: ['幼馴染', '陽だまりロードナイト', '約束', '礎の花冠'],
 };
