@@ -68,7 +68,7 @@ function showAnalyzing() {
     document.getElementById('quiz-area').hidden = true;
     document.getElementById('analyzing').hidden = false;
 
-    const messages = ['回答を解析しています…', 'CP相性データベースと照合中…', '運命を計算しています…'];
+    const messages = ['回答を解析しています…', '凪不凪のデータベースと照合中…', 'シロツメクサを検出…'];
     const msgEl = document.getElementById('analyzing-text');
     let i = 0;
     msgEl.textContent = messages[0];
@@ -122,10 +122,4 @@ function initResult() {
         li.textContent = t;
         traitList.appendChild(li);
     });
-
-    // Xでシェア（URLは診断トップを共有）
-    const topUrl = new URL('index.html', location.href).href;
-    const shareText = `私の推しCPは「${RESULT.name}」でした！\n#${SHINDAN_CONFIG.hashtag}\n`;
-    document.getElementById('share-btn').href =
-        `https://x.com/intent/post?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(topUrl)}`;
 }
