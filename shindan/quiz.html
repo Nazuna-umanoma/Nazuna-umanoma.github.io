@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>質問 | 推しCP診断</title>
+    <link rel="stylesheet" href="shindan.css">
+</head>
+<body data-page="quiz">
+    <header class="header">
+        <a href="../index.html" class="home-link"><img src="../nazuna.png" alt="">凪不凪（ナズナ）</a>
+        <a href="index.html" class="sub-link">診断トップ</a>
+    </header>
+
+    <main>
+        <div id="quiz-area">
+            <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
+            <p class="progress-text" id="progress-text"></p>
+
+            <section class="card question-card">
+                <h2 class="question-text" id="question-text"></h2>
+                <div class="yesno">
+                    <button type="button" class="yesno-btn yes" id="yes-btn">YES</button>
+                    <button type="button" class="yesno-btn no" id="no-btn">NO</button>
+                </div>
+            </section>
+
+            <div class="btn-area">
+                <button type="button" class="btn btn-ghost" id="back-btn" hidden>← 前の質問に戻る</button>
+            </div>
+        </div>
+
+        <!-- 全問回答後の「解析中」演出 -->
+        <section class="analyzing" id="analyzing" hidden>
+            <div class="spinner"></div>
+            <p id="analyzing-text"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 凪不凪（ナズナ）. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="shindan.js"></script>
+</body>
+</html>
