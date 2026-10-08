@@ -23,6 +23,7 @@ function initQuiz() {
     const progressBar = document.getElementById('progress-bar');
     const questionText = document.getElementById('question-text');
     const backBtn = document.getElementById('back-btn');
+    const questionCard = document.getElementById('question-card');
 
     function render() {
         progressText.textContent = `Q${current + 1} / ${QUESTIONS.length}`;
@@ -32,7 +33,16 @@ function initQuiz() {
     }
 
     // YES / NO どちらを押しても次へ進むだけ（回答は結果に影響しない）
-    function answer() {
+    // ただし最後の質問は YES を選ぶまで同じ質問を繰り返す
+    function answer(isYes) {
+        const isLast = current === QUESTIONS.length - 1;
+        if (isLast && !isYes) {
+            // 質問カードを揺らして、同じ質問をもう一度表示
+            questionCard.classList.remove('shake');
+            void questionCard.offsetWidth; // アニメーションを再生し直すため
+            questionCard.classList.add('shake');
+            return;
+        }
         current++;
         if (current < QUESTIONS.length) {
             render();
@@ -41,8 +51,8 @@ function initQuiz() {
         }
     }
 
-    document.getElementById('yes-btn').addEventListener('click', answer);
-    document.getElementById('no-btn').addEventListener('click', answer);
+    document.getElementById('yes-btn').addEventListener('click', () => answer(true));
+    document.getElementById('no-btn').addEventListener('click', () => answer(false));
     backBtn.addEventListener('click', () => {
         if (current > 0) {
             current--;
