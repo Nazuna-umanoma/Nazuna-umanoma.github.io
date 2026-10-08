@@ -87,29 +87,6 @@ function showAnalyzing() {
 function initResult() {
     document.title = `${RESULT.name} | ${SHINDAN_CONFIG.title}`;
 
-    // 2人のアイコン
-    const pairBox = document.getElementById('result-pair');
-    RESULT.pair.forEach((chara, i) => {
-        if (i > 0) {
-            const cross = document.createElement('span');
-            cross.className = 'pair-cross';
-            cross.textContent = '×';
-            pairBox.appendChild(cross);
-        }
-        const icon = document.createElement('div');
-        icon.className = 'pair-icon';
-        icon.style.setProperty('--chara-color', chara.color);
-        if (chara.image) {
-            const img = document.createElement('img');
-            img.src = `images/${chara.image}`;
-            img.alt = chara.name;
-            icon.appendChild(img);
-        } else {
-            icon.textContent = chara.initial;
-        }
-        pairBox.appendChild(icon);
-    });
-
     document.getElementById('result-catch').textContent = RESULT.catchphrase;
     document.getElementById('result-name').textContent = RESULT.name;
     document.getElementById('result-members').textContent =
