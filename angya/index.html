@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全国行脚 | 凪不凪</title>
+    <link rel="stylesheet" href="angya.css?v=2">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="home-link"><img src="../nazuna.png" alt="">凪不凪（ナズナ）</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 id="angya-title"></h1>
+            <p id="angya-description"></p>
+            <span class="badge" id="spot-count"></span>
+        </section>
+
+        <section class="card spot-card">
+            <p class="placeholder" id="placeholder">さて、今日はどこへ行こうか。</p>
+            <p class="rolling" id="rolling" hidden></p>
+
+            <div id="result" hidden>
+                <p class="spot-meta">
+                    <span class="spot-region" id="spot-region"></span>
+                    <span id="spot-place"></span>
+                </p>
+                <h2 class="spot-name" id="spot-name"></h2>
+                <ul class="spot-tags" id="spot-tags"></ul>
+                <p class="spot-description" id="spot-description"></p>
+
+                <div class="spot-ss-box" id="spot-ss-box" hidden>
+                    <p class="spot-ss-label">行脚録</p>
+                    <p class="spot-ss" id="spot-ss"></p>
+                </div>
+            </div>
+        </section>
+
+        <div class="btn-area">
+            <button type="button" class="btn btn-primary" id="draw-btn">行脚する</button>
+        </div>
+
+        <section class="card history" id="history" hidden>
+            <h2>行脚の記録</h2>
+            <p class="history-summary" id="history-summary"></p>
+            <ol class="history-list" id="history-list"></ol>
+            <div class="history-actions">
+                <button type="button" class="btn btn-ghost btn-small" id="clear-history-btn">記録を消す</button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>遊び方</h2>
+            <p>「行脚する」ボタンを押すと、全国の観光地からランダムに一か所が選ばれ、紹介文が表示されます。<br>何度でも押せるので、気になる場所が出るまで行脚してください。</p>
+        </section>
+
+        <div class="btn-area">
+            <a href="../index.html" class="btn btn-ghost">プロフィールに戻る</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 凪不凪（ナズナ）. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js?v=2"></script>
+    <script src="angya.js?v=2"></script>
+</body>
+</html>
