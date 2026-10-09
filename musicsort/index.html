@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roselia曲選出 | 凪不凪</title>
+    <link rel="stylesheet" href="musicsort.css?v=6">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="home-link"><img src="../nazuna.png" alt="">凪不凪（ナズナ）</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 id="musicsort-title"></h1>
+            <p id="musicsort-description"></p>
+            <span class="badge" id="song-count"></span>
+        </section>
+
+        <!-- 曲目リスト（選んだ順に上から埋まる） -->
+        <section class="card tracklist-card">
+            <h2>あなたの曲目リスト</h2>
+            <p class="pick-status" id="pick-status"></p>
+            <div class="tracklist-frame">
+                <p class="tracklist-heading" id="tracklist-heading"></p>
+                <ol class="tracklist" id="tracklist"></ol>
+            </div>
+            <p class="hint">▲▼で曲順を入れ替え、×で外せます。</p>
+        </section>
+
+        <!-- 曲リスト -->
+        <section class="card">
+            <h2>曲を選ぶ</h2>
+            <input type="search" class="search" id="search" placeholder="曲名で絞り込み">
+            <ul class="song-list" id="song-list"></ul>
+        </section>
+
+        <section class="card">
+            <h2>画像の設定</h2>
+            <p class="field-label">選んだ基準</p>
+            <div class="criteria" id="criteria"></div>
+            <p class="field-label">名前</p>
+            <input type="text" class="name-input" id="name-input" maxlength="20">
+        </section>
+
+        <div class="btn-area">
+            <button type="button" class="btn btn-ghost" id="reset-btn">リセット</button>
+            <button type="button" class="btn btn-ghost" id="random-btn">おまかせで埋める</button>
+            <button type="button" class="btn btn-primary" id="generate-btn" disabled>画像を作る</button>
+        </div>
+
+        <!-- 出力画像 -->
+        <section class="card result" id="result" hidden>
+            <h2>できあがり</h2>
+            <img id="result-img" alt="選んだ曲の曲目リスト画像">
+            <p class="hint">スマホの場合は画像を長押しで保存できます。</p>
+            <div class="btn-area">
+                <a class="btn btn-primary" id="download-link" download="roselia-12songs.png">画像をダウンロード</a>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>遊び方</h2>
+            <p>Roseliaの曲から好きな12曲を選んでください。選んだ順に曲目リストへ並び、▲▼で曲順を入れ替えられます。<br>選んだ基準と名前を決めて、12曲そろったら「画像を作る」を押すと、曲目リストを画像として保存できます。</p>
+        </section>
+
+        <div class="btn-area">
+            <a href="../index.html" class="btn btn-ghost">プロフィールに戻る</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 凪不凪（ナズナ）. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js?v=6"></script>
+    <script src="musicsort.js?v=6"></script>
+</body>
+</html>
