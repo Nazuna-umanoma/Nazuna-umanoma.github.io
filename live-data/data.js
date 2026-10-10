@@ -1258,6 +1258,9 @@ const LIVES = [
         name: "BanG Dream!3rd☆LIVE Sparklin'Party 2017!",
         venue: 'TOKYO DOME CITY HALL',
         setlist: `
+            魂のルフラン
+            Hacking to the Gate
+            BLACK SHOUT
         `,
         interludes: `
         `,
@@ -1269,6 +1272,9 @@ const LIVES = [
         name: 'ミルキィホームズ&ブシロード10周年ライブ&スクフェス4周年記念ライブ',
         venue: '横浜アリーナ',
         setlist: `
+            BLACK SHOUT
+            魂のルフラン
+            Re:birth day
         `,
         interludes: `
         `,
@@ -1280,6 +1286,10 @@ const LIVES = [
         name: 'ガルパライブ&ガルパーティ!in東京',
         venue: '東京ビッグサイト',
         setlist: `
+            ONENESS
+            Re:birth day
+            陽だまりロードナイト
+            LOUDER
         `,
         interludes: `
         `,
@@ -1291,6 +1301,9 @@ const LIVES = [
         name: 'ガルパライブ&ガルパーティ!in東京',
         venue: '東京ビッグサイト',
         setlist: `
+            BLACK SHOUT
+            熱色スターマイン
+            ONENESS
         `,
         interludes: `
         `,
@@ -1302,6 +1315,11 @@ const LIVES = [
         name: 'がんばろう!九州 BanG Dream!×ミルキィホームズ×けものフレンズ HTB真冬の対バン祭り!!',
         venue: 'ハウステンボス ロッテルダム特設会場',
         setlist: `
+            BLACK SHOUT
+            ONENESS
+            熱色スターマイン
+            Determination Symphony
+            LOUDER
         `,
         interludes: `
         `,
@@ -1313,6 +1331,10 @@ const LIVES = [
         name: 'NO GIRL NO CRY',
         venue: 'メットライフドーム',
         setlist: `
+            LOUDER
+            R
+            BRAVE JEWEL
+            熱色スターマイン
         `,
         interludes: `
         `,
@@ -1324,6 +1346,17 @@ const LIVES = [
         name: 'Rausch und/and Craziness',
         venue: '幕張メッセ 国際展示場 4～6ホール',
         setlist: `
+            R
+            LOUDER
+            Neo-Aspect
+            Ringing Bloom
+            Re:birth day
+            BRAVE JEWEL
+            FIRE BIRD
+            Legendary
+            PASSIONATE ANTHEM
+            ONENESS
+            BLACK SHOUT
         `,
         interludes: `
         `,
@@ -1335,6 +1368,17 @@ const LIVES = [
         name: 'Rausch und/and Craziness',
         venue: '幕張メッセ 国際展示場 4～6ホール',
         setlist: `
+            Legendary
+            ONENESS
+            LOUDER
+            Ringing Bloom
+            R
+            BRAVE JEWEL
+            Determination Symphony
+            PASSIONATE ANTHEM
+            熱色スターマイン
+            FIRE BIRD
+            BLACK SHOUT
         `,
         interludes: `
         `,
@@ -1346,6 +1390,19 @@ const LIVES = [
         name: 'Rausch und/and Craziness -interlude-',
         venue: 'オンラインライブ',
         setlist: `
+            FIRE BIRD
+            Neo-Aspect
+            Avant-garde HISTORY
+            シャルル
+            Ringing Bloom
+            陽だまりロードナイト
+            Determination Symphony
+            軌跡
+            約束
+            R
+            Break your desire
+            Song I am.
+            BLACK SHOUT
         `,
         interludes: `
         `,
@@ -1357,6 +1414,19 @@ const LIVES = [
         name: 'Rausch und/and Craziness Ⅱ',
         venue: '横浜アリーナ',
         setlist: `
+            Avant-garde HISTORY
+            FIRE BIRD
+            PASSIONATE ANTHEM
+            シャルル
+            Song I am.
+            Ringing Bloom
+            陽だまりロードナイト
+            Determination Symphony
+            軌跡
+            Blessing Chord
+            BLACK SHOUT
+            ZEAL of proud
+            熱色スターマイン
         `,
         interludes: `
         `,
@@ -1368,6 +1438,17 @@ const LIVES = [
         name: 'The Beginning DAY1',
         venue: '富士急ハイランド コニファーフォレスト',
         setlist: `
+            熱色スターマイン
+            R
+            ONENESS
+            Proud of oneself
+            PASSIONATE ANTHEM
+            BRAVE JEWEL
+            Safe and Sound
+            Sing Alive
+            BLACK SHOUT
+            Sprechchor
+            FIRE BIRD
         `,
         interludes: `
         `,
@@ -1379,6 +1460,17 @@ const LIVES = [
         name: 'The Beginning DAY2',
         venue: '富士急ハイランド コニファーフォレスト',
         setlist: `
+            PASSIONATE ANTHEM
+            R
+            Break your desire
+            Proud of oneself
+            熱色スターマイン
+            BRAVE JEWEL
+            Safe and Sound
+            Sing Alive
+            Neo-Aspect
+            Sprechchor
+            FIRE BIRD
         `,
         interludes: `
         `,
@@ -1390,6 +1482,12 @@ const LIVES = [
         name: 'BanG Dream! Special☆LIVE Girls Band Party! 2020→2022',
         venue: 'ベルーナドーム',
         setlist: `
+            FIRE BIRD
+            R
+            PASSIONATE ANTHEM
+            Ringing Bloom
+            BLACK SHOUT
+            ROZEN HORIZON
         `,
         interludes: `
         `,
@@ -1401,6 +1499,9 @@ const LIVES = [
         name: 'BUSHIROAD 15thANNIVERSARY LIVE',
         venue: 'ベルーナドーム',
         setlist: `
+            FIRE BIRD
+            BLACK SHOUT
+            ROZEN HORIZON
         `,
         interludes: `
         `,
@@ -1412,6 +1513,17 @@ const LIVES = [
         name: '星空の夜想曲',
         venue: '有明アリーナ',
         setlist: `
+            BLACK SHOUT
+            FIRE BIRD
+            Re:birth day
+            THE HISTORIC...
+            Swear ～Night & Day～
+            熱色スターマイン
+            Ringing Bloom
+            Sprechchor
+            Song I am.
+            Dear Gleam
+            BRAVE JEWEL
         `,
         interludes: `
         `,
@@ -1423,6 +1535,11 @@ const LIVES = [
         name: 'RAISE A SUILEN LIVE 2023「EXCLAMATION HIGHLAND」OA',
         venue: '富士急ハイランド コニファーフォレスト',
         setlist: `
+            熱色スターマイン
+            Dear Gleam
+            PASSIONATE ANTHEM
+            BLACK SHOUT
+            FIRE BIRD
         `,
         interludes: `
         `,
@@ -1434,6 +1551,11 @@ const LIVES = [
         name: 'Ave Mujica 4th LIVE「Adventus」OA',
         venue: '武蔵野の森総合スポーツプラザ',
         setlist: `
+            FIRE BIRD
+            Determination Symphony
+            THE HISTORIC...
+            PASSIONATE ANTHEM
+            Floral Haven
         `,
         interludes: `
         `,
@@ -1445,6 +1567,11 @@ const LIVES = [
         name: 'BanG Dream! 10th Anniversary LIVE「In the name of BanG Dream!」',
         venue: 'Kアリーナ横浜',
         setlist: `
+            ZEAL of proud
+            BLACK SHOUT
+            FIRE BIRD
+            VIOLET LINE
+            PASSIONATE ANTHEM
         `,
         interludes: `
         `,
@@ -1456,6 +1583,16 @@ const LIVES = [
         name: 'DREAMS GO ON in TAIPEI',
         venue: '台北・大佳河濱公園',
         setlist: `
+            Requiem for Fate
+            BLACK SHOUT
+            ONENESS
+            Steadfast Spirits
+            熱色スターマイン
+            R
+            Sing Alive
+            ZEAL of proud
+            BRAVE JEWEL
+            FIRE BIRD
         `,
         interludes: `
         `,
@@ -1467,6 +1604,16 @@ const LIVES = [
         name: 'DREAMS GO ON',
         venue: '有明アリーナ',
         setlist: `
+            BLACK SHOUT
+            Requiem for Fate
+            Steadfast Spirits
+            Talk to My Tone
+            Song I am.
+            ROZEN HORIZON
+            R
+            ZEAL of proud
+            Sing Alive
+            FIRE BIRD
         `,
         interludes: `
         `,
