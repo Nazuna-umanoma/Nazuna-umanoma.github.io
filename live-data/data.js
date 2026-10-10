@@ -356,7 +356,7 @@ const LIVES = [
         name: 'Episode of Roselia Day1: Weißklee',
         venue: '富士急ハイランド コニファーフォレスト',
         setlist: `
-            雨上がりの夢
+            雨上がりの夢/湊友希那
             Proud of oneself
             BLACK SHOUT
             Re:birth day
@@ -1077,182 +1077,6 @@ const LIVES = [
         note: '',
     },
     {
-        category: 'fes',
-        date: '2017-08-25',
-        name: 'Animelo Summer Live 2017 -THE CARD-',
-        venue: 'さいたまスーパーアリーナ',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2018-07-25',
-        name: 'FNSうたの夏まつり2018',
-        venue: 'フジテレビ',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2019-07-21',
-        name: 'BILIBILI MACRO LINK-STAR PHASE 2019',
-        venue: '上海Mercedes-Benz Arena',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2019-08-30',
-        name: 'Animelo Summer Live 2019 -STORY-',
-        venue: 'さいたまスーパーアリーナ',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2019-10-27',
-        name: 'ANIMAX MUSIX 2019 KOBE',
-        venue: 'ワールド記念ホール',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2020-02-11',
-        name: 'RADIO EXPO ～TBSラジオ万博2020～',
-        venue: 'パシフィコ横浜 展示ホール',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2021-02-14',
-        name: 'オダイバ!!超次元音楽祭-ヨコハマからハッピーバレンタイン-',
-        venue: 'ぴあアリーナMM',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2021-03-25',
-        name: '2021VS1995-2000アニソンバトルBEST20',
-        venue: 'テレビ朝日',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2021-11-20',
-        name: 'ANIMAX MUSIX 2021',
-        venue: '横浜アリーナ',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2022-12-30',
-        name: 'COUNTDOWN JAPAN 22/23',
-        venue: 'COSMO STAGE at 幕張メッセ',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2023-05-04',
-        name: 'JAPAN JAM 2023',
-        venue: 'SUNSET STAGE at 千葉市蘇我スポーツ公園',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2023-08-25',
-        name: 'Animelo Summer Live 2023 -AXEL-',
-        venue: 'さいたまスーパーアリーナ',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2023-12-29',
-        name: 'COUNTDOWN JAPAN 23/24',
-        venue: 'COSMO STAGE at 幕張メッセ',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2024-07-14',
-        name: 'LuckyFes 2024',
-        venue: 'RAINBOW STAGE at 国営ひたち海浜公園',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2025-08-29',
-        name: 'Animelo Summer Live 2025 "ThanXX!"',
-        venue: 'さいたまスーパーアリーナ',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
-        category: 'fes',
-        date: '2026-07-02',
-        name: 'J-POP SOUND CAPSULE',
-        venue: 'Crypto.com Arena',
-        setlist: `
-        `,
-        interludes: `
-        `,
-        note: '',
-    },
-    {
         category: 'inhouse',
         date: '2017-02-05',
         name: "BanG Dream!3rd☆LIVE Sparklin'Party 2017!",
@@ -1619,6 +1443,263 @@ const LIVES = [
         `,
         note: '',
     },
+    {
+        category: 'fes',
+        date: '2017-08-27',
+        name: 'Animelo Summer Live 2017 -THE CARD-',
+        venue: 'さいたまスーパーアリーナ',
+        setlist: `
+            BLACK SHOUT
+            LOUDER
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2018-07-25',
+        name: 'FNSうたの夏まつり2018',
+        venue: 'フジテレビ',
+        setlist: `
+            魂のルフラン
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2019-07-21',
+        name: 'BILIBILI MACRO LINK-STAR PHASE 2019',
+        venue: '上海Mercedes-Benz Arena',
+        setlist: `
+            BRAVE JEWEL
+            BLACK SHOUT
+            LOUDER
+            熱色スターマイン
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2019-08-30',
+        name: 'Animelo Summer Live 2019 -STORY-',
+        venue: 'さいたまスーパーアリーナ',
+        setlist: `
+            LOUDER
+            BLACK SHOUT
+            BRAVE JEWEL
+            This game
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2019-10-27',
+        name: 'ANIMAX MUSIX 2019 KOBE',
+        venue: 'ワールド記念ホール',
+        setlist: `
+            FIRE BIRD
+            R
+            BLACK SHOUT
+            Shangri-La
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2019-12-07',
+        name: 'Chara Expo USA 2019',
+        venue: 'アナハイムコンベンションセンター',
+        setlist: `
+            Legendary
+            ONENESS
+            LOUDER
+            Ringing Bloom
+            R
+            BRAVE JEWEL
+            Determination Symphony
+            PASSIONATE ANTHEM
+            熱色スターマイン
+            FIRE BIRD
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2020-02-11',
+        name: 'RADIO EXPO ～TBSラジオ万博2020～',
+        venue: 'パシフィコ横浜 展示ホール',
+        setlist: `
+            BLACK SHOUT
+            R
+            Neo-Aspect
+            FIRE BIRD
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2021-02-14',
+        name: 'オダイバ!!超次元音楽祭-ヨコハマからハッピーバレンタインフェス2021-',
+        venue: 'ぴあアリーナMM',
+        setlist: `
+            BRAVE JEWEL
+            Neo-Aspect
+            ONENESS
+            BLACK SHOUT
+            FIRE BIRD
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2021-03-25',
+        name: '2021VS1995-2000アニソンバトルBEST20',
+        venue: 'テレビ朝日',
+        setlist: `
+            ZEAL of proud
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2021-11-20',
+        name: 'ANIMAX MUSIX 2021',
+        venue: '横浜アリーナ',
+        setlist: `
+            PASSIONATE ANTHEM
+            FIRE BIRD
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2022-12-30',
+        name: 'COUNTDOWN JAPAN 22/23',
+        venue: 'COSMO STAGE at 幕張メッセ',
+        setlist: `
+            ZEAL of proud
+            Ringing Bloom
+            Break your desire
+            R
+            FIRE BIRD
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2023-05-04',
+        name: 'JAPAN JAM 2023',
+        venue: 'SUNSET STAGE at 千葉市蘇我スポーツ公園',
+        setlist: `
+            PASSIONATE ANTHEM
+            Dear Gleam
+            overtuRe
+            残酷な天使のテーゼ
+            FIRE BIRD
+            ROZEN HORIZON
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2023-08-25',
+        name: 'Animelo Summer Live 2023 -AXEL-',
+        venue: 'さいたまスーパーアリーナ',
+        setlist: `
+            ROZEN HORIZON
+            R
+            ZEAL of proud
+            FIRE BIRD
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2023-12-29',
+        name: 'COUNTDOWN JAPAN 23/24',
+        venue: 'COSMO STAGE at 幕張メッセ',
+        setlist: `
+            ZEAL of proud
+            Ringing Bloom
+            Break your desire
+            R
+            FIRE BIRD
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2024-07-14',
+        name: 'LuckyFes 2024',
+        venue: 'RAINBOW STAGE at 国営ひたち海浜公園',
+        setlist: `
+            FIRE BIRD
+            Sing Alive
+            PASSIONATE ANTHEM
+            R
+            熱色スターマイン
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2025-08-29',
+        name: 'Animelo Summer Live 2025 "ThanXX!"',
+        venue: 'さいたまスーパーアリーナ',
+        setlist: `
+            ONENESS
+            BLACK SHOUT
+            FIRE BIRD
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
+    {
+        category: 'fes',
+        date: '2026-07-02',
+        name: 'J-POP SOUND CAPSULE',
+        venue: 'Crypto.com Arena',
+        setlist: `
+            Neo-Aspect
+            PASSIONATE ANTHEM
+            BLACK SHOUT
+            R
+            FIRE BIRD
+        `,
+        interludes: `
+        `,
+        note: '',
+    },
 //     {
 //         category: '',
 //         date: '',
@@ -1687,7 +1768,7 @@ const SONGS = [
     { title: 'overtuRe', last: '' },
     { title: 'Sing Alive', last: '' },
     { title: 'Singing "OURS"', last: '' },
-    { title: '雨上がりの夢', last: '' },
+    { title: '雨上がりの夢/湊友希那', last: '' },
     { title: 'Keep Heart', last: '' },
     { title: 'Original Call', last: '' },
     { title: 'Sprechchor', last: '' },

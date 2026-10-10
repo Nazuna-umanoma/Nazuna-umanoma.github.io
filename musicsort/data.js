@@ -63,7 +63,7 @@ const SONGS = [
     { title: 'Sprechchor' },
     { title: '閃光' },
     { title: 'THE HISTORIC...' },
-    { title: 'ROSEN HORIZON' },
+    { title: 'ROZEN HORIZON' },
     { title: 'Swear ～Night & Day～' },
     { title: 'Our Carol' },
     { title: 'THRONE OF ROSE' },
