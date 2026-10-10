@@ -27,6 +27,15 @@ const LIVES = [
         name: 'Rosenlied',
         venue: 'duo MUSIC EXCHANGE',
         setlist: `
+            BLACK SHOUT
+            魂のルフラン
+            Hacking to the Gate
+            ETERNAL BLAZE
+            陽だまりロードナイト
+            Re:birth day
+            LOUDER
+            魂のルフラン
+            BLACK SHOUT
         `,
         interludes: `
         `,
@@ -38,6 +47,16 @@ const LIVES = [
         name: 'Rosenlied追加公演',
         venue: '有明コロシアム',
         setlist: `
+            LOUDER
+            BLACK SHOUT
+            魂のルフラン
+            Hacking to the Gate
+            熱色スターマイン
+            ETERNAL BLAZE
+            陽だまりロードナイト
+            Re:birth day
+            BLACK SHOUT
+            LOUDER
         `,
         interludes: `
         `,
@@ -49,6 +68,18 @@ const LIVES = [
         name: 'Zeit',
         venue: '幕張メッセ イベントホール',
         setlist: `
+            BLACK SHOUT
+            LOUDER
+            魂のルフラン
+            Hacking to the Gate
+            Determination Symphony
+            Re:birth day
+            ETERNAL BLAZE
+            陽だまりロードナイト
+            -HEROIC ADVENT-
+            熱色スターマイン
+            Re:birth day
+            BLACK SHOUT
         `,
         interludes: `
             合宿
@@ -61,6 +92,20 @@ const LIVES = [
         name: 'Ewigkeit',
         venue: '幕張メッセ 国際展示場 1～3ホール',
         setlist: `
+            ONENESS
+            Determination Symphony
+            魂のルフラン
+            Hacking to the Gate
+            ETERNAL BLAZE
+            深愛
+            LOUDER
+            熱色スターマイン
+            軌跡
+            Re:birth day
+            -HEROIC ADVENT-
+            Neo-Aspect
+            BLACK SHOUT
+            陽だまりロードナイト
         `,
         interludes: `
             格付け
@@ -73,6 +118,10 @@ const LIVES = [
         name: 'Roselia Fan Meeting 昼',
         venue: 'カルッツかわさき ホール',
         setlist: `
+            熱色スターマイン
+            LOUDER
+            BLACK SHOUT
+            R
         `,
         interludes: `
         `,
@@ -84,6 +133,10 @@ const LIVES = [
         name: 'Roselia Fan Meeting 夜',
         venue: 'カルッツかわさき ホール',
         setlist: `
+            Neo-Aspect
+            BLACK SHOUT
+            LOUDER
+            R
         `,
         interludes: `
         `,
@@ -95,6 +148,16 @@ const LIVES = [
         name: 'Vier',
         venue: '品川プリンスホテル ステラボール',
         setlist: `
+            BLACK SHOUT
+            R
+            熱色スターマイン
+            Neo-Aspect
+            LOUDER
+            ONENESS
+            Re:birth day
+            LOUDER
+            魂のルフラン
+            BLACK SHOUT
         `,
         interludes: `
         `,
@@ -106,6 +169,21 @@ const LIVES = [
         name: 'Hitze',
         venue: '日本武道館',
         setlist: `
+            BRAVE JEWEL
+            R
+            魂のルフラン
+            残酷な天使のテーゼ
+            ONENESS
+            Sanctuary
+            陽だまりロードナイト
+            Determination Symphony
+            軌跡
+            BLACK SHOUT
+            LOUDER
+            Safe and Sound
+            Re:birth day
+            熱色スターマイン
+            Neo-Aspect
         `,
         interludes: `
             PV・撮影現場
@@ -118,6 +196,20 @@ const LIVES = [
         name: 'Flamme',
         venue: '富士急ハイランド コニファーフォレスト',
         setlist: `
+            ONENESS
+            R
+            BRAVE JEWEL
+            LOUDER
+            ETERNAL BLAZE
+            残酷な天使のテーゼ
+            This game
+            FIRE BIRD
+            Safe and Sound
+            Neo-Aspect
+            Ringing Bloom
+            陽だまりロードナイト
+            BLACK SHOUT
+            熱色スターマイン
         `,
         interludes: `
             富士急ハイランド
@@ -130,6 +222,20 @@ const LIVES = [
         name: 'Wasser',
         venue: '富士急ハイランド コニファーフォレスト',
         setlist: `
+            Determination Symphony
+            R
+            BRAVE JEWEL
+            Sanctuary
+            残酷な天使のテーゼ
+            ETERNAL BLAZE
+            This game
+            Ringing Bloom
+            Re:birth day
+            FIRE BIRD
+            BLACK SHOUT
+            Neo-Aspect
+            LOUDER
+            熱色スターマイン
         `,
         interludes: `
             富士急ハイランド
@@ -142,6 +248,21 @@ const LIVES = [
         name: 'Rausch',
         venue: '武蔵野の森総合スポーツプラザ',
         setlist: `
+            BLACK SHOUT
+            R
+            Neo-Aspect
+            Ringing Bloom
+            Re:birth day
+            BRAVE JEWEL
+            Determination Symphony
+            ONENESS
+            Legendary
+            Shangri-La
+            PASSIONATE ANTHEM
+            熱色スターマイン
+            FIRE BIRD
+            約束
+            LOUDER
         `,
         interludes: `
             クッキーづくり
@@ -154,6 +275,21 @@ const LIVES = [
         name: 'Einheit',
         venue: '富士急ハイランド コニファーフォレスト',
         setlist: `
+            Avant-garde HISTORY
+            BLACK SHOUT
+            Ringing Bloom
+            BRAVE JEWEL
+            Safe and Sound
+            約束
+            Break your desire
+            Neo-Aspect
+            PASSIONATE ANTHEM
+            ONENESS
+            Sanctuary
+            R
+            FIRE BIRD
+            Song I am.
+            熱色スターマイン
         `,
         interludes: `
             5人で一緒
@@ -166,6 +302,21 @@ const LIVES = [
         name: 'Edelstein Day1',
         venue: '名古屋国際会議場 センチュリーホール',
         setlist: `
+            BLACK SHOUT
+            Determination Symphony
+            陽だまりロードナイト
+            Ringing Bloom
+            熱色スターマイン
+            FIRE BIRD
+            Opera of the wasteland
+            軌跡
+            R
+            ZEAL of proud
+            Re:birth day
+            PASSIONATE ANTHEM
+            "UNIONS" Road
+            Sprechchor
+            BRAVE JEWEL
         `,
         interludes: `
             練習風景
@@ -178,6 +329,21 @@ const LIVES = [
         name: 'Edelstein Day2',
         venue: '名古屋国際会議場 センチュリーホール',
         setlist: `
+            BRAVE JEWEL
+            Determination Symphony
+            陽だまりロードナイト
+            Ringing Bloom
+            Re:birth day
+            FIRE BIRD
+            "UNIONS" Road
+            Neo-Aspect
+            ZEAL of proud
+            熱色スターマイン
+            PASSIONATE ANTHEM
+            Sprechchor
+            Opera of the wasteland
+            BLACK SHOUT
+            Song I am.
         `,
         interludes: `
             練習風景
@@ -190,6 +356,20 @@ const LIVES = [
         name: 'Episode of Roselia Day1: Weißklee',
         venue: '富士急ハイランド コニファーフォレスト',
         setlist: `
+            雨上がりの夢
+            Proud of oneself
+            BLACK SHOUT
+            Re:birth day
+            約束
+            "UNIONS" Road
+            LOUDER
+            Neo-Aspect
+            Song I am.
+            FIRE BIRD
+            overtuRe
+            ZEAL of proud
+            ONENESS
+            ROZEN HORIZON
         `,
         interludes: `
             これまでこれから
@@ -202,6 +382,20 @@ const LIVES = [
         name: 'Episode of Roselia Day2: Rose',
         venue: '富士急ハイランド コニファーフォレスト',
         setlist: `
+            Sing Alive
+            BLACK SHOUT
+            FIRE BIRD
+            R
+            Sprechchor
+            約束
+            閃光
+            Neo-Aspect
+            熱色スターマイン
+            "UNIONS" Road
+            Singing "OURS"
+            ROZEN HORIZON
+            Song I am.
+            LOUDER
         `,
         interludes: `
             これまでこれから
@@ -214,6 +408,21 @@ const LIVES = [
         name: 'Sonnenschein',
         venue: '有明アリーナ',
         setlist: `
+            THE HISTORIC...
+            BRAVE JEWEL
+            Opera of the wasteland
+            PASSIONATE ANTHEM
+            Ringing Bloom
+            "UNIONS" Road
+            Determination Symphony
+            Swear ～Night & Day～
+            Sprechchor
+            陽だまりロードナイト
+            R
+            overtuRe
+            FIRE BIRD
+            ROZEN HORIZON
+            -HEROIC ADVENT-
         `,
         interludes: `
             Roeslier
@@ -226,6 +435,22 @@ const LIVES = [
         name: 'Farbe Day1',
         venue: '有明アリーナ',
         setlist: `
+            BLACK SHOUT
+            R
+            THRONE OF ROSE
+            ROZEN HORIZON
+            "UNIONS" Road
+            FIRE BIRD
+            Neo-Aspect
+            Opera of the wasteland
+            Determination Symphony
+            Ringing Bloom
+            陽だまりロードナイト
+            Song I am.
+            Re:birth day
+            一逢のFull Glory
+            -HEROIC ADVENT-
+            ZEAL of proud
         `,
         interludes: `
             夏休み
@@ -238,6 +463,22 @@ const LIVES = [
         name: 'Farbe Day2',
         venue: '有明アリーナ',
         setlist: `
+            BLACK SHOUT
+            ROZEN HORIZON
+            ONENESS
+            R
+            ZEAL of proud
+            FIRE BIRD
+            一逢のFull Glory
+            Opera of the wasteland
+            Determination Symphony
+            Ringing Bloom
+            陽だまりロードナイト
+            Song I am.
+            Sprechchor
+            THRONE OF ROSE
+            -HEROIC ADVENT-
+            "UNIONS" Road
         `,
         interludes: `
             夏休み
@@ -250,6 +491,20 @@ const LIVES = [
         name: 'Rosenchor大阪特別公演 Day1',
         venue: '大阪城ホール',
         setlist: `
+            ROZEN HORIZON
+            BLACK SHOUT
+            Song I am.
+            覚悟のLiberation
+            熱色スターマイン
+            Blessing Chord
+            Sing Alive
+            ZEAL of proud
+            Safe and Sound
+            Sprechchor
+            Dear Gleam
+            一逢のFull Glory
+            FIRE BIRD
+            VIOLET LINE
         `,
         interludes: `
             陣取り合戦
@@ -262,6 +517,20 @@ const LIVES = [
         name: 'Rosenchor大阪特別公演 Day2',
         venue: '大阪城ホール',
         setlist: `
+            ROZEN HORIZON
+            BLACK SHOUT
+            PASSIONATE ANTHEM
+            覚悟のLiberation
+            熱色スターマイン
+            Break your desire
+            Sing Alive
+            ZEAL of proud
+            Safe and Sound
+            約束
+            Dear Gleam
+            一逢のFull Glory
+            FIRE BIRD
+            VIOLET LINE
         `,
         interludes: `
             陣取り合戦
@@ -274,6 +543,20 @@ const LIVES = [
         name: 'Rosenchor札幌Day1',
         venue: 'カナモトホール',
         setlist: `
+            ROZEN HORIZON
+            BLACK SHOUT
+            熱色スターマイン
+            覚悟のLiberation
+            Sing Alive
+            "UNIONS" Road
+            THE HISTORIC...
+            R
+            軌跡
+            約束
+            Dear Gleam
+            一逢のFull Glory
+            FIRE BIRD
+            VIOLET LINE
         `,
         interludes: `
             陣取り合戦
@@ -286,6 +569,20 @@ const LIVES = [
         name: 'Rosenchor札幌Day2',
         venue: 'カナモトホール',
         setlist: `
+            ROZEN HORIZON
+            BLACK SHOUT
+            熱色スターマイン
+            覚悟のLiberation
+            ZEAL of proud
+            "UNIONS" Road
+            THE HISTORIC...
+            R
+            軌跡
+            Sprechchor
+            Dear Gleam
+            一逢のFull Glory
+            FIRE BIRD
+            VIOLET LINE
         `,
         interludes: `
             陣取り合戦
@@ -298,6 +595,20 @@ const LIVES = [
         name: 'Rosenchor愛知公演',
         venue: '愛知県芸術劇場 大ホール',
         setlist: `
+            ROZEN HORIZON
+            BLACK SHOUT
+            熱色スターマイン
+            覚悟のLiberation
+            Sing Alive
+            "UNIONS" Road
+            THE HISTORIC...
+            R
+            軌跡
+            Sprechchor
+            Dear Gleam
+            一逢のFull Glory
+            FIRE BIRD
+            VIOLET LINE
         `,
         interludes: `
             陣取り合戦
@@ -310,6 +621,20 @@ const LIVES = [
         name: 'Rosenchor福岡公演',
         venue: '福岡サンパレス',
         setlist: `
+            ROZEN HORIZON
+            BLACK SHOUT
+            熱色スターマイン
+            覚悟のLiberation
+            PASSIONATE ANTHEM
+            "UNIONS" Road
+            THE HISTORIC...
+            R
+            軌跡
+            約束
+            Dear Gleam
+            一逢のFull Glory
+            FIRE BIRD
+            VIOLET LINE
         `,
         interludes: `
             陣取り合戦
@@ -322,6 +647,20 @@ const LIVES = [
         name: 'Rosenchor東京公演Day1',
         venue: '東京ガーデンシアター',
         setlist: `
+            ROZEN HORIZON
+            ONENESS
+            Sing Alive
+            覚悟のLiberation
+            ZEAL of proud
+            "UNIONS" Road
+            THE HISTORIC...
+            R
+            軌跡
+            約束
+            Dear Gleam
+            一逢のFull Glory
+            FIRE BIRD
+            VIOLET LINE
         `,
         interludes: `
             陣取り合戦
@@ -334,6 +673,20 @@ const LIVES = [
         name: 'Rosenchor東京公演Day2',
         venue: '東京ガーデンシアター',
         setlist: `
+            ROZEN HORIZON
+            ONENESS
+            PASSIONATE ANTHEM
+            覚悟のLiberation
+            "UNIONS" Road
+            THE HISTORIC...
+            R
+            軌跡
+            Sprechchor
+            Dear Gleam
+            一逢のFull Glory
+            Floral Haven
+            FIRE BIRD
+            VIOLET LINE
         `,
         interludes: `
             陣取り合戦
@@ -346,6 +699,20 @@ const LIVES = [
         name: 'Rosenchor上海追加公演',
         venue: '静安体育中心',
         setlist: `
+            ROZEN HORIZON
+            BLACK SHOUT
+            熱色スターマイン
+            覚悟のLiberation
+            PASSIONATE ANTHEM
+            "UNIONS" Road
+            THE HISTORIC...
+            R
+            軌跡
+            Sprechchor
+            Dear Gleam
+            一逢のFull Glory
+            FIRE BIRD
+            VIOLET LINE
         `,
         interludes: `
         `,
@@ -357,6 +724,20 @@ const LIVES = [
         name: 'Stille Nacht, Rosen Nacht',
         venue: '武蔵野の森総合スポーツプラザ',
         setlist: `
+            Sage der Rosen
+            Song I am.
+            THE HISTORIC...
+            Determination Symphony
+            FIRE BIRD
+            約束
+            礎の花冠
+            Neo-Aspect
+            Re:birth day
+            Floral Haven
+            PASSIONATE ANTHEM
+            R
+            -HEROIC ADVENT-
+            Our Carol
         `,
         interludes: `
             クリスマス
@@ -369,6 +750,20 @@ const LIVES = [
         name: 'Stille Nacht, Rosen Nacht 上海追加公演',
         venue: '浦発銀行東方体育中心',
         setlist: `
+            Sage der Rosen
+            Song I am.
+            THE HISTORIC...
+            Determination Symphony
+            FIRE BIRD
+            約束
+            礎の花冠
+            Neo-Aspect
+            Re:birth day
+            熱色スターマイン
+            PASSIONATE ANTHEM
+            Our Carol
+            ONENESS
+            BLACK SHOUT
         `,
         interludes: `
         `,
@@ -380,6 +775,20 @@ const LIVES = [
         name: 'Sei stark',
         venue: '有明アリーナ',
         setlist: `
+            overtuRe
+            Break your desire
+            BLACK SHOUT
+            Swear ～Night & Day～
+            ROZEN HORIZON
+            Requiem for Fate
+            Keep Heart
+            BRAVE JEWEL
+            Safe and Sound
+            ZEAL of proud
+            一逢のFull Glory
+            Dazzle the Destiny
+            "UNIONS" Road
+            FIRE BIRD
         `,
         interludes: `
             運命の館
@@ -392,6 +801,16 @@ const LIVES = [
         name: 'Stolz',
         venue: 'duo MUSIC EXCHANGE',
         setlist: `
+            BLACK SHOUT
+            Requiem for Fate
+            BRAVE JEWEL
+            R
+            Neo-Aspect
+            Ringing Bloom
+            FIRE BIRD
+            Re:birth day
+            Dazzle the Destiny
+            BLACK SHOUT
         `,
         interludes: `
         `,
@@ -403,6 +822,20 @@ const LIVES = [
         name: 'Neuweltfahrt大阪',
         venue: 'おおきにアリーナ舞洲',
         setlist: `
+            FRONTIER FANTASIA
+            Song I am.
+            Determination Symphony
+            紫炎
+            R
+            熱色スターマイン
+            Ringing Bloom
+            陽だまりロードナイト
+            軌跡
+            BLACK SHOUT
+            Steadfast Spirits
+            Neo-Aspect
+            FIRE BIRD
+            PASSIONATE ANTHEM
         `,
         interludes: `
             絆
@@ -415,6 +848,20 @@ const LIVES = [
         name: 'Neuweltfahrtシンガポール',
         venue: 'THE STAR THEATRE',
         setlist: `
+            FRONTIER FANTASIA
+            Song I am.
+            Determination Symphony
+            紫炎
+            R
+            約束
+            Ringing Bloom
+            陽だまりロードナイト
+            軌跡
+            BRAVE JEWEL
+            Steadfast Spirits
+            Neo-Aspect
+            FIRE BIRD
+            PASSIONATE ANTHEM
         `,
         interludes: `
             総集編
@@ -427,6 +874,20 @@ const LIVES = [
         name: 'Neuweltfahrtソウル',
         venue: 'KOREA UNIVERSITY TIGER DOME',
         setlist: `
+            FRONTIER FANTASIA
+            Song I am.
+            Determination Symphony
+            紫炎
+            R
+            熱色スターマイン
+            Ringing Bloom
+            陽だまりロードナイト
+            軌跡
+            BLACK SHOUT
+            Steadfast Spirits
+            Neo-Aspect
+            FIRE BIRD
+            PASSIONATE ANTHEM
         `,
         interludes: `
             総集編
@@ -439,6 +900,20 @@ const LIVES = [
         name: 'Neuweltfahrt台北',
         venue: 'Zepp New Taipei',
         setlist: `
+            FRONTIER FANTASIA
+            Song I am.
+            Determination Symphony
+            紫炎
+            R
+            約束
+            Ringing Bloom
+            陽だまりロードナイト
+            軌跡
+            BRAVE JEWEL
+            Steadfast Spirits
+            Neo-Aspect
+            FIRE BIRD
+            PASSIONATE ANTHEM
         `,
         interludes: `
             総集編
@@ -451,6 +926,20 @@ const LIVES = [
         name: 'Neuweltfahrt大阪特別DAY1',
         venue: 'Zepp Osaka Bayside',
         setlist: `
+            FRONTIER FANTASIA
+            Song I am.
+            Determination Symphony
+            紫炎
+            R
+            熱色スターマイン
+            Ringing Bloom
+            陽だまりロードナイト
+            軌跡
+            BRAVE JEWEL
+            Steadfast Spirits
+            Neo-Aspect
+            FIRE BIRD
+            PASSIONATE ANTHEM
         `,
         interludes: `
             総集編
@@ -463,6 +952,20 @@ const LIVES = [
         name: 'Neuweltfahrt大阪特別DAY2',
         venue: 'Zepp Osaka Bayside',
         setlist: `
+            FRONTIER FANTASIA
+            Song I am.
+            Determination Symphony
+            紫炎
+            R
+            約束
+            Ringing Bloom
+            陽だまりロードナイト
+            軌跡
+            BLACK SHOUT
+            Steadfast Spirits
+            Neo-Aspect
+            FIRE BIRD
+            PASSIONATE ANTHEM
         `,
         interludes: `
             総集編
@@ -475,6 +978,20 @@ const LIVES = [
         name: 'Neuweltfahrt東京DAY1',
         venue: '東京ガーデンシアター',
         setlist: `
+            FRONTIER FANTASIA
+            Song I am.
+            Determination Symphony
+            紫炎
+            R
+            約束
+            Ringing Bloom
+            陽だまりロードナイト
+            軌跡
+            ZEAL of proud
+            Steadfast Spirits
+            Neo-Aspect
+            FIRE BIRD
+            PASSIONATE ANTHEM
         `,
         interludes: `
             宝の島
@@ -487,6 +1004,20 @@ const LIVES = [
         name: 'Neuweltfahrt東京DAY2',
         venue: '東京ガーデンシアター',
         setlist: `
+            FRONTIER FANTASIA
+            BLACK SHOUT
+            Determination Symphony
+            紫炎
+            R
+            ZEAL of proud
+            Ringing Bloom
+            陽だまりロードナイト
+            軌跡
+            Song I am.
+            Steadfast Spirits
+            Neo-Aspect
+            FIRE BIRD
+            PASSIONATE ANTHEM
         `,
         interludes: `
             宝の島
@@ -499,6 +1030,20 @@ const LIVES = [
         name: 'Lehre der Rose DAY1',
         venue: '有明アリーナ',
         setlist: `
+            Neo-Aspect
+            BRAVE JEWEL
+            Sanctuary
+            Ringing Bloom
+            礎の花冠
+            Sprechchor
+            Sing Alive
+            ZEAL of proud
+            PASSIONATE ANTHEM
+            Avant-garde HISTORY
+            一逢のFull Glory
+            ROZEN HORIZON
+            R
+            FIRE BIRD
         `,
         interludes: `
             就職活動
@@ -511,6 +1056,20 @@ const LIVES = [
         name: 'Lehre der Rose DAY2',
         venue: '有明アリーナ',
         setlist: `
+            Neo-Aspect
+            BRAVE JEWEL
+            Sanctuary
+            陽だまりロードナイト
+            礎の花冠
+            Sprechchor
+            Song I am.
+            Blessing Chord
+            PASSIONATE ANTHEM
+            Avant-garde HISTORY
+            VIOLET LINE
+            ROZEN HORIZON
+            BLACK SHOUT
+            FIRE BIRD
         `,
         interludes: `
             就職活動
@@ -981,13 +1540,13 @@ const SONGS = [
     { title: 'overtuRe', last: '' },
     { title: 'Sing Alive', last: '' },
     { title: 'Singing "OURS"', last: '' },
-    { title: '雨上がりの夢/湊友希那', last: '' },
+    { title: '雨上がりの夢', last: '' },
     { title: 'Keep Heart', last: '' },
     { title: 'Original Call', last: '' },
     { title: 'Sprechchor', last: '' },
     { title: '閃光', last: '' },
     { title: 'THE HISTORIC...', last: '' },
-    { title: 'ROSEN HORIZON', last: '' },
+    { title: 'ROZEN HORIZON', last: '' },
     { title: 'Swear ～Night & Day～', last: '' },
     { title: 'Our Carol', last: '' },
     { title: 'THRONE OF ROSE', last: '' },
@@ -1028,6 +1587,7 @@ const COVER_SONGS = [
     { title: 'Shangri-La', last: '' },
     { title: 'This game', last: '' },
     { title: 'Hacking to the Gate', last: '' },
+    { title: '深愛', last: '' },
     // { title: '', last: '' },
     // { title: '', last: '' },
     // { title: '', last: '' },
