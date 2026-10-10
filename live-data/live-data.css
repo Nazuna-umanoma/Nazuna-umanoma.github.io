@@ -1,0 +1,540 @@
+/* live-data.css - Roseliaライブデータベースのスタイル
+   ベースと Roselia カラーは musicsort.css と同じです。
+   区分の色：単独＝roselia / 自社内＝yukina / 外部＝lisa（どれも白文字が読める色）。 */
+
+:root {
+    --bg: #ffffff;
+    --bg-card: #fafafa;
+    --black: #111111;
+    --text: #1a1a1a;
+    --text-muted: #666666;
+    --border: #e2e2e2;
+
+    --roselia: #3344AA;
+    --yukina: #871088;
+    --sayo: #00AABB;
+    --lisa: #DD2200;
+    --ako: #DC0087;
+    --rinko: #BBBBBB;
+
+    /* メンバーカラーの帯（ヘッダー下） */
+    --stripe: linear-gradient(to right,
+        var(--yukina) 0 20%, var(--sayo) 20% 40%, var(--lisa) 40% 60%,
+        var(--ako) 60% 80%, var(--rinko) 80% 100%);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ヘッダー */
+.header {
+    background: var(--stripe) bottom / 100% 4px no-repeat, var(--black);
+    padding: 16px 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+.header a:hover { color: var(--sayo); }
+.header .home-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header .home-link img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid var(--roselia);
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 30px 16px;
+}
+
+/* カード */
+.card {
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--roselia);
+    border-radius: 5px;
+    background-color: var(--bg-card);
+    margin-bottom: 20px;
+}
+.card h2 {
+    margin-top: 0;
+    color: var(--black);
+    border-left: 4px solid var(--roselia);
+    padding-left: 10px;
+    font-size: 1.2rem;
+}
+
+/* トップ */
+.hero {
+    text-align: center;
+    padding: 30px 0 10px;
+}
+.hero h1 {
+    color: var(--roselia);
+    margin: 0 0 10px;
+    letter-spacing: 0.1em;
+}
+.hero p { color: var(--text-muted); margin: 0 0 6px; }
+.hero .badge {
+    display: inline-block;
+    padding: 2px 12px;
+    background: var(--roselia);
+    color: #ffffff;
+    border-radius: 999px;
+    font-size: 0.85em;
+}
+
+.muted { color: var(--text-muted); margin: 0; }
+
+/* タブ */
+.tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin: 24px 0 16px;
+}
+.tab {
+    --tab-color: var(--roselia);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 10px 4px;
+    border: 1px solid var(--border);
+    border-bottom: 3px solid var(--tab-color);
+    border-radius: 5px 5px 0 0;
+    background: #ffffff;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+.tab small {
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: var(--text-muted);
+}
+.tab-inhouse { --tab-color: var(--yukina); }
+.tab-fes { --tab-color: var(--lisa); }
+.tab-songs { --tab-color: var(--black); }
+.tab:hover { border-color: var(--tab-color); }
+.tab[aria-selected="true"] {
+    background: var(--tab-color);
+    border-color: var(--tab-color);
+    color: #ffffff;
+}
+.tab[aria-selected="true"] small { color: rgba(255, 255, 255, 0.8); }
+.tab:focus-visible { outline: 2px solid var(--sayo); outline-offset: 2px; }
+
+/* 検索・並び替え */
+.toolbar { padding: 16px; }
+.search {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: #ffffff;
+}
+.search:focus, .sort-select:focus {
+    outline: none;
+    border-color: var(--sayo);
+}
+.toolbar-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+.result-count {
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+.btn-small, .sort-select {
+    padding: 6px 12px;
+    border: 1px solid var(--rinko);
+    border-radius: 5px;
+    background: #ffffff;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+.btn-small:hover { border-color: var(--roselia); color: var(--roselia); }
+.btn-small:focus-visible { outline: 2px solid var(--sayo); outline-offset: 2px; }
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+.chip input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.chip span {
+    display: inline-block;
+    padding: 4px 14px;
+    border: 1px solid var(--rinko);
+    border-radius: 999px;
+    background: #ffffff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+.chip span:hover { border-color: var(--sayo); }
+.chip input:checked + span {
+    background: var(--black);
+    border-color: var(--black);
+    color: #ffffff;
+}
+.chip-solo input:checked + span { background: var(--roselia); border-color: var(--roselia); }
+.chip-inhouse input:checked + span { background: var(--yukina); border-color: var(--yukina); }
+.chip-fes input:checked + span { background: var(--lisa); border-color: var(--lisa); }
+.chip input:focus-visible + span { outline: 2px solid var(--sayo); outline-offset: 2px; }
+
+/* 開閉リスト共通 */
+.live-list, .song-stats {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.empty {
+    color: var(--text-muted);
+    text-align: center;
+    padding: 24px 0;
+}
+details > summary {
+    list-style: none;
+    cursor: pointer;
+}
+details > summary::-webkit-details-marker { display: none; }
+details > summary:focus-visible { outline: 2px solid var(--sayo); outline-offset: -2px; }
+.live summary::after, .song-row summary::after {
+    content: '▼';
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7rem;
+    color: var(--rinko);
+    transition: transform 0.2s;
+}
+.live details[open] > summary::after,
+.song-row details[open] > summary::after { transform: translateY(-50%) rotate(180deg); }
+
+/* 区分の色 */
+.cat-solo { --cat-color: var(--roselia); }
+.cat-inhouse { --cat-color: var(--yukina); }
+.cat-fes { --cat-color: var(--lisa); }
+
+/* 公演 */
+.live {
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--cat-color);
+    border-radius: 5px;
+    background: var(--bg-card);
+    scroll-margin-top: 16px;
+}
+.live summary {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 36px 12px 16px;
+}
+.live summary:hover .live-name { color: var(--cat-color); }
+.live-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+}
+.live-name {
+    font-weight: bold;
+    font-size: 1.05rem;
+    transition: color 0.2s;
+}
+.live-venue {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+.live-venue::before { content: '会場：'; }
+.live-body {
+    padding: 4px 16px 16px;
+    border-top: 1px solid var(--border);
+}
+.live-body h3 {
+    margin: 16px 0 8px;
+    font-size: 0.95rem;
+    color: var(--black);
+    border-left: 3px solid var(--cat-color);
+    padding-left: 8px;
+}
+.live-note {
+    margin: 0;
+    white-space: pre-wrap;
+    font-size: 0.9rem;
+}
+
+/* セットリスト */
+.setlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.setlist-song {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 4px 6px;
+    border-bottom: 1px dashed var(--border);
+}
+.setlist-no {
+    flex-shrink: 0;
+    width: 1.8em;
+    text-align: right;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+}
+.song-link {
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    text-align: left;
+    cursor: pointer;
+}
+.song-link:hover { color: var(--cat-color); text-decoration: underline; }
+.song-link:focus-visible { outline: 2px solid var(--sayo); outline-offset: 1px; }
+.tag-cover {
+    flex-shrink: 0;
+    padding: 0 6px;
+    border: 1px solid var(--yukina);
+    border-radius: 3px;
+    color: var(--yukina);
+    font-size: 0.7rem;
+}
+.setlist-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0 4px;
+    color: var(--cat-color);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+.setlist-section::before, .setlist-section::after {
+    content: '';
+    flex: 1;
+    border-top: 1px solid var(--cat-color);
+    opacity: 0.4;
+}
+.interludes {
+    margin: 0;
+    padding-left: 1.4em;
+    font-size: 0.95rem;
+}
+.hit { background: #fff6c2; }
+.setlist-song.hit .song-link { font-weight: bold; }
+
+/* 曲別データ */
+.song-group-title {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 28px 0 10px;
+    padding-left: 10px;
+    border-left: 4px solid var(--roselia);
+    font-size: 1.1rem;
+    color: var(--black);
+}
+.song-group:first-child .song-group-title { margin-top: 8px; }
+.song-group-cover .song-group-title { border-left-color: var(--yukina); }
+.song-group-unknown .song-group-title { border-left-color: var(--ako); }
+.song-group-title small {
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: var(--text-muted);
+}
+.song-group-hint {
+    margin: -4px 0 10px;
+    font-size: 0.85rem;
+    color: var(--ako);
+}
+.song-row {
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: #ffffff;
+    scroll-margin-top: 16px;
+}
+.song-row summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 36px 10px 14px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.song-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background: var(--roselia);
+    opacity: 0.5;
+}
+.song-title {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    word-break: break-word;
+}
+.song-last {
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: var(--text-muted);
+}
+.song-count {
+    flex-shrink: 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+.song-count strong {
+    margin-right: 2px;
+    color: var(--roselia);
+    font-size: 1.2rem;
+    font-variant-numeric: tabular-nums;
+}
+.song-row.zero .song-title { color: var(--text-muted); font-weight: normal; }
+.song-group-cover .song-bar { background: var(--yukina); }
+.song-group-cover .song-count strong { color: var(--yukina); }
+.song-row.zero .song-count strong { color: var(--rinko); }
+.song-body {
+    padding: 4px 14px 14px;
+    border-top: 1px solid var(--border);
+}
+.song-breakdown, .song-summary {
+    margin: 8px 0 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+.perf-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+.perf-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 10px;
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 0.9rem;
+}
+.perf-date {
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+}
+.cat-badge {
+    padding: 0 8px;
+    border-radius: 999px;
+    background: var(--cat-color);
+    color: #ffffff;
+    font-size: 0.75rem;
+}
+.live-link {
+    flex: 1;
+    color: var(--text);
+    text-decoration: none;
+}
+.live-link:hover { color: var(--roselia); text-decoration: underline; }
+.perf-no {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* ボタン */
+.btn-area {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 24px 0;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: inherit;
+}
+.btn:focus-visible { outline: 2px solid var(--sayo); outline-offset: 2px; }
+.btn-ghost {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--rinko);
+}
+.btn-ghost:hover { color: var(--roselia); border-color: var(--roselia); }
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #ececec;
+    border-top: 2px solid var(--roselia);
+}
+footer p { margin: 0; }
+
+@media (max-width: 600px) {
+    .card { padding: 18px; }
+    .toolbar { padding: 12px; }
+    .tabs { grid-template-columns: repeat(2, 1fr); }
+    .tab { border-radius: 5px; }
+}

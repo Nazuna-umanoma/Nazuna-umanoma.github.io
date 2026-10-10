@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roseliaライブデータベース | 凪不凪</title>
+    <link rel="stylesheet" href="live-data.css?v=3">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="home-link"><img src="../nazuna.png" alt="">凪不凪（ナズナ）</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 id="live-title"></h1>
+            <p id="live-description"></p>
+            <span class="badge" id="live-count"></span>
+        </section>
+
+        <!-- タブ（単独ライブ・自社内・外部・曲別データ） -->
+        <nav class="tabs" role="tablist" id="tabs"></nav>
+
+        <!-- 公演一覧（中身は live-data.js で作ります） -->
+        <section class="panel" id="panel-solo" role="tabpanel" data-category="solo" hidden></section>
+        <section class="panel" id="panel-inhouse" role="tabpanel" data-category="inhouse" hidden></section>
+        <section class="panel" id="panel-fes" role="tabpanel" data-category="fes" hidden></section>
+
+        <!-- 曲別データ -->
+        <section class="panel" id="panel-songs" role="tabpanel" hidden>
+            <div class="card toolbar">
+                <input type="search" class="search" id="song-search" placeholder="曲名で検索">
+                <div class="chips" id="song-category"></div>
+                <div class="toolbar-row">
+                    <span class="result-count" id="song-result-count"></span>
+                    <select class="sort-select" id="song-sort">
+                        <option value="count">披露回数が多い順</option>
+                        <option value="order">曲一覧の順</option>
+                        <option value="name">曲名順</option>
+                    </select>
+                </div>
+            </div>
+            <div id="song-stats"></div>
+        </section>
+
+        <section class="card">
+            <h2>使い方</h2>
+            <p>タブで「単独ライブ」「自社内」「外部」「曲別データ」を切り替えられます。公演をタップするとセットリストと幕間映像が開き、曲名をタップするとその曲の披露回数と披露した公演が見られます。<br>検索欄にはライブ名・会場・曲名・年などを入れて絞り込めます（スペース区切りで複数の言葉も使えます）。<br>※このサイトはファンサイトであり、BanG Dream!公式のものではありません。<br>This site is an unofficial, fan-made website. </p>
+        </section>
+
+        <div class="btn-area">
+            <a href="../index.html" class="btn btn-ghost">プロフィールに戻る</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 凪不凪（ナズナ）. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js?v=3"></script>
+    <script src="live-data.js?v=3"></script>
+</body>
+</html>
