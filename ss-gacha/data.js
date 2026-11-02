@@ -4,7 +4,7 @@
 // サイト全体の設定
 const GACHA_CONFIG = {
     title: '小説お題ガチャ',
-    description: 'ボタンを押すと5種類のキーワードが1つずつ出てきます。全部使って小説を書いてみましょう。',
+    description: 'ボタンを押すと5種類のキーワードが1つずつ出てきます。好きなものを使って小説を書いてみましょう。',
     // コピーするときに末尾につく文字（空欄なら入りません）
     shareFooter: '#小説お題ガチャ nazuna-umanoma.github.io/ss-gacha/',
 };
