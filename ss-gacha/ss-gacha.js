@@ -88,11 +88,9 @@ function finish() {
 
     document.getElementById('share-area').hidden = false;
     document.getElementById('copy-btn').textContent = 'お題をコピー';
-    document.getElementById('post-link').href =
-        'https://x.com/intent/post?text=' + encodeURIComponent(shareText());
 }
 
-// コピー・ポスト用の文章
+// コピー用の文章
 function shareText() {
     const lines = [`【${GACHA_CONFIG.title}】`, ...current.map((k, i) => `${POOLS[i].name}：${k}`)];
     if (GACHA_CONFIG.shareFooter) lines.push('', GACHA_CONFIG.shareFooter);
