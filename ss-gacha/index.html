@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小説お題ガチャ | 凪不凪</title>
+    <link rel="stylesheet" href="ss-gacha.css?v=2">
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="home-link"><img src="../nazuna.png" alt="">凪不凪（ナズナ）</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 id="gacha-title"></h1>
+            <p id="gacha-description"></p>
+            <span class="badge" id="keyword-count"></span>
+        </section>
+
+        <!-- 引いたキーワード -->
+        <section class="card">
+            <h2>今回のお題</h2>
+            <ol class="keywords" id="keywords" aria-live="polite"></ol>
+            <div class="btn-area">
+                <button type="button" class="btn btn-primary btn-draw" id="draw-btn">ガチャを引く</button>
+            </div>
+            <div class="btn-area share-area" id="share-area" hidden>
+                <button type="button" class="btn btn-ghost" id="copy-btn">お題をコピー</button>
+                <a class="btn btn-ghost" id="post-link" target="_blank" rel="noopener">Xでポスト</a>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>遊び方</h2>
+            <p>「ガチャを引く」を押すと、「状況」「命」「無機物」「感情」「セリフ」のキーワードが1つずつ、計5つ出てきます。<br>5つ全部を使って、短い小説（SS）を書いてみてください。気に入らなければ何度でも引き直せます。</p>
+        </section>
+
+        <div class="btn-area">
+            <a href="../index.html" class="btn btn-ghost">プロフィールに戻る</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 凪不凪（ナズナ）. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js?v=2"></script>
+    <script src="ss-gacha.js?v=2"></script>
+</body>
+</html>
