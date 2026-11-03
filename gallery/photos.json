@@ -1,3 +1,64 @@
 {
-  "photos": []
+  "photos": [
+    {
+      "file": "20261103_1.jpg",
+      "title": "晴れ装束",
+      "date": "",
+      "location": "",
+      "alt": "色鮮やかな装束と笠を身に着けた騎手たちが、芦毛の馬や鹿毛の馬に乗って観客の前を進んでいく様子。",
+      "width": 2048,
+      "height": 1356,
+      "thumbWidth": 600,
+      "thumbHeight": 397,
+      "webp": true
+    },
+    {
+      "file": "20261103_2.jpg",
+      "title": "並ぶ横顔",
+      "date": "",
+      "location": "",
+      "alt": "厩舎の馬房から顔を出す2頭の栗毛の馬を、横から写した写真。",
+      "width": 2048,
+      "height": 1356,
+      "thumbWidth": 600,
+      "thumbHeight": 397,
+      "webp": true
+    },
+    {
+      "file": "20261103_3.jpg",
+      "title": "若葉の射手",
+      "date": "",
+      "location": "",
+      "alt": "緑の装束に鹿の毛皮の行縢（むかばき）を着け、弓を持った射手が、赤い房飾りを付けた鹿毛の馬に乗っている。背景は木々の緑。",
+      "width": 2048,
+      "height": 1356,
+      "thumbWidth": 600,
+      "thumbHeight": 397,
+      "webp": true
+    },
+    {
+      "file": "20261103_4.jpg",
+      "title": "たてがみ",
+      "date": "",
+      "location": "",
+      "alt": "頭絡と手綱を付けた栗毛の馬の横顔。背景にはぼやけた観客席と花が写っている。",
+      "width": 2048,
+      "height": 1526,
+      "thumbWidth": 600,
+      "thumbHeight": 447,
+      "webp": true
+    },
+    {
+      "file": "20261103_5.jpg",
+      "title": "疾走",
+      "date": "",
+      "location": "",
+      "alt": "鎧姿の騎手が弓を手に、白い柵沿いの馬場を鹿毛の馬で駆け抜ける様子。背景に色づいた木々と観客が見える。",
+      "width": 2048,
+      "height": 1356,
+      "thumbWidth": 600,
+      "thumbHeight": 397,
+      "webp": true
+    }
+  ]
 }
