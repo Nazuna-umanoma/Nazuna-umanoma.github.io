@@ -12,7 +12,7 @@ gallery/originals/ に置いた元画像（JPEG / PNG / HEIC）から次の画�
   - 書き出し後、すべての出力画像に GPS 情報が無いことを検証し、見つかればその画像を
     削除してエラー終了します。
 
-新しい写真は gallery/photos.json に雛形を追記します（タイトルや alt は手で記入）。
+新しい写真は gallery/photos.json に雛形を追記します（タイトルや撮影状況は手で記入）。
 
 使い方:
     python scripts/prepare_photos.py           # 新しい・更新された写真だけ処理する
@@ -329,7 +329,7 @@ def check_sizes(gallery_dir, originals_dir):
 
 # ---------------------------------------------------------------- photos.json
 
-ENTRY_KEYS = ["file", "title", "date", "location", "event", "alt",
+ENTRY_KEYS = ["file", "title", "date", "location", "event", "note",
               "width", "height", "thumbWidth", "thumbHeight", "webp"]
 
 
@@ -353,7 +353,7 @@ def update_manifest(manifest_path, dirs, dates):
         entry = by_file.get(photo.name)
         if entry is None:
             entry = {"file": photo.name, "title": "", "date": dates.get(photo.name, ""),
-                     "location": "", "event": "", "alt": ""}
+                     "location": "", "event": "", "note": ""}
             entries.append(entry)
             by_file[photo.name] = entry
             added.append(photo.name)
@@ -374,14 +374,14 @@ def update_manifest(manifest_path, dirs, dates):
                              encoding="utf-8")
 
     if added:
-        print("photos.json に雛形を追加しました（title / alt / location / event を記入してください）:")
+        print("photos.json に雛形を追加しました（title / location / event を記入してください）:")
         for name in added:
             print(f"  + {name}")
     for e in data["photos"]:
         if not (dirs["photos"] / e.get("file", "")).exists():
             print(f"注意: photos.json の {e.get('file')!r} に対応する画像が gallery/photos/ にありません。")
-        elif not e.get("title") or not e.get("alt"):
-            print(f"注意: {e['file']} の title または alt が未入力です。")
+        elif not e.get("title"):
+            print(f"注意: {e['file']} の title が未入力です。")
 
 
 # ---------------------------------------------------------------- メイン

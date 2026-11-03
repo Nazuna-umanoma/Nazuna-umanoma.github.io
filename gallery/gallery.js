@@ -59,7 +59,7 @@ function createWork(photo) {
     img.height = photo.thumbHeight;
     img.loading = 'lazy';
     img.decoding = 'async';
-    img.alt = photo.alt || photo.title || '撮影した写真';
+    img.alt = photo.title || '撮影した写真';
     picture.append(img);
     link.append(picture);
 
