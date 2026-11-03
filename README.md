@@ -170,7 +170,8 @@ github.io/
    - 新しい写真の雛形が `gallery/photos.json` に追記されます
    - Git Bash で日本語が文字化けする場合は `PYTHONUTF8=1 python scripts/prepare_photos.py` で実行してください
 3. **データを編集する**：`gallery/photos.json` の `title`（題名）、`alt`（写真の内容の説明）、
-   `location`（任意・市区町村まで）を記入する。`date` は撮影日が自動で入ります。
+   `location`（任意・市区町村まで）、`event`（任意・イベント名など）を記入する。`date` は撮影日が自動で入ります。
+   一覧には写真だけが並び、題名と撮影状況（`event`・`location`・`date`）は拡大表示したときに表示されます。
    `width` などのサイズ欄はスクリプトが管理するので触らないでください。
    並び順は `photos.json` の順番です。
 4. **確認してコミットする**：

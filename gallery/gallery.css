@@ -109,7 +109,7 @@ main {
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
-    gap: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 56px);
+    gap: clamp(16px, 4vw, 56px);
 }
 
 .work {
@@ -167,27 +167,6 @@ main {
     filter: brightness(1);
 }
 
-/* キャプション札 */
-.work-caption {
-    margin: 4px 9% 0;
-    padding-top: 14px;
-    border-top: 1px solid var(--line);
-}
-.work-title {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    overflow-wrap: anywhere;
-}
-.work-meta {
-    margin: 4px 0 0;
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    color: var(--text-muted);
-    overflow-wrap: anywhere;
-}
-
 .gallery-message {
     text-align: center;
     color: var(--text-muted);
@@ -224,7 +203,7 @@ main {
 .footer p { margin: 6px 0; }
 .footer a { color: var(--brass); }
 
-/* 拡大表示（PhotoSwipe）のキャプション */
+/* 拡大表示（PhotoSwipe）のキャプション札：題名と撮影状況は、ここでだけ見せる */
 .pswp__custom-caption {
     position: absolute;
     left: 50%;
@@ -239,7 +218,29 @@ main {
     pointer-events: none;
 }
 .pswp__custom-caption:empty { display: none; }
-.pswp__custom-caption .work-title { font-size: 0.95rem; }
+.caption-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+}
+.caption-title::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 1px;
+    margin: 8px auto 6px;
+    background: var(--brass);
+}
+.caption-title:last-child::after { display: none; }
+.caption-meta {
+    margin: 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    overflow-wrap: anywhere;
+}
 
 @media (prefers-reduced-motion: reduce) {
     .work, .work-link img, .work-link::before { transition: none; }

@@ -34,7 +34,7 @@ function el(tag, className, text) {
     return node;
 }
 
-// 一覧の1作品（額装された写真＋キャプション札）を作る
+// 一覧の1作品を作る（一覧には写真だけを掛け、題名などは拡大表示で見せる）
 function createWork(photo) {
     const figure = el('figure', 'work');
 
@@ -63,13 +63,17 @@ function createWork(photo) {
     picture.append(img);
     link.append(picture);
 
-    const caption = el('figcaption', 'work-caption');
-    caption.append(el('p', 'work-title', photo.title || '無題'));
-    const meta = [photo.date && photo.date.replaceAll('-', '.'), photo.location].filter(Boolean).join(' ／ ');
-    if (meta) caption.append(el('p', 'work-meta', meta));
-
-    figure.append(link, caption);
+    figure.append(link);
     return figure;
+}
+
+// 拡大表示のキャプション札（題名と、イベント名・場所・撮影日の撮影状況）
+function createCaption(photo) {
+    const nodes = [el('p', 'caption-title', photo.title || '無題')];
+    const scene = [photo.event, photo.location, photo.date && photo.date.replaceAll('-', '.')]
+        .filter(Boolean).join(' ／ ');
+    if (scene) nodes.push(el('p', 'caption-meta', scene));
+    return nodes;
 }
 
 // 作品が画面に入ったら、ゆっくり浮かび上がらせる
@@ -89,12 +93,12 @@ function revealOnScroll(works) {
     works.forEach((w) => observer.observe(w));
 }
 
-function setupLightbox(useWebp) {
+function setupLightbox(photos, useWebp) {
     const lightbox = new PhotoSwipeLightbox({
         gallery: '#gallery',
         children: 'a.work-link',
         pswpModule: () => import('photoswipe'),
-        bgOpacity: 0.96,
+        bgOpacity: 1,
         paddingFn: (viewport) => (viewport.x < 600
             ? { top: 16, bottom: 88, left: 0, right: 0 }
             : { top: 48, bottom: 104, left: 72, right: 72 }),
@@ -113,7 +117,7 @@ function setupLightbox(useWebp) {
         });
     }
 
-    // 拡大表示の下に、一覧と同じキャプション札を出す
+    // 拡大表示の下にキャプション札を出す（一覧の並びと photos の並びは同じ）
     lightbox.on('uiRegister', () => {
         lightbox.pswp.ui.registerElement({
             name: 'custom-caption',
@@ -122,9 +126,8 @@ function setupLightbox(useWebp) {
             appendTo: 'root',
             onInit: (captionEl, pswp) => {
                 pswp.on('change', () => {
-                    const caption = pswp.currSlide.data.element
-                        && pswp.currSlide.data.element.closest('.work').querySelector('.work-caption');
-                    captionEl.replaceChildren(...(caption ? caption.cloneNode(true).childNodes : []));
+                    const photo = photos[pswp.currIndex];
+                    captionEl.replaceChildren(...(photo ? createCaption(photo) : []));
                 });
             },
         });
@@ -176,7 +179,7 @@ async function main() {
     countEl.textContent = `展示作品 ${photos.length} 点`;
     revealOnScroll(works);
 
-    const lightbox = setupLightbox(await webpSupported);
+    const lightbox = setupLightbox(photos, await webpSupported);
     openFromHash(lightbox);
 }
 

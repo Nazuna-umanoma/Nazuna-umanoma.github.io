@@ -329,7 +329,7 @@ def check_sizes(gallery_dir, originals_dir):
 
 # ---------------------------------------------------------------- photos.json
 
-ENTRY_KEYS = ["file", "title", "date", "location", "alt",
+ENTRY_KEYS = ["file", "title", "date", "location", "event", "alt",
               "width", "height", "thumbWidth", "thumbHeight", "webp"]
 
 
@@ -353,7 +353,7 @@ def update_manifest(manifest_path, dirs, dates):
         entry = by_file.get(photo.name)
         if entry is None:
             entry = {"file": photo.name, "title": "", "date": dates.get(photo.name, ""),
-                     "location": "", "alt": ""}
+                     "location": "", "event": "", "alt": ""}
             entries.append(entry)
             by_file[photo.name] = entry
             added.append(photo.name)
@@ -374,7 +374,7 @@ def update_manifest(manifest_path, dirs, dates):
                              encoding="utf-8")
 
     if added:
-        print("photos.json に雛形を追加しました（title / alt / location を記入してください）:")
+        print("photos.json に雛形を追加しました（title / alt / location / event を記入してください）:")
         for name in added:
             print(f"  + {name}")
     for e in data["photos"]:
