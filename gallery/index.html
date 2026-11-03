@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>写真ギャラリー | 凪不凪</title>
+    <meta name="description" content="凪不凪（ナズナ）が撮影した写真のギャラリーです。">
+    <meta name="theme-color" content="#0b0b0c">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Shippori+Mincho:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css"
+          integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE" crossorigin="anonymous">
+    <link rel="stylesheet" href="gallery.css?v=1">
+    <script type="importmap">
+    {
+        "imports": {
+            "photoswipe/lightbox": "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js",
+            "photoswipe": "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js"
+        },
+        "integrity": {
+            "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js": "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/",
+            "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js": "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s"
+        }
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <a href="../index.html" class="home-link"><img src="../nazuna.png" alt="">凪不凪（ナズナ）</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <p class="hero-kicker">Photo Gallery</p>
+            <h1>写真ギャラリー</h1>
+            <p class="hero-lead">自分で撮影した写真を展示しています。<br>作品を選ぶと、大きく鑑賞できます。</p>
+            <p class="hero-count" id="photo-count" aria-live="polite"></p>
+        </section>
+
+        <!-- 作品は photos.json をもとに gallery.js が並べます -->
+        <section class="gallery" id="gallery" aria-label="展示作品"></section>
+        <p class="gallery-message" id="gallery-message" hidden></p>
+        <noscript><p class="gallery-message">作品の表示には JavaScript を有効にしてください。</p></noscript>
+
+        <div class="back">
+            <a href="../index.html" class="back-link">プロフィールに戻る</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Nao. All rights reserved. 掲載写真の無断転載・二次利用を禁じます。</p>
+        <p>掲載写真に問題がある場合はご連絡ください。<br>
+            連絡先：<a href="https://marshmallow-qa.com/fro7inpd7ycq0lu?t=5z8m8z&utm_medium=url_text&utm_source=promotion" target="_blank" rel="noopener">マシュマロ</a></p>
+    </footer>
+
+    <script type="module" src="gallery.js?v=1"></script>
+</body>
+</html>

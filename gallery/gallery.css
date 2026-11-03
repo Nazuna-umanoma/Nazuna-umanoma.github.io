@@ -1,0 +1,248 @@
+/* gallery.css - 写真ギャラリーのスタイル
+   他ページと違い、照明を落とした美術館の展示室をイメージした暗い配色にしています。
+   差し色は真鍮（キャプション札の金具）の色です。 */
+
+:root {
+    --wall: #0b0b0c;          /* 展示室の壁 */
+    --wall-light: #1a1917;    /* スポットライトが当たった壁 */
+    --text: #e9e5dc;          /* 生成りの白 */
+    --text-muted: #8d887e;
+    --brass: #b59a68;         /* 真鍮 */
+    --line: rgba(233, 229, 220, 0.12);
+
+    --serif: 'Shippori Mincho', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', serif;
+    --latin: 'Cormorant Garamond', 'Times New Roman', serif;
+
+    --pswp-bg: #050505;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--wall);
+    background-image: radial-gradient(ellipse 90% 520px at 50% 0, #1d1b18 0%, rgba(11, 11, 12, 0) 100%);
+    background-repeat: no-repeat;
+    color: var(--text);
+    font-family: var(--serif);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+/* ヘッダー（他ページと同じ構成で、色だけ展示室に合わせる） */
+.header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+}
+.header .home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', Arial, sans-serif;
+    font-weight: bold;
+}
+.header .home-link:hover { color: var(--brass); }
+.header .home-link img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--brass);
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 48px);
+}
+
+/* 入口の掲示 */
+.hero {
+    text-align: center;
+    padding: clamp(56px, 10vw, 112px) 0 clamp(40px, 7vw, 80px);
+}
+.hero-kicker {
+    margin: 0 0 12px;
+    font-family: var(--latin);
+    font-size: 0.95rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--brass);
+}
+.hero h1 {
+    margin: 0;
+    font-size: clamp(1.9rem, 5vw, 2.8rem);
+    font-weight: 400;
+    letter-spacing: 0.24em;
+}
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 1px;
+    margin: 28px auto 0;
+    background: var(--brass);
+}
+.hero-lead {
+    margin: 28px 0 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+}
+.hero-count {
+    margin: 12px 0 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+}
+
+/* 展示壁：作品を同じ大きさの区画に掛ける */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 56px);
+}
+
+.work {
+    margin: 0;
+    min-width: 0;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.work.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.work-link {
+    position: relative;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1 / 1;
+    container-type: inline-size; /* 写真の大きさを区画の幅（cqw）から決める */
+    padding: 9%;
+    border-radius: 2px;
+    outline-offset: 6px;
+}
+/* 天井から当たるスポットライト */
+.work-link::before {
+    content: "";
+    position: absolute;
+    inset: -6% 0 0; /* 左右に広げるとスマホ幅で横スクロールが出る */
+    background: radial-gradient(ellipse 60% 55% at 50% 30%, rgba(255, 238, 206, 0.075), rgba(255, 238, 206, 0) 70%);
+    opacity: 0.7;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+}
+.work-link:hover::before,
+.work-link:focus-visible::before { opacity: 1; }
+.work-link:focus-visible { outline: 1px solid var(--brass); }
+
+.work-link picture { display: contents; }
+.work-link img {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    box-shadow: 0 22px 40px -12px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    background: var(--wall-light);
+    transition: transform 0.6s ease, filter 0.6s ease;
+    filter: brightness(0.92);
+}
+/* 横長なら幅を、縦長なら高さを区画の内側（幅の 82% = 100% − 余白 9% × 2）に合わせる */
+.work-link.is-wide img { width: 100%; height: auto; }
+.work-link.is-tall img { height: 82cqw; width: auto; }
+.work-link:hover img,
+.work-link:focus-visible img {
+    transform: translateY(-4px);
+    filter: brightness(1);
+}
+
+/* キャプション札 */
+.work-caption {
+    margin: 4px 9% 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+}
+.work-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    overflow-wrap: anywhere;
+}
+.work-meta {
+    margin: 4px 0 0;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    overflow-wrap: anywhere;
+}
+
+.gallery-message {
+    text-align: center;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+.back {
+    text-align: center;
+    margin: clamp(72px, 10vw, 120px) 0 56px;
+}
+.back-link {
+    display: inline-block;
+    padding: 10px 28px;
+    border: 1px solid var(--line);
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    font-size: 0.9rem;
+    transition: color 0.3s, border-color 0.3s;
+}
+.back-link:hover {
+    color: var(--brass);
+    border-color: var(--brass);
+}
+
+.footer {
+    padding: 28px 20px 36px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+.footer p { margin: 6px 0; }
+.footer a { color: var(--brass); }
+
+/* 拡大表示（PhotoSwipe）のキャプション */
+.pswp__custom-caption {
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    width: min(calc(100% - 32px), 640px);
+    padding: 10px 16px;
+    text-align: center;
+    font-family: var(--serif);
+    color: var(--text);
+    background: rgba(5, 5, 5, 0.6);
+    pointer-events: none;
+}
+.pswp__custom-caption:empty { display: none; }
+.pswp__custom-caption .work-title { font-size: 0.95rem; }
+
+@media (prefers-reduced-motion: reduce) {
+    .work, .work-link img, .work-link::before { transition: none; }
+    .work { opacity: 1; transform: none; }
+    .work-link:hover img, .work-link:focus-visible img { transform: none; }
+}

@@ -1,0 +1,5 @@
+# 写真ギャラリーの元画像（GPS などのメタデータを含むため、絶対にコミットしない）
+gallery/originals/
+
+# Python のキャッシュ
+__pycache__/

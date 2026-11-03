@@ -144,3 +144,40 @@ github.io/
 
 何か問題が発生した場合や、さらなるカスタマイズが必要な場合は、
 気軽にお知らせください！
+## 📷 写真ギャラリー（/gallery/）
+
+自分で撮った写真を `gallery/` で展示しています。元画像は位置情報（GPS）などを含むため、
+**必ず前処理スクリプトを通した画像だけを公開します**。
+
+### 必要なもの（初回のみ）
+
+- Python 3 と Pillow（`python -m pip install Pillow`）
+- exiftool（Windows: `winget install OliverBetz.ExifTool` ／ macOS: `brew install exiftool`）
+- HEIC を使う場合のみ pillow-heif（`python -m pip install pillow-heif`）
+
+足りないものがあれば、スクリプトがインストール方法を表示して止まります。
+
+### 写真を追加する手順
+
+1. **元画像を置く**：`gallery/originals/` に JPEG / PNG / HEIC を入れる
+   （このフォルダは `.gitignore` 済みで、コミットされません）
+2. **スクリプトを実行する**：
+   ```
+   python scripts/prepare_photos.py
+   ```
+   - 拡大用（長辺2048px）を `gallery/photos/`、サムネイル（長辺600px）を `gallery/thumbs/` に JPEG と WebP で書き出します
+   - GPS・シリアル番号などを削除し、出力画像に GPS が残っていないことを検証します（残っていればエラーで止まります）
+   - 新しい写真の雛形が `gallery/photos.json` に追記されます
+   - Git Bash で日本語が文字化けする場合は `PYTHONUTF8=1 python scripts/prepare_photos.py` で実行してください
+3. **データを編集する**：`gallery/photos.json` の `title`（題名）、`alt`（写真の内容の説明）、
+   `location`（任意・市区町村まで）を記入する。`date` は撮影日が自動で入ります。
+   `width` などのサイズ欄はスクリプトが管理するので触らないでください。
+   並び順は `photos.json` の順番です。
+4. **確認してコミットする**：
+   ```
+   python -m http.server 8000
+   ```
+   で http://localhost:8000/gallery/ を開いて表示を確認し、
+   `gallery/photos/`・`gallery/thumbs/`・`gallery/photos.json` をコミットする
+
+写真を外すときは、`photos.json` の項目と `photos/`・`thumbs/` の同名ファイル（.jpg と .webp）を削除します。
