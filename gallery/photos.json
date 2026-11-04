@@ -64,6 +64,32 @@
       "thumbWidth": 600,
       "thumbHeight": 397,
       "webp": true
+    },
+    {
+      "file": "20261103_6.jpg",
+      "title": "旗を掲げて",
+      "date": "2026-11-03",
+      "location": "JRA馬事公苑",
+      "event": "愛馬の日",
+      "note": "",
+      "width": 2048,
+      "height": 1356,
+      "thumbWidth": 600,
+      "thumbHeight": 397,
+      "webp": true
+    },
+    {
+      "file": "20241221_1.jpg",
+      "title": "光る水面を渡る",
+      "date": "2024-12-21",
+      "location": "",
+      "event": "",
+      "note": "",
+      "width": 2048,
+      "height": 1306,
+      "thumbWidth": 600,
+      "thumbHeight": 383,
+      "webp": true
     }
   ]
 }
