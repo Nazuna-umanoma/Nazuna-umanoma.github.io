@@ -27,7 +27,7 @@ function initQuiz() {
 
     function render() {
         progressText.textContent = `Q${current + 1} / ${QUESTIONS.length}`;
-        progressBar.style.width = `${(current / QUESTIONS.length) * 100}%`;
+        progressBar.style.width = `${((current + 1) / QUESTIONS.length) * 100}%`; // 最後の質問で100%
         questionText.textContent = QUESTIONS[current];
         backBtn.hidden = current === 0;
     }
