@@ -1,0 +1,22 @@
+# データ検査：push のたびに scripts/check_data.mjs を実行し、
+# セットリストの曲名・曲一覧の表記ゆれ・日付・category・写真ファイルの対応を確かめます。
+# 結果は GitHub の「Actions」タブで見られます（✕ になったらログに問題の一覧が出ています）。
+# ※この検査はサイトの公開（GitHub Pages）とは別に動くので、✕ でもサイトは更新されます。
+name: データ検査
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - run: node scripts/check_data.mjs
