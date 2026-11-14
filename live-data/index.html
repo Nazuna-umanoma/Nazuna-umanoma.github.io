@@ -20,15 +20,16 @@
         </section>
 
         <!-- タブ（単独ライブ・自社内・外部・曲別データ） -->
-        <nav class="tabs" role="tablist" id="tabs"></nav>
+        <!-- ←→・Home・End キーでタブを移動できます（WAI-ARIA のタブの作法） -->
+        <div class="tabs" role="tablist" id="tabs" aria-label="表示する一覧"></div>
 
         <!-- 公演一覧（中身は live-data.js で作ります） -->
-        <section class="panel" id="panel-solo" role="tabpanel" data-category="solo" hidden></section>
-        <section class="panel" id="panel-inhouse" role="tabpanel" data-category="inhouse" hidden></section>
-        <section class="panel" id="panel-fes" role="tabpanel" data-category="fes" hidden></section>
+        <section class="panel" id="panel-solo" role="tabpanel" aria-labelledby="tab-solo" data-category="solo" hidden></section>
+        <section class="panel" id="panel-inhouse" role="tabpanel" aria-labelledby="tab-inhouse" data-category="inhouse" hidden></section>
+        <section class="panel" id="panel-fes" role="tabpanel" aria-labelledby="tab-fes" data-category="fes" hidden></section>
 
         <!-- 曲別データ -->
-        <section class="panel" id="panel-songs" role="tabpanel" hidden>
+        <section class="panel" id="panel-songs" role="tabpanel" aria-labelledby="tab-songs" hidden>
             <div class="card toolbar">
                 <input type="search" class="search" id="song-search" placeholder="曲名で検索">
                 <div class="chips" id="song-category"></div>

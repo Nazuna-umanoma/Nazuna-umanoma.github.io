@@ -171,7 +171,9 @@ function renderTabs() {
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = `tab tab-${tab.id}`;
+        btn.id = `tab-${tab.id}`;
         btn.setAttribute('role', 'tab');
+        btn.setAttribute('aria-controls', `panel-${tab.id}`);
         btn.dataset.tab = tab.id;
         const count = tab.id === 'songs'
             ? songStats.length
@@ -181,12 +183,31 @@ function renderTabs() {
         btn.addEventListener('click', () => { location.hash = tab.id; });
         nav.appendChild(btn);
     });
+
+    // キーボード操作：←→で隣のタブ、Home・End で最初・最後のタブへ移り、そのタブを表示する
+    nav.addEventListener('keydown', e => {
+        const tabs = [...nav.querySelectorAll('[role="tab"]')];
+        const i = tabs.indexOf(document.activeElement);
+        if (i < 0) return;
+        const next = {
+            ArrowRight: (i + 1) % tabs.length,
+            ArrowLeft: (i - 1 + tabs.length) % tabs.length,
+            Home: 0,
+            End: tabs.length - 1,
+        }[e.key];
+        if (next === undefined) return;
+        e.preventDefault();
+        tabs[next].focus();
+        location.hash = tabs[next].dataset.tab;
+    });
 }
 
 function showTab(id) {
     currentTab = id;
     document.querySelectorAll('.tab').forEach(btn => {
-        btn.setAttribute('aria-selected', btn.dataset.tab === id ? 'true' : 'false');
+        const selected = btn.dataset.tab === id;
+        btn.setAttribute('aria-selected', selected ? 'true' : 'false');
+        btn.tabIndex = selected ? 0 : -1; // Tab キーでは選択中のタブにだけ止まる
     });
     document.querySelectorAll('.panel').forEach(panel => {
         panel.hidden = panel.id !== `panel-${id}`;
