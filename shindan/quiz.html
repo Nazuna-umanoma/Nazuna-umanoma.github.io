@@ -17,6 +17,8 @@
         <div id="quiz-area">
             <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
             <p class="progress-text" id="progress-text"></p>
+            <!-- 質問が切り替わったことを読み上げソフトに伝える（画面には表示しない） -->
+            <p class="visually-hidden" id="question-live" aria-live="polite"></p>
 
             <section class="card question-card" id="question-card">
                 <h2 class="question-text" id="question-text"></h2>
@@ -34,7 +36,7 @@
         <!-- 全問回答後の「解析中」演出 -->
         <section class="analyzing" id="analyzing" hidden>
             <div class="spinner"></div>
-            <p id="analyzing-text"></p>
+            <p id="analyzing-text" role="status"></p>
         </section>
     </main>
 

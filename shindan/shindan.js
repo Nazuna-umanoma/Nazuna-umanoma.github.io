@@ -24,6 +24,15 @@ function initQuiz() {
     const questionText = document.getElementById('question-text');
     const backBtn = document.getElementById('back-btn');
     const questionCard = document.getElementById('question-card');
+    const questionLive = document.getElementById('question-live');
+
+    // 読み上げソフト向けに「質問3/10：（質問文）」を伝える（同じ文でも読み直すよう、一度空にしてから入れる）
+    function announce(prefix = '') {
+        questionLive.textContent = '';
+        setTimeout(() => {
+            questionLive.textContent = `${prefix}質問${current + 1}/${QUESTIONS.length}：${QUESTIONS[current]}`;
+        }, 50);
+    }
 
     function render() {
         progressText.textContent = `Q${current + 1} / ${QUESTIONS.length}`;
@@ -41,11 +50,13 @@ function initQuiz() {
             questionCard.classList.remove('shake');
             void questionCard.offsetWidth; // アニメーションを再生し直すため
             questionCard.classList.add('shake');
+            announce('もう一度、');
             return;
         }
         current++;
         if (current < QUESTIONS.length) {
             render();
+            announce();
         } else {
             showAnalyzing();
         }
@@ -57,6 +68,7 @@ function initQuiz() {
         if (current > 0) {
             current--;
             render();
+            announce();
         }
     });
 
