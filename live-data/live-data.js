@@ -316,7 +316,10 @@ function openLive(id) {
     renderLiveList(live.category);
     location.hash = live.category;
     showTab(live.category);
-    document.getElementById(`live-${id}`).scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
+    const item = document.getElementById(`live-${id}`);
+    item.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
+    // 押したリンクは隠れたタブにあるので、開いた公演へフォーカスを移す（キーボード操作の続きのため）
+    item.querySelector('summary').focus({ preventScroll: true });
 }
 
 // ---------- 曲別データ ----------
@@ -445,5 +448,9 @@ function openSong(title) {
     location.hash = 'songs';
     showTab('songs');
     const row = [...document.querySelectorAll('.song-row')].find(el => el.dataset.title === title);
-    if (row) row.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
+    if (row) {
+        row.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
+        // 押した曲名は隠れたタブにあるので、開いた曲へフォーカスを移す（キーボード操作の続きのため）
+        row.querySelector('summary').focus({ preventScroll: true });
+    }
 }

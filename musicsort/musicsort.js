@@ -101,6 +101,24 @@ function moveTrack(pos, dir) {
 
 const trackNo = n => String(n).padStart(2, '0');
 
+// 曲目リストと曲リストは選ぶたびに作り直すので、キーボードで続けて操作できるようにフォーカスを戻す
+function focusTrackButton(pos, action) {
+    const tracks = document.querySelectorAll('#tracklist .track.filled');
+    const track = tracks[Math.min(pos, tracks.length - 1)];
+    if (!track) {
+        document.getElementById('search').focus(); // 全部外したときは曲リストの検索欄へ
+        return;
+    }
+    const btn = track.querySelector(`.track-btn[data-action="${action}"]:not(:disabled)`)
+        || track.querySelector('.track-btn:not(:disabled)');
+    if (btn) btn.focus();
+}
+
+function focusSongButton(index) {
+    const btn = document.querySelector(`#song-list .song-btn[data-index="${index}"]`);
+    if (btn && !btn.disabled) btn.focus();
+}
+
 // 曲目リスト
 function renderTracklist() {
     const list = document.getElementById('tracklist');
@@ -119,13 +137,14 @@ function renderTracklist() {
             const actions = document.createElement('span');
             actions.className = 'track-actions';
             [
-                ['▲', '上へ', () => moveTrack(i, -1), i === 0, ''],
-                ['▼', '下へ', () => moveTrack(i, 1), i === picks.length - 1, ''],
-                ['×', '外す', () => togglePick(picks[i]), false, 'remove'],
-            ].forEach(([text, label, onClick, disabled, extraClass]) => {
+                ['▲', '上へ', () => { moveTrack(i, -1); focusTrackButton(i - 1, 'up'); }, i === 0, '', 'up'],
+                ['▼', '下へ', () => { moveTrack(i, 1); focusTrackButton(i + 1, 'down'); }, i === picks.length - 1, '', 'down'],
+                ['×', '外す', () => { togglePick(picks[i]); focusTrackButton(i, 'remove'); }, false, 'remove', 'remove'],
+            ].forEach(([text, label, onClick, disabled, extraClass, action]) => {
                 const btn = document.createElement('button');
                 btn.type = 'button';
                 btn.className = `track-btn ${extraClass}`.trim();
+                btn.dataset.action = action;
                 btn.textContent = text;
                 btn.title = label;
                 btn.setAttribute('aria-label', label);
@@ -164,7 +183,11 @@ function renderSongList() {
         } else if (full) {
             btn.disabled = true;
         }
-        btn.addEventListener('click', () => togglePick(index));
+        btn.dataset.index = index;
+        btn.addEventListener('click', () => {
+            togglePick(index);
+            focusSongButton(index);
+        });
         li.appendChild(btn);
         list.appendChild(li);
     });
@@ -186,6 +209,9 @@ function fillRandom() {
     }
     hideResult();
     render();
+    // 押したボタンは使えなくなるので、次に押す「画像を作る」へフォーカスを移す
+    const generateBtn = document.getElementById('generate-btn');
+    if (!generateBtn.disabled) generateBtn.focus();
 }
 
 function reset() {
