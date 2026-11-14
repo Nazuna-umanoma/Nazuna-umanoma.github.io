@@ -6,21 +6,20 @@
     <title>写真ギャラリー | 凪不凪</title>
     <meta name="description" content="凪不凪（ナズナ）が撮影した写真のギャラリーです。">
     <meta name="theme-color" content="#0b0b0c">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Shippori+Mincho:wght@400;500&display=swap">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css"
-          integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE" crossorigin="anonymous">
-    <link rel="stylesheet" href="gallery.css?v=1">
+    <!-- PhotoSwipe 5.4.4（MIT License）は外部 CDN を使わず vendor/ から配信しています（LICENSE 同梱）。
+         integrity は npm 配布物のハッシュで、ファイルが書き換わっていないことの確認に使います。 -->
+    <link rel="stylesheet" href="vendor/photoswipe-5.4.4/photoswipe.css"
+          integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE">
+    <link rel="stylesheet" href="gallery.css?v=2">
     <script type="importmap">
     {
         "imports": {
-            "photoswipe/lightbox": "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js",
-            "photoswipe": "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js"
+            "photoswipe/lightbox": "./vendor/photoswipe-5.4.4/photoswipe-lightbox.esm.min.js",
+            "photoswipe": "./vendor/photoswipe-5.4.4/photoswipe.esm.min.js"
         },
         "integrity": {
-            "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js": "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/",
-            "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js": "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s"
+            "./vendor/photoswipe-5.4.4/photoswipe-lightbox.esm.min.js": "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/",
+            "./vendor/photoswipe-5.4.4/photoswipe.esm.min.js": "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s"
         }
     }
     </script>

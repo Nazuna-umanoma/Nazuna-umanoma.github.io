@@ -10,6 +10,8 @@
     --brass: #b59a68;         /* 真鍮 */
     --line: rgba(233, 229, 220, 0.12);
 
+    /* Web フォントは読み込まず（外部通信をしないため）、閲覧環境にある明朝体で表示します。
+       Shippori Mincho / Cormorant Garamond は、閲覧者の PC に入っていれば使われます。 */
     --serif: 'Shippori Mincho', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', serif;
     --latin: 'Cormorant Garamond', 'Times New Roman', serif;
 
