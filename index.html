@@ -255,35 +255,10 @@
 
     <footer style="text-align: center; padding: 20px; background-color: #000; color: #ececec; border-top: 2px solid #e50914;">
         <p>&copy; 2026 凪不凪（ナズナ）. All rights reserved.</p>
-        <p id="last-updated" style="font-size: 0.9em; color: #9a9a9a;">最終更新日: 取得中...</p>
+        <!-- 最終更新日は script.js が取得できたときだけ表示する（取得できなければ出さない） -->
+        <p id="last-updated" style="font-size: 0.9em; color: #9a9a9a;" hidden></p>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // GitHub APIから最終更新日を取得
-        fetch('https://api.github.com/repos/Nazuna-umanoma/Nazuna-umanoma.github.io/commits?path=index.html&per_page=1')
-            .then(response => response.json())
-            .then(data => {
-                if (data.length > 0) {
-                    const lastUpdate = new Date(data[0].commit.committer.date);
-                    const formattedDate = lastUpdate.toLocaleDateString('ja-JP', {
-                        year: 'numeric',
-                        month: '2-digit',
-                        day: '2-digit'
-                    });
-                    document.getElementById('last-updated').textContent = `最終更新日: ${formattedDate}`;
-                }
-            })
-            .catch(error => {
-                console.log('更新日の取得に失敗しました');
-                // フォールバック：今日の日付を表示
-                const today = new Date().toLocaleDateString('ja-JP', {
-                    year: 'numeric',
-                    month: '2-digit',
-                    day: '2-digit'
-                });
-                document.getElementById('last-updated').textContent = `最終更新日: ${today}`;
-            });
-    </script>
 </body>
 </html>
