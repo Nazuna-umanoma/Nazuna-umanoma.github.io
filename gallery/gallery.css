@@ -36,6 +36,12 @@ body {
 
 a { color: inherit; }
 
+/* キーボード操作時のフォーカス表示（Tab キーで移動したときだけ枠が出る） */
+:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+}
+
 /* ヘッダー（他ページと同じ構成で、色だけ展示室に合わせる） */
 .header {
     padding: 16px 20px;
@@ -148,7 +154,7 @@ main {
 }
 .work-link:hover::before,
 .work-link:focus-visible::before { opacity: 1; }
-.work-link:focus-visible { outline: 1px solid var(--brass); }
+.work-link:focus-visible { outline: 2px solid var(--brass); }
 
 .work-link picture { display: contents; }
 .work-link img {

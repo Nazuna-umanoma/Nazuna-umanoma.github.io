@@ -13,9 +13,16 @@
     --text-muted: #666666;
     --text-sub: #555555;   /* 「誰やねん」の本文 */
     --border: #e2e2e2;
+    --focus-ring: var(--red); /* キーボード操作時のフォーカス枠 */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+
+/* キーボード操作時のフォーカス表示（Tab キーで移動したときだけ枠が出る） */
+:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
 
 body {
     margin: 0;

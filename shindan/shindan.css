@@ -19,6 +19,7 @@
     --btn-primary-hover: var(--black);
     --ghost-border: var(--border);
     --ghost-hover: var(--black);
+    --focus-ring: var(--red);
 }
 
 .header .sub-link { font-size: 0.9em; color: #b3b3b3; }

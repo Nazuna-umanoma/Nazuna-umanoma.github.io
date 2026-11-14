@@ -27,6 +27,7 @@
     --btn-primary-hover: var(--yukina);
     --ghost-border: var(--rinko);
     --ghost-hover: var(--roselia);
+    --focus-ring: #008c99; /* sayo を少し濃くした色（白地でも見えるように） */
 }
 
 /* ヘッダー：下線の代わりにメンバーカラーの帯 */
@@ -78,7 +79,6 @@
     color: #ffffff;
 }
 .tab[aria-selected="true"] small { color: rgba(255, 255, 255, 0.8); }
-.tab:focus-visible { outline: 2px solid var(--sayo); outline-offset: 2px; }
 
 /* 検索・並び替え */
 .toolbar { padding: 16px; }
@@ -92,7 +92,6 @@
     background: #ffffff;
 }
 .search:focus, .sort-select:focus {
-    outline: none;
     border-color: var(--sayo);
 }
 .toolbar-row {
@@ -117,7 +116,6 @@
     cursor: pointer;
 }
 .btn-small:hover { border-color: var(--roselia); color: var(--roselia); }
-.btn-small:focus-visible { outline: 2px solid var(--sayo); outline-offset: 2px; }
 
 .chips {
     display: flex;
@@ -149,7 +147,7 @@
 .chip-solo input:checked + span { background: var(--roselia); border-color: var(--roselia); }
 .chip-inhouse input:checked + span { background: var(--yukina); border-color: var(--yukina); }
 .chip-fes input:checked + span { background: var(--lisa); border-color: var(--lisa); }
-.chip input:focus-visible + span { outline: 2px solid var(--sayo); outline-offset: 2px; }
+.chip input:focus-visible + span { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 
 /* 開閉リスト共通 */
 .live-list, .song-stats {
@@ -170,7 +168,7 @@ details > summary {
     cursor: pointer;
 }
 details > summary::-webkit-details-marker { display: none; }
-details > summary:focus-visible { outline: 2px solid var(--sayo); outline-offset: -2px; }
+details > summary:focus-visible { outline-offset: -2px; }
 .live summary::after, .song-row summary::after {
     content: '▼';
     position: absolute;
@@ -268,7 +266,7 @@ details > summary:focus-visible { outline: 2px solid var(--sayo); outline-offset
     cursor: pointer;
 }
 .song-link:hover { color: var(--cat-color); text-decoration: underline; }
-.song-link:focus-visible { outline: 2px solid var(--sayo); outline-offset: 1px; }
+.song-link:focus-visible { outline-offset: 1px; }
 .tag-cover {
     flex-shrink: 0;
     padding: 0 6px;
@@ -419,8 +417,6 @@ details > summary:focus-visible { outline: 2px solid var(--sayo); outline-offset
     color: var(--text-muted);
     font-size: 0.8rem;
 }
-
-.btn:focus-visible { outline: 2px solid var(--sayo); outline-offset: 2px; }
 
 @media (max-width: 600px) {
     .card { padding: 18px; }

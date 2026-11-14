@@ -19,6 +19,7 @@
     --btn-primary-hover: var(--black);
     --ghost-border: var(--border);
     --ghost-hover: var(--black);
+    --focus-ring: var(--red);
 }
 
 /* 観光地カード */
@@ -149,6 +150,7 @@
     cursor: pointer;
 }
 .history-item:hover { background: #f0f0f0; }
+.history-item:focus-visible { outline-offset: -2px; } /* スクロール枠で枠線が切れないよう内側に描く */
 .history-no { color: var(--text-muted); font-size: 0.85em; min-width: 2.5em; }
 .history-name { font-weight: bold; }
 .history-place { color: var(--text-muted); font-size: 0.85em; margin-left: auto; }
