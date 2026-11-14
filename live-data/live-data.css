@@ -77,14 +77,14 @@
 }
 .tab-inhouse { --tab-color: var(--yukina); }
 .tab-fes { --tab-color: var(--lisa); }
-.tab-songs { --tab-color: var(--black); }
+.tab-songs { --tab-color: var(--black-fill); }
 .tab:hover { border-color: var(--tab-color); }
 .tab[aria-selected="true"] {
     background: var(--tab-color);
     border-color: var(--tab-color);
     color: #ffffff;
 }
-.tab[aria-selected="true"] small { color: rgba(255, 255, 255, 0.8); }
+.tab[aria-selected="true"] small { color: var(--tab-small, rgba(255, 255, 255, 0.8)); } /* --tab-small はダークモード用 */
 
 /* 検索・並び替え */
 .toolbar { padding: 16px; }
@@ -146,8 +146,8 @@
 }
 .chip span:hover { border-color: var(--sayo); }
 .chip input:checked + span {
-    background: var(--black);
-    border-color: var(--black);
+    background: var(--black-fill);
+    border-color: var(--black-fill);
     color: #ffffff;
 }
 .chip-solo input:checked + span { background: var(--roselia); border-color: var(--roselia); }
@@ -441,4 +441,6 @@ details > summary:focus-visible { outline-offset: -2px; }
         --ako-text: #ff80c4;
         --hit-bg: #40380f;
     }
+    /* 選択中の「曲別データ」タブ（灰色の塗り）の件数は、4.5:1 以上になるよう白一色にする */
+    .tab-songs { --tab-small: #ffffff; }
 }

@@ -16,9 +16,9 @@
     --header-hover: var(--red);
     --hero-color: var(--red-text);
     --hero-spacing: 0.2em;
-    --badge-bg: var(--black);
+    --badge-bg: var(--black-fill);
     --btn-primary: var(--red);
-    --btn-primary-hover: var(--black);
+    --btn-primary-hover: var(--black-fill);
     --ghost-border: var(--border);
     --ghost-hover: var(--heading);
     --focus-ring: var(--red);
@@ -53,7 +53,7 @@
     display: inline-block;
     padding: 1px 10px;
     margin-right: 6px;
-    background: var(--black);
+    background: var(--black-fill);
     color: #ffffff;
     border-radius: 999px;
     font-size: 0.85em;

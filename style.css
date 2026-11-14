@@ -15,6 +15,7 @@
     --border: #e2e2e2;
     --heading: #111111;     /* 見出しの文字（--black はヘッダーなどの黒い背景用） */
     --red-text: var(--red); /* 文字に使う赤（ダークモードでは明るくする） */
+    --black-fill: #111111;  /* 黒で塗る部品（作品集ボタンのホバー。ダークモードでは灰色） */
     --focus-ring: var(--red); /* キーボード操作時のフォーカス枠 */
 }
 
@@ -143,7 +144,7 @@ body {
     font-weight: 500;
 }
 .section-link-btn:hover {
-    background-color: var(--black);
+    background-color: var(--black-fill);
 }
 
 /* 好きなもの紹介 */
@@ -220,5 +221,6 @@ body {
         --border: #3a3a3f;
         --heading: #f5f5f5;
         --red-text: #ff6b72;
+        --black-fill: #737373; /* カードに対して 3:1 以上、白い文字が 4.5:1 以上 */
     }
 }

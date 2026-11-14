@@ -12,6 +12,7 @@
     --ako: #DC0087;
     --rinko: #BBBBBB;
     --roselia-text: var(--roselia); /* 文字に使う roselia（ダークモードでは明るくする） */
+    --frame-edge: transparent;      /* 曲目リストの黒い枠の外周の線（ダークモードだけ見せる） */
 
     /* 黒地で目立たせる文字色（上の6色とは別。保存画像と同じ色） */
     --criterion: #A9B8FF; /* 選んだ基準 */
@@ -63,6 +64,7 @@
 }
 .tracklist-frame {
     background: var(--stripe) top / 100% 4px no-repeat, var(--black);
+    box-shadow: 0 0 0 1px var(--frame-edge); /* 大きさは変えずに外周に線を引く */
     padding: 16px 20px 20px;
     border-radius: 5px;
     color: #ffffff;
@@ -258,5 +260,7 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --roselia-text: #a3b0ff;
+        /* 黒い枠（保存画像と同じ見た目なので塗りは黒のまま）がカードに溶けないよう、外周に 3:1 以上の線を引く */
+        --frame-edge: #737373;
     }
 }
