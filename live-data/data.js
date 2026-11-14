@@ -16,7 +16,7 @@ const LIVE_CONFIG = {
 // setlist    : セットリスト。` `（バッククォート）の間に 1行1曲 で書きます。
 //              Excelで曲名の列をコピーして、そのまま貼り付けられます。
 //              「--- アンコール ---」のように - か = を2つ以上で始めた行は区切りになり、曲数に数えません。
-//              ※曲名は下の SONGS / COVER_SONGS と同じ表記にしてください（違うと別の曲として数えられます）。
+//              ※曲名は common/songs.js の SONGS か、下の COVER_SONGS と同じ表記にしてください（違うと別の曲として数えられます）。
 // interludes : 幕間映像の内容。setlist と同じく 1行に1つ（なくてもOK）
 // note       : メモ（なくてもOK）
 //
@@ -1729,84 +1729,15 @@ const LIVES = [
 ];
 
 // 曲一覧（曲別データに並ぶ曲。披露0回の曲もここにあれば表示されます）
-// オリジナル曲は SONGS、カバー曲は COVER_SONGS に書きます。曲別データでは別々のリストで表示されます。
+// オリジナル曲は common/songs.js の SONGS（Roselia曲選出と共通）、カバー曲は下の COVER_SONGS に書きます。
+// 曲別データでは別々のリストで表示されます。
 // どちらにもない曲名がセットリストにあると「一覧にない曲」に出るので、表記ゆれの確認に使えます。
 //
 // title : 曲名
 // last  : 最後に披露されたライブ名（例：'Rosenlied DAY1'）。
 //         空欄なら、LIVES のデータからいちばん新しい公演を自動で表示します。
-//
-// ※SONGS は musicsort/data.js と同じ曲一覧です。新曲は両方に書き足してください。
-const SONGS = [
-    { title: 'BLACK SHOUT', last: '' },
-    { title: 'LOUDER', last: '' },
-    { title: 'Re:birth day', last: '' },
-    { title: '陽だまりロードナイト', last: '' },
-    { title: '熱色スターマイン', last: '' },
-    { title: '-HEROIC ADVENT-', last: '' },
-    { title: 'ONENESS', last: '' },
-    { title: 'Determination Symphony', last: '' },
-    { title: 'Opera of the wasteland', last: '' },
-    { title: '軌跡', last: '' },
-    { title: 'Neo-Aspect', last: '' },
-    { title: 'Legendary', last: '' },
-    { title: 'R', last: '' },
-    { title: 'BRAVE JEWEL', last: '' },
-    { title: 'Sanctuary', last: '' },
-    { title: 'Safe and Sound', last: '' },
-    { title: 'PASSIONATE ANTHEM', last: '' },
-    { title: 'FIRE BIRD', last: '' },
-    { title: 'Ringing Bloom', last: '' },
-    { title: '約束', last: '' },
-    { title: '"UNIONS" Road', last: '' },
-    { title: 'Avant-garde HISTORY', last: '' },
-    { title: 'Break your desire', last: '' },
-    { title: 'Song I am.', last: '' },
-    { title: 'ZEAL of proud', last: '' },
-    { title: 'Blessing Chord', last: '' },
-    { title: 'Proud of oneself', last: '' },
-    { title: 'overtuRe', last: '' },
-    { title: 'Sing Alive', last: '' },
-    { title: 'Singing "OURS"', last: '' },
-    { title: '雨上がりの夢/湊友希那', last: '' },
-    { title: 'Keep Heart', last: '' },
-    { title: 'Original Call', last: '' },
-    { title: 'Sprechchor', last: '' },
-    { title: '閃光', last: '' },
-    { title: 'THE HISTORIC...', last: '' },
-    { title: 'ROZEN HORIZON', last: '' },
-    { title: 'Swear ～Night & Day～', last: '' },
-    { title: 'Our Carol', last: '' },
-    { title: 'THRONE OF ROSE', last: '' },
-    { title: 'Dear Gleam', last: '' },
-    { title: '一逢のFull Glory', last: '' },
-    { title: 'VIOLET LINE', last: '' },
-    { title: 'Call the shots', last: '' },
-    { title: 'Sunlit Musical', last: '' },
-    { title: 'Sage der Rosen', last: '' },
-    { title: '覚悟のLiberation', last: '' },
-    { title: 'Always recall.', last: '' },
-    { title: 'Floral Haven', last: '' },
-    { title: '礎の花冠', last: '' },
-    { title: 'FRONTIER FANTASIA', last: '' },
-    { title: 'Dazzle the Destiny', last: '' },
-    { title: 'Grateful Melting', last: '' },
-    { title: 'Requiem for Fate', last: '' },
-    { title: 'Second to None', last: '' },
-    { title: 'Steadfast Spirits', last: '' },
-    { title: '紫炎', last: '' },
-    { title: 'Fear Nothing', last: '' },
-    { title: 'Talk to My Tone', last: '' },
-    { title: 'XV', last: '' },
-    { title: 'この蒼き闇と光', last: '' },
-    { title: 'who we aRe', last: '' },
-    { title: 'Resound the Way', last: '' },
-    // { title: '', last: '' },
-    // { title: '', last: '' },
-    // { title: '', last: '' },
-];
 
-// カバー曲一覧（書き方は SONGS と同じ）
+// カバー曲一覧（書き方は common/songs.js の SONGS と同じ）
 const COVER_SONGS = [
     { title: '魂のルフラン', last: '' },
     { title: '残酷な天使のテーゼ', last: '' },
