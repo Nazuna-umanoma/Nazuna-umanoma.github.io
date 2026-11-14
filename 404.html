@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ページが見つかりません | 凪不凪</title>
+    <!-- 404.html は存在しない URL のどの階層でも表示されるので、読み込むファイルはすべて / から始まる絶対パスにする -->
+    <link rel="stylesheet" href="/common/common.css?v=1">
+    <style>
+        /* 差し色はトップページと同じ赤（変数の意味は common.css の説明を参照） */
+        :root {
+            --accent: #e50914;
+            --accent-heading: #e50914;
+            --header-hover: #e50914;
+            --hero-color: #e50914;
+            --hero-spacing: 0.05em;
+            --badge-bg: var(--black);
+            --btn-primary: #e50914;
+            --btn-primary-hover: var(--black);
+            --ghost-border: var(--border);
+            --ghost-hover: var(--black);
+        }
+        /* スマホ幅でも見出しが1行に収まるように */
+        .hero h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="home-link"><img src="/nazuna.webp" alt="">凪不凪（ナズナ）</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>ページが見つかりません</h1>
+            <p>お探しのページは、移動または削除された可能性があります。</p>
+            <span class="badge">404 Not Found</span>
+        </section>
+
+        <div class="btn-area">
+            <a href="/" class="btn btn-primary">トップページに戻る</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span class="copyright-year">2026</span> 凪不凪（ナズナ）. All rights reserved.</p>
+    </footer>
+
+    <script src="/common/site.js?v=1"></script>
+</body>
+</html>
