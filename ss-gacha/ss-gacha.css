@@ -7,18 +7,21 @@
     --ink: #1f3a5f;       /* 藍：見出し・メインボタン */
     --vermilion: #c0392b; /* 朱：番号・アクセント */
     --paper: #fdfaf2;     /* 生成り：キーワードの札 */
+    --ink-text: var(--ink);             /* 文字に使う藍・朱（ダークモードでは明るくする） */
+    --vermilion-text: var(--vermilion);
+    --spin-text: #aaaaaa;               /* ガチャが回っている間の文字 */
 
     /* 共通部分の差し色（common.css の説明を参照） */
     --accent: var(--ink);
     --accent-heading: var(--vermilion);
     --header-hover: #9fb6d8;
-    --hero-color: var(--ink);
+    --hero-color: var(--ink-text);
     --hero-spacing: 0.1em;
     --badge-bg: var(--ink);
     --btn-primary: var(--ink);
     --btn-primary-hover: var(--vermilion);
     --ghost-border: #bbbbbb;
-    --ghost-hover: var(--ink);
+    --ghost-hover: var(--ink-text);
     --focus-ring: var(--vermilion);
 }
 
@@ -49,7 +52,7 @@
     padding: 2px 8px;
     border: 2px solid var(--vermilion);
     border-radius: 4px;
-    color: var(--vermilion);
+    color: var(--vermilion-text);
     font-weight: bold;
     font-size: 0.85rem;
     text-align: center;
@@ -62,9 +65,9 @@
     letter-spacing: 0.05em;
     word-break: break-word;
 }
-.keyword.spinning .keyword-text { color: #aaaaaa; }
+.keyword.spinning .keyword-text { color: var(--spin-text); }
 .keyword.settled {
-    border-color: var(--ink);
+    border-color: var(--ink-text);
     animation: pop 0.3s ease-out;
 }
 
@@ -94,4 +97,14 @@ main > .btn-area { margin: 24px 0; }
 
 @media (prefers-reduced-motion: reduce) {
     .keyword.settled { animation: none; }
+}
+
+/* ダークモード：文字に使う差し色を明るくする（背景・線の差し色はそのまま） */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --paper: #26241f;
+        --ink-text: #9db8e6;
+        --vermilion-text: #ff8a7a;
+        --spin-text: #8f8f8f;
+    }
 }

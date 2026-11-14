@@ -10,6 +10,12 @@
     --lisa: #DD2200;
     --ako: #DC0087;
     --rinko: #BBBBBB;
+    /* 文字に使うメンバーカラー（ダークモードでは明るくする） */
+    --roselia-text: var(--roselia);
+    --yukina-text: var(--yukina);
+    --lisa-text: var(--lisa);
+    --ako-text: var(--ako);
+    --hit-bg: #fff6c2; /* 検索に当たった行の背景 */
 
     /* メンバーカラーの帯（ヘッダー下） */
     --stripe: linear-gradient(to right,
@@ -20,13 +26,13 @@
     --accent: var(--roselia);
     --accent-heading: var(--roselia);
     --header-hover: var(--sayo);
-    --hero-color: var(--roselia);
+    --hero-color: var(--roselia-text);
     --hero-spacing: 0.1em;
     --badge-bg: var(--roselia);
     --btn-primary: var(--roselia);
     --btn-primary-hover: var(--yukina);
     --ghost-border: var(--rinko);
-    --ghost-hover: var(--roselia);
+    --ghost-hover: var(--roselia-text);
     --focus-ring: #008c99; /* sayo を少し濃くした色（白地でも見えるように） */
 }
 
@@ -56,7 +62,7 @@
     border: 1px solid var(--border);
     border-bottom: 3px solid var(--tab-color);
     border-radius: 5px 5px 0 0;
-    background: #ffffff;
+    background: var(--surface);
     color: var(--text);
     font-family: inherit;
     font-size: 0.95rem;
@@ -89,7 +95,7 @@
     border-radius: 5px;
     font-family: inherit;
     font-size: 1rem;
-    background: #ffffff;
+    background: var(--surface);
 }
 .search:focus, .sort-select:focus {
     border-color: var(--sayo);
@@ -109,13 +115,13 @@
     padding: 6px 12px;
     border: 1px solid var(--rinko);
     border-radius: 5px;
-    background: #ffffff;
+    background: var(--surface);
     color: var(--text);
     font-family: inherit;
     font-size: 0.85rem;
     cursor: pointer;
 }
-.btn-small:hover { border-color: var(--roselia); color: var(--roselia); }
+.btn-small:hover { border-color: var(--roselia); color: var(--roselia-text); }
 
 .chips {
     display: flex;
@@ -133,7 +139,7 @@
     padding: 4px 14px;
     border: 1px solid var(--rinko);
     border-radius: 999px;
-    background: #ffffff;
+    background: var(--surface);
     font-size: 0.9rem;
     cursor: pointer;
     transition: border-color 0.2s, background-color 0.2s;
@@ -183,9 +189,10 @@ details > summary:focus-visible { outline-offset: -2px; }
 .song-row details[open] > summary::after { transform: translateY(-50%) rotate(180deg); }
 
 /* 区分の色 */
-.cat-solo { --cat-color: var(--roselia); }
-.cat-inhouse { --cat-color: var(--yukina); }
-.cat-fes { --cat-color: var(--lisa); }
+/* --cat-color は線・背景用、--cat-text は文字用 */
+.cat-solo { --cat-color: var(--roselia); --cat-text: var(--roselia-text); }
+.cat-inhouse { --cat-color: var(--yukina); --cat-text: var(--yukina-text); }
+.cat-fes { --cat-color: var(--lisa); --cat-text: var(--lisa-text); }
 
 /* 公演 */
 .live {
@@ -201,7 +208,7 @@ details > summary:focus-visible { outline-offset: -2px; }
     flex-direction: column;
     padding: 12px 36px 12px 16px;
 }
-.live summary:hover .live-name { color: var(--cat-color); }
+.live summary:hover .live-name { color: var(--cat-text); }
 .live-date {
     font-size: 0.85rem;
     color: var(--text-muted);
@@ -224,7 +231,7 @@ details > summary:focus-visible { outline-offset: -2px; }
 .live-body h3 {
     margin: 16px 0 8px;
     font-size: 0.95rem;
-    color: var(--black);
+    color: var(--heading);
     border-left: 3px solid var(--cat-color);
     padding-left: 8px;
 }
@@ -265,14 +272,14 @@ details > summary:focus-visible { outline-offset: -2px; }
     text-align: left;
     cursor: pointer;
 }
-.song-link:hover { color: var(--cat-color); text-decoration: underline; }
+.song-link:hover { color: var(--cat-text); text-decoration: underline; }
 .song-link:focus-visible { outline-offset: 1px; }
 .tag-cover {
     flex-shrink: 0;
     padding: 0 6px;
     border: 1px solid var(--yukina);
     border-radius: 3px;
-    color: var(--yukina);
+    color: var(--yukina-text);
     font-size: 0.7rem;
 }
 .setlist-section {
@@ -280,7 +287,7 @@ details > summary:focus-visible { outline-offset: -2px; }
     align-items: center;
     gap: 10px;
     margin: 10px 0 4px;
-    color: var(--cat-color);
+    color: var(--cat-text);
     font-size: 0.8rem;
     font-weight: bold;
     letter-spacing: 0.1em;
@@ -296,7 +303,7 @@ details > summary:focus-visible { outline-offset: -2px; }
     padding-left: 1.4em;
     font-size: 0.95rem;
 }
-.hit { background: #fff6c2; }
+.hit { background: var(--hit-bg); }
 .setlist-song.hit .song-link { font-weight: bold; }
 
 /* 曲別データ */
@@ -308,7 +315,7 @@ details > summary:focus-visible { outline-offset: -2px; }
     padding-left: 10px;
     border-left: 4px solid var(--roselia);
     font-size: 1.1rem;
-    color: var(--black);
+    color: var(--heading);
 }
 .song-group:first-child .song-group-title { margin-top: 8px; }
 .song-group-cover .song-group-title { border-left-color: var(--yukina); }
@@ -321,12 +328,12 @@ details > summary:focus-visible { outline-offset: -2px; }
 .song-group-hint {
     margin: -4px 0 10px;
     font-size: 0.85rem;
-    color: var(--ako);
+    color: var(--ako-text);
 }
 .song-row {
     border: 1px solid var(--border);
     border-radius: 5px;
-    background: #ffffff;
+    background: var(--surface);
     scroll-margin-top: 16px;
 }
 .song-row summary {
@@ -365,13 +372,13 @@ details > summary:focus-visible { outline-offset: -2px; }
 }
 .song-count strong {
     margin-right: 2px;
-    color: var(--roselia);
+    color: var(--roselia-text);
     font-size: 1.2rem;
     font-variant-numeric: tabular-nums;
 }
 .song-row.zero .song-title { color: var(--text-muted); font-weight: normal; }
 .song-group-cover .song-bar { background: var(--yukina); }
-.song-group-cover .song-count strong { color: var(--yukina); }
+.song-group-cover .song-count strong { color: var(--yukina-text); }
 .song-row.zero .song-count strong { color: var(--rinko); }
 .song-body {
     padding: 4px 14px 14px;
@@ -412,7 +419,7 @@ details > summary:focus-visible { outline-offset: -2px; }
     color: var(--text);
     text-decoration: none;
 }
-.live-link:hover { color: var(--roselia); text-decoration: underline; }
+.live-link:hover { color: var(--roselia-text); text-decoration: underline; }
 .perf-no {
     color: var(--text-muted);
     font-size: 0.8rem;
@@ -423,4 +430,15 @@ details > summary:focus-visible { outline-offset: -2px; }
     .toolbar { padding: 12px; }
     .tabs { grid-template-columns: repeat(2, 1fr); }
     .tab { border-radius: 5px; }
+}
+
+/* ダークモード：文字に使う差し色を明るくする（背景・線の差し色はそのまま） */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --roselia-text: #a3b0ff;
+        --yukina-text: #e391e3;
+        --lisa-text: #ff8f73;
+        --ako-text: #ff80c4;
+        --hit-bg: #40380f;
+    }
 }

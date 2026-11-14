@@ -7,18 +7,20 @@
     --red-dark: #a8060f;
     --violet: #7c3aed;
     --violet-dark: #5b21b6;
+    --red-text: var(--red);       /* 文字に使う赤・紫（ダークモードでは明るくする） */
+    --violet-text: var(--violet);
 
     /* 共通部分の差し色（common.css の説明を参照） */
     --accent: var(--red);
     --accent-heading: var(--red);
     --header-hover: var(--red);
-    --hero-color: var(--red);
+    --hero-color: var(--red-text);
     --hero-spacing: 0.2em;
     --badge-bg: var(--black);
     --btn-primary: var(--red);
     --btn-primary-hover: var(--black);
     --ghost-border: var(--border);
-    --ghost-hover: var(--black);
+    --ghost-hover: var(--heading);
     --focus-ring: var(--red);
 }
 
@@ -61,7 +63,7 @@
     margin: 4px 0 12px;
     padding: 0;
     border: none;
-    color: var(--black);
+    color: var(--heading);
 }
 .spot-tags {
     list-style: none;
@@ -88,7 +90,7 @@
 .spot-ss-box {
     margin-top: 20px;
     padding: 16px 20px;
-    background: #ffffff;
+    background: var(--surface);
     border: 1px solid var(--border);
     border-left: 4px solid var(--violet);
     border-radius: 5px;
@@ -96,7 +98,7 @@
 }
 .spot-ss-label {
     margin: 0 0 8px;
-    color: var(--violet);
+    color: var(--violet-text);
     font-weight: bold;
     font-size: 0.9em;
     letter-spacing: 0.1em;
@@ -149,7 +151,7 @@
     text-align: left;
     cursor: pointer;
 }
-.history-item:hover { background: #f0f0f0; }
+.history-item:hover { background: var(--surface-hover); }
 .history-item:focus-visible { outline-offset: -2px; } /* スクロール枠で枠線が切れないよう内側に描く */
 .history-no { color: var(--text-muted); font-size: 0.85em; min-width: 2.5em; }
 .history-name { font-weight: bold; }
@@ -159,4 +161,12 @@
 @media (max-width: 600px) {
     .card h2.spot-name { font-size: 1.6rem; }
     .rolling { font-size: 1.15rem; }
+}
+
+/* ダークモード：文字に使う差し色を明るくする（背景・線の差し色はそのまま） */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --red-text: #ff6b72;
+        --violet-text: #b99aff;
+    }
 }

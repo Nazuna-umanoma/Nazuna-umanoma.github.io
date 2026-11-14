@@ -7,18 +7,19 @@
     --red-dark: #a8060f;
     --violet: #7c3aed;
     --violet-dark: #5b21b6;
+    --red-text: var(--red); /* 文字に使う赤（ダークモードでは明るくする） */
 
     /* 共通部分の差し色（common.css の説明を参照） */
     --accent: var(--red);
     --accent-heading: var(--red);
     --header-hover: var(--red);
-    --hero-color: var(--red);
+    --hero-color: var(--red-text);
     --hero-spacing: 0.05em;
     --badge-bg: var(--black);
     --btn-primary: var(--red);
     --btn-primary-hover: var(--black);
     --ghost-border: var(--border);
-    --ghost-hover: var(--black);
+    --ghost-hover: var(--heading);
     --focus-ring: var(--red);
 }
 
@@ -49,7 +50,7 @@
 }
 .question-text {
     font-size: 1.3rem;
-    color: var(--black);
+    color: var(--heading);
     margin: 0 0 20px;
 }
 .question-card { text-align: center; }
@@ -110,8 +111,8 @@
     border-left-color: var(--violet);
 }
 .result-label { color: var(--text-muted); margin: 0 0 16px; }
-.result-catch { color: var(--red); font-weight: bold; margin: 0; }
-.result-name { font-size: 2rem; margin: 4px 0; color: var(--black); }
+.result-catch { color: var(--red-text); font-weight: bold; margin: 0; }
+.result-name { font-size: 2rem; margin: 4px 0; color: var(--heading); }
 .result-work { color: var(--text-muted); margin: 0 0 16px; font-size: 0.9em; }
 .result-description { text-align: left; }
 .result-traits {
@@ -133,4 +134,11 @@
 @media (max-width: 600px) {
     .result-name { font-size: 1.6rem; }
     .question-text { font-size: 1.15rem; }
+}
+
+/* ダークモード：文字に使う差し色を明るくする（背景・線の差し色はそのまま） */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --red-text: #ff6b72;
+    }
 }

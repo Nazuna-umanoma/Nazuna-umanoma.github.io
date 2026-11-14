@@ -18,8 +18,12 @@
             --btn-primary: #e50914;
             --btn-primary-hover: var(--black);
             --ghost-border: var(--border);
-            --ghost-hover: var(--black);
+            --ghost-hover: var(--heading);
             --focus-ring: #e50914;
+        }
+        /* ダークモードでは文字に使う赤を明るくする */
+        @media (prefers-color-scheme: dark) {
+            :root { --hero-color: #ff6b72; }
         }
         /* スマホ幅でも見出しが1行に収まるように */
         .hero h1 { font-size: clamp(1.5rem, 6vw, 2rem); }

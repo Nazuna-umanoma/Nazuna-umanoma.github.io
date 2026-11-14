@@ -13,6 +13,8 @@
     --text-muted: #666666;
     --text-sub: #555555;   /* 「誰やねん」の本文 */
     --border: #e2e2e2;
+    --heading: #111111;     /* 見出しの文字（--black はヘッダーなどの黒い背景用） */
+    --red-text: var(--red); /* 文字に使う赤（ダークモードでは明るくする） */
     --focus-ring: var(--red); /* キーボード操作時のフォーカス枠 */
 }
 
@@ -79,7 +81,7 @@ body {
 
 .about h2, .sns h2 {
     margin: 0 0 20px;
-    color: var(--black);
+    color: var(--heading);
     border-left: 4px solid var(--red);
     padding-left: 10px;
 }
@@ -148,14 +150,14 @@ body {
 .section-title {
     margin: 30px 0 0;
     text-align: center;
-    color: var(--red);
+    color: var(--red-text);
 }
 .interest-section {
     border-left: 4px solid var(--red);
 }
 .interest-section h3 {
     margin: 0 0 8px;
-    color: var(--red);
+    color: var(--red-text);
 }
 .interest-section p {
     margin: 0;
@@ -183,6 +185,7 @@ body {
 .like-btn {
     margin: 0;
     padding: 0;
+    color-scheme: light; /* ダークモードでも見た目を変えない */
 }
 
 @media (max-width: 768px) {
@@ -202,5 +205,20 @@ body {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+}
+
+/* ダークモード：OS の設定に従う（切り替えボタンはなし）。本文のコントラスト比は 4.5:1 以上 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --bg: #121212;
+        --bg-card: #1c1c1e;
+        --text: #e6e6e6;
+        --text-muted: #a8a8ad;
+        --text-sub: #c2c2c2;
+        --border: #3a3a3f;
+        --heading: #f5f5f5;
+        --red-text: #ff6b72;
     }
 }
