@@ -158,3 +158,13 @@ footer {
     border-top: 2px solid var(--accent);
 }
 footer p { margin: 0; }
+
+/* 「動きを減らす」設定（OS のアクセシビリティ設定）の閲覧者には、アニメーションと切り替え効果を止める */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

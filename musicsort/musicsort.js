@@ -4,6 +4,8 @@
 const MAX_PICKS = 12; // 選ぶ曲数（変えるときは data.js の imageTitle も合わせる）
 const picks = [];     // 選んだ曲（SONGS のインデックス、曲順）
 let criterion = 0;    // 選んだ基準（CRITERIA のインデックス）
+// 「動きを減らす」設定のときは、スムーズスクロールを使わない
+const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('musicsort-title').textContent = MUSICSORT_CONFIG.title;
@@ -294,7 +296,7 @@ function generateImage() {
     document.getElementById('download-link').href = url;
     const result = document.getElementById('result');
     result.hidden = false;
-    result.scrollIntoView({ behavior: 'smooth' });
+    result.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
 }
 
 // 見出し：1行目「（名前）の　（基準）」、2行目「Roselia曲12選」

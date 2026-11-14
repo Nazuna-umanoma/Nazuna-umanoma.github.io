@@ -12,6 +12,8 @@ const CATEGORY_IDS = Object.keys(CATEGORY_LABELS);
 const WEEKDAYS = '日月火水木金土';
 // 「--- アンコール ---」「== MC ==」のような区切り行
 const SEPARATOR = /^[-=]{2,}\s*(.*?)\s*[-=]*$/;
+// 「動きを減らす」設定のときは、スムーズスクロールを使わない
+const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 let lives = [];     // 整えた公演データ
 let songStats = []; // 曲ごとの集計
@@ -293,7 +295,7 @@ function openLive(id) {
     renderLiveList(live.category);
     location.hash = live.category;
     showTab(live.category);
-    document.getElementById(`live-${id}`).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById(`live-${id}`).scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
 }
 
 // ---------- 曲別データ ----------
@@ -422,5 +424,5 @@ function openSong(title) {
     location.hash = 'songs';
     showTab('songs');
     const row = [...document.querySelectorAll('.song-row')].find(el => el.dataset.title === title);
-    if (row) row.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (row) row.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
 }

@@ -4,6 +4,8 @@
 let lastIndex = -1;
 let drawing = false;
 const visitLog = []; // 行脚の記録（SPOTS のインデックス、古い順）
+// 「動きを減らす」設定のときは、ルーレットやスムーズスクロールを使わない
+const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('angya-title').textContent = ANGYA_CONFIG.title;
@@ -34,6 +36,24 @@ function draw() {
     const rolling = document.getElementById('rolling');
     const result = document.getElementById('result');
 
+    function finish() {
+        const index = pickIndex();
+        visitLog.push(index);
+        showSpot(index);
+        renderHistory();
+        rolling.hidden = true;
+        drawBtn.disabled = false;
+        drawBtn.textContent = 'もう一度行脚する';
+        drawing = false;
+    }
+
+    // 動きを減らす設定なら、ルーレットを回さずにすぐ結果を出す
+    if (prefersReducedMotion()) {
+        placeholder.hidden = true;
+        finish();
+        return;
+    }
+
     drawBtn.disabled = true;
     placeholder.hidden = true;
     result.hidden = true;
@@ -46,14 +66,7 @@ function draw() {
         ticks++;
         if (ticks >= 12) {
             clearInterval(timer);
-            const index = pickIndex();
-            visitLog.push(index);
-            showSpot(index);
-            renderHistory();
-            rolling.hidden = true;
-            drawBtn.disabled = false;
-            drawBtn.textContent = 'もう一度行脚する';
-            drawing = false;
+            finish();
         }
     }, 70);
 }
@@ -109,7 +122,7 @@ function renderHistory() {
         btn.addEventListener('click', () => {
             if (drawing) return;
             showSpot(visitLog[n]);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
         });
         li.appendChild(btn);
         list.appendChild(li);
