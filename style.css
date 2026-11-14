@@ -1,39 +1,46 @@
-/* style.css - Main stylesheet */
+/* style.css - トップページ（index.html）のスタイル
+   色は :root の変数にまとめています。作品ページ（shindan など）も同じ配色です。 */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --bg: #ffffff;
+    --bg-card: #fafafa;
+    --red: #e50914;
+    --red-dark: #a8060f;
+    --black: #111111;
+    --violet: #7c3aed;
+    --violet-dark: #5b21b6;
+    --text: #1a1a1a;
+    --text-muted: #666666;
+    --text-sub: #555555;   /* 「誰やねん」の本文 */
+    --border: #e2e2e2;
 }
+
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', Arial, sans-serif;
     line-height: 1.6;
-    color: #1a1a1a;
-    background-color: #ffffff;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header Section */
-header {
-    background: #111111;
-    color: white;
-    padding: 60px 20px;
+/* ヘッダー */
+.header {
+    background: var(--black);
+    color: #ffffff;
+    padding: 40px 20px;
     text-align: center;
-    border-bottom: 3px solid #e50914;
+    border-bottom: 3px solid var(--red);
 }
-
-header h1 {
+.header h1 {
+    margin: 15px 0 5px;
     font-size: 3rem;
-    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+    color: #ffffff;
 }
-
-header p {
+.header p {
+    margin: 0;
     font-size: 1.2rem;
     opacity: 0.9;
     color: #b3b3b3;
@@ -43,129 +50,140 @@ header p {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 3px solid #e50914;
+    border: 3px solid var(--red);
     margin-bottom: 20px;
 }
 
-/* About Section */
-.about {
-    background: #fafafa;
-    padding: 40px;
-    margin: 40px 0;
-    border-radius: 8px;
-    border: 1px solid #e2e2e2;
+/* 本文の幅：最大幅を決めて左右に余白をとる（スマホでは余白を少し狭く） */
+.container {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.about h2 {
-    color: #111111;
-    border-left: 4px solid #e50914;
-    padding-left: 12px;
-    margin-bottom: 20px;
-    font-size: 2rem;
+/* カード（各SNS・作品集・誰やねん・好きなもの） */
+.about, .sns, .interest-section {
+    padding: 20px;
+    border: 1px solid var(--border);
+    margin: 20px 0;
+    border-radius: 5px;
+    background-color: var(--bg-card);
 }
+
+.about h2, .sns h2 {
+    margin: 0 0 20px;
+    color: var(--black);
+    border-left: 4px solid var(--red);
+    padding-left: 10px;
+}
+.about h2 { font-size: 2rem; }
 
 .about p {
+    margin: 0;
     font-size: 1.1rem;
-    color: #555555;
+    color: var(--text-sub);
     line-height: 1.8;
 }
 
-/* Skills Section */
-.skills {
-    background: #fafafa;
-    padding: 40px;
-    margin: 40px 0;
-    border-radius: 8px;
-    border: 1px solid #e2e2e2;
+/* 箇条書き：行頭の点がカードからはみ出さないように字下げする */
+.about ul, .interest-section ul {
+    margin: 0.5em 0 0;
+    padding-left: 1.5em;
+}
+.about li, .interest-section li { color: var(--text); }
+
+/* SNS欄 */
+.sns-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.sns-links a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--violet);
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid var(--violet);
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.sns-links a:hover {
+    background-color: var(--violet-dark);
+    border-color: var(--violet-dark);
+    color: #ffffff;
 }
 
-.skills h2 {
-    color: #111111;
-    border-left: 4px solid #e50914;
-    padding-left: 12px;
-    margin-bottom: 20px;
-    font-size: 2rem;
+/* 作品集へのリンク */
+.section-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+.section-link-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--red);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+.section-link-btn:hover {
+    background-color: var(--black);
 }
 
-.skills ul {
-    list-style-type: none;
-    columns: 2;
-    gap: 20px;
-}
-
-.skills li {
-    padding: 10px 0;
-    border-bottom: 1px solid #e2e2e2;
-}
-
-.skills li:last-child {
-    border-bottom: none;
-}
-
-/* Blog Preview Section */
-.blog-preview {
-    background: #fafafa;
-    padding: 40px;
-    margin: 40px 0;
-    border-radius: 8px;
-    border: 1px solid #e2e2e2;
-}
-
-.blog-preview h2 {
-    color: #111111;
-    border-left: 4px solid #e50914;
-    padding-left: 12px;
-    margin-bottom: 30px;
-    font-size: 2rem;
-}
-
-.blog-preview article {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e2e2e2;
-    transition: transform 0.3s ease;
-}
-
-.blog-preview article:hover {
-    transform: translateX(10px);
-}
-
-.blog-preview article:last-child {
-    border-bottom: none;
-}
-
-.blog-preview h3 {
-    color: #111111;
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-}
-
-.blog-preview p {
-    color: #555555;
-    font-size: 1rem;
-}
-
-/* Footer */
-footer {
-    background-color: #111111;
-    color: white;
+/* 好きなもの紹介 */
+.section-title {
+    margin: 30px 0 0;
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    border-top: 3px solid #e50914;
+    color: var(--red);
+}
+.interest-section {
+    border-left: 4px solid var(--red);
+}
+.interest-section h3 {
+    margin: 0 0 8px;
+    color: var(--red);
+}
+.interest-section p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-muted);
 }
 
-/* Responsive Design */
+/* フッター */
+.footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: #000;
+    color: #ececec;
+    border-top: 2px solid var(--red);
+}
+.footer p { margin: 0; }
+.last-updated {
+    font-size: 0.9em;
+    color: #9a9a9a;
+}
+
+/* 「何が好きー？」ボタン（script.js が body の末尾に追加する）
+   ブラウザ標準のボタンの見た目のまま、余白だけ 0 にしている（以前の一括リセットと同じ見た目） */
+.like-btn {
+    margin: 0;
+    padding: 0;
+}
+
 @media (max-width: 768px) {
-    header h1 {
+    .header h1 {
         font-size: 2rem;
     }
+}
 
-    .about, .skills, .blog-preview {
-        padding: 20px;
-    }
-
-    .skills ul {
-        columns: 1;
-    }
+@media (max-width: 600px) {
+    .container { padding: 0 16px; }
 }

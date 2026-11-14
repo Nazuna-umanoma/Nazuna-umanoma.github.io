@@ -35,6 +35,7 @@
 
 // Interactive features: Example button for demonstration
 const button = document.createElement('button');
+button.className = 'like-btn'; // 見た目は style.css の .like-btn
 button.innerText = '何が好きー？';
 button.onclick = () => alert('リサゆきが好き。お前もリサゆき推しにならないか？');
 document.body.appendChild(button);
