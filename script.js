@@ -1,36 +1,4 @@
-// script.js
-
-// Smooth scrolling functionality
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Navigation active state updates
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav a');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${entry.target.id}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
-});
-
-sections.forEach(section => {
-    observer.observe(section);
-});
+// script.js - トップページ（index.html）の処理
 
 // 最終更新日：GitHub API から index.html の最新コミット日時を取得して表示する
 // ・間違った日付は出さない：エラー・上限超過（配列以外の応答）・通信失敗のときは行ごと非表示のまま
