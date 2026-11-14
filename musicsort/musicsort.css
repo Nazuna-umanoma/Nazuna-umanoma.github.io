@@ -1,16 +1,10 @@
 /* musicsort.css - Roselia曲選出ページのスタイル
    ベース（白・黒）は他ページと同じで、差し色だけ Roselia のカラーにしています。
    白地の文字には roselia / yukina / lisa / ako を使い、黒地の文字（基準・曲番号）は別の色にして、
-   それ以外の組み合わせは線や背景だけに使います（文字が読みにくくなるため）。 */
+   それ以外の組み合わせは線や背景だけに使います（文字が読みにくくなるため）。
+   共通部分（ヘッダー・カード・ボタン・フッターなど）は ../common/common.css にあります。 */
 
 :root {
-    --bg: #ffffff;
-    --bg-card: #fafafa;
-    --black: #111111;
-    --text: #1a1a1a;
-    --text-muted: #666666;
-    --border: #e2e2e2;
-
     --roselia: #3344AA;
     --yukina: #871088;
     --sayo: #00AABB;
@@ -26,93 +20,25 @@
     --stripe: linear-gradient(to right,
         var(--yukina) 0 20%, var(--sayo) 20% 40%, var(--lisa) 40% 60%,
         var(--ako) 60% 80%, var(--rinko) 80% 100%);
+
+    /* 共通部分の差し色（common.css の説明を参照） */
+    --accent: var(--roselia);
+    --accent-heading: var(--roselia);
+    --header-hover: var(--sayo);
+    --hero-color: var(--roselia);
+    --hero-spacing: 0.1em;
+    --badge-bg: var(--roselia);
+    --btn-primary: var(--roselia);
+    --btn-primary-hover: var(--yukina);
+    --ghost-border: var(--rinko);
+    --ghost-hover: var(--roselia);
 }
 
-* { box-sizing: border-box; }
-
-body {
-    font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* ヘッダー */
+/* ヘッダー：下線の代わりにメンバーカラーの帯 */
 .header {
     background: var(--stripe) bottom / 100% 4px no-repeat, var(--black);
     padding: 16px 20px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-}
-.header a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-}
-.header a:hover { color: var(--sayo); }
-.header .home-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.header .home-link img {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 2px solid var(--roselia);
-}
-
-main {
-    flex: 1;
-    width: 100%;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 30px 16px;
-}
-
-/* カード */
-.card {
-    padding: 24px;
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--roselia);
-    border-radius: 5px;
-    background-color: var(--bg-card);
-    margin-bottom: 20px;
-}
-.card h2 {
-    margin-top: 0;
-    color: var(--black);
-    border-left: 4px solid var(--roselia);
-    padding-left: 10px;
-    font-size: 1.2rem;
-}
-
-/* トップ */
-.hero {
-    text-align: center;
-    padding: 30px 0 10px;
-}
-.hero h1 {
-    color: var(--roselia);
-    margin: 0 0 10px;
-    letter-spacing: 0.1em;
-}
-.hero p { color: var(--text-muted); margin: 0 0 6px; }
-.hero .badge {
-    display: inline-block;
-    padding: 2px 12px;
-    background: var(--roselia);
-    color: #ffffff;
-    border-radius: 999px;
-    font-size: 0.85em;
+    border-bottom: none;
 }
 
 .hint {
@@ -321,46 +247,7 @@ main {
     border: 1px solid var(--border);
 }
 
-/* ボタン */
-.btn-area {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin: 24px 0;
-}
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-family: inherit;
-}
-.btn:disabled { opacity: 0.6; cursor: default; }
-.btn-primary { background-color: var(--roselia); color: #ffffff; }
-.btn-primary:hover:not(:disabled) { background-color: var(--yukina); }
 .btn:focus-visible { outline: 2px solid var(--sayo); outline-offset: 2px; }
-.btn-ghost {
-    background: transparent;
-    color: var(--text-muted);
-    border: 1px solid var(--rinko);
-}
-.btn-ghost:hover:not(:disabled) { color: var(--roselia); border-color: var(--roselia); }
-
-/* フッター */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #000;
-    color: #ececec;
-    border-top: 2px solid var(--roselia);
-}
-footer p { margin: 0; }
 
 @media (max-width: 600px) {
     .card { padding: 18px; }

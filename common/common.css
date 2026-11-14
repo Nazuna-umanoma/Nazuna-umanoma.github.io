@@ -1,0 +1,153 @@
+/* common.css - 作品ページ共通のスタイル
+   対象：shindan・angya・musicsort・live-data・ss-gacha（gallery は別デザインなので使いません）
+
+   各ページの HTML では、このファイルを先に、ページ別の CSS を後に読み込みます。
+   ページごとの差し色は、ページ別 CSS の :root で次の変数を決めます。
+     --accent             ヘッダーの下線・カードの左線・フッターの上線・アイコンの枠
+     --accent-heading     カード見出し（h2）の左線
+     --header-hover       ヘッダーのリンクにカーソルを乗せたときの文字色
+     --hero-color         ページタイトル（h1）の文字色
+     --hero-spacing       ページタイトルの字間
+     --badge-bg           タイトル下のバッジ（収録数など）の背景
+     --btn-primary        メインボタンの色
+     --btn-primary-hover  メインボタンにカーソルを乗せたときの色
+     --ghost-border       枠線だけのボタン（「プロフィールに戻る」など）の線の色
+     --ghost-hover        枠線だけのボタンにカーソルを乗せたときの文字・線の色
+   ページ固有の部品（診断の質問カード、曲目リストなど）はページ別 CSS に書きます。 */
+
+:root {
+    --bg: #ffffff;
+    --bg-card: #fafafa;
+    --black: #111111;
+    --text: #1a1a1a;
+    --text-muted: #666666;
+    --border: #e2e2e2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ヘッダー */
+.header {
+    background: var(--black);
+    padding: 16px 20px;
+    border-bottom: 3px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+.header a:hover { color: var(--header-hover); }
+.header .home-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header .home-link img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 30px 16px;
+}
+
+/* カード */
+.card {
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 5px;
+    background-color: var(--bg-card);
+    margin-bottom: 20px;
+}
+.card h2 {
+    margin-top: 0;
+    color: var(--black);
+    border-left: 4px solid var(--accent-heading);
+    padding-left: 10px;
+    font-size: 1.2rem;
+}
+
+/* ページタイトル */
+.hero {
+    text-align: center;
+    padding: 30px 0 10px;
+}
+.hero h1 {
+    color: var(--hero-color);
+    margin: 0 0 10px;
+    letter-spacing: var(--hero-spacing);
+}
+.hero p { color: var(--text-muted); margin: 0 0 6px; }
+.hero .badge {
+    display: inline-block;
+    padding: 2px 12px;
+    background: var(--badge-bg);
+    color: #ffffff;
+    border-radius: 999px;
+    font-size: 0.85em;
+}
+
+/* ボタン */
+.btn-area {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 24px 0;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: inherit;
+}
+.btn:disabled { opacity: 0.6; cursor: default; }
+.btn-primary { background-color: var(--btn-primary); color: #ffffff; }
+.btn-primary:hover:not(:disabled) { background-color: var(--btn-primary-hover); }
+.btn-ghost {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--ghost-border);
+}
+.btn-ghost:hover:not(:disabled) { color: var(--ghost-hover); border-color: var(--ghost-hover); }
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #ececec;
+    border-top: 2px solid var(--accent);
+}
+footer p { margin: 0; }
