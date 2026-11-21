@@ -1809,86 +1809,10 @@ const LIVES = [
 //         interludes: `
 //
 //         `,
+//         source: '',
 //         note: '',
 //     },
-//     {
-//         category: '',
-//         date: '',
-//         name: '',
-//         venue: '',
-//         setlist: `
-//
-//         `,
-//         interludes: `
-//
-//         `,
-//         note: '',
-//     },
-//     {
-//         category: '',
-//         date: '',
-//         name: '',
-//         venue: '',
-//         setlist: `
-//
-//         `,
-//         interludes: `
-//
-//         `,
-//         note: '',
-//     },
-//     {
-//         category: '',
-//         date: '',
-//         name: '',
-//         venue: '',
-//         setlist: `
-//
-//         `,
-//         interludes: `
-//
-//         `,
-//         note: '',
-//     },
-//     {
-//         category: '',
-//         date: '',
-//         name: '',
-//         venue: '',
-//         setlist: `
-//
-//         `,
-//         interludes: `
-//
-//         `,
-//         note: '',
-//     },
-//     {
-//         category: '',
-//         date: '',
-//         name: '',
-//         venue: '',
-//         setlist: `
-//
-//         `,
-//         interludes: `
-//
-//         `,
-//         note: '',
-//     },
-//     {
-//         category: '',
-//         date: '',
-//         name: '',
-//         venue: '',
-//         setlist: `
-//
-//         `,
-//         interludes: `
-//
-//         `,
-//         note: '',
-//     },
+
 ];
 
 // 曲一覧（曲別データに並ぶ曲。披露0回の曲もここにあれば表示されます）
