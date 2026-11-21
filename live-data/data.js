@@ -1088,7 +1088,7 @@ const LIVES = [
         interludes: `
             就職活動
         `,
-        source: '',
+        source: 'https://times.abema.tv/articles/-/10269993?page=2',
         note: '',
     },
     {
@@ -1115,7 +1115,7 @@ const LIVES = [
         interludes: `
             就職活動
         `,
-        source: '',
+        source: 'https://times.abema.tv/articles/-/10269993?page=2',
         note: '',
     },
     {
