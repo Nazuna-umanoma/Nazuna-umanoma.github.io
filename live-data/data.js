@@ -1700,19 +1700,25 @@ const LIVES = [
         `,
         note: '',
     },
-//     {
-//         category: '',
-//         date: '',
-//         name: '',
-//         venue: '',
-//         setlist: `
-//
-//         `,
-//         interludes: `
-//
-//         `,
-//         note: '',
-//     },
+    {
+        category: 'fes',
+        date: '2026-11-21',
+        name: 'WONDERLIVET2026',
+        venue: 'KINTEX HALL',
+        setlist: `
+            R
+            熱色スターマイン
+            礎の花冠
+            BLACK SHOUT
+            ZEAL of proud
+            Neo-Aspect
+            FIRE BIRD
+        `,
+        interludes: `
+
+        `,
+        note: '',
+    },
 //     {
 //         category: '',
 //         date: '',
