@@ -240,6 +240,11 @@ details > summary:focus-visible { outline-offset: -2px; }
     white-space: pre-wrap;
     font-size: 0.9rem;
 }
+.live-source {
+    margin: 0;
+    white-space: pre-wrap;
+    font-size: 0.9rem;
+}
 
 /* セットリスト */
 .setlist {

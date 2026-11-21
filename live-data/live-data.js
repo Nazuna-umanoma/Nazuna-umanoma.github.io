@@ -103,10 +103,11 @@ function prepareLives() {
             dateText: date ? date.text : String(raw.date || '日付未入力'),
             items,
             interludes: toLines(raw.interludes),
+            source: (raw.source || '').trim(),
         };
         const songs = items.filter(it => it.type === 'song').map(it => it.title);
         // 開いた中身（セトリ・幕間・メモ）と、それ以外の見出し部分を分けて持つ
-        live.bodyText = normalize([...songs, ...live.interludes, live.note].join('\n'));
+        live.bodyText = normalize([...songs, ...live.interludes, live.note, live.source].join('\n'));
         live.headText = normalize([live.name, live.venue, raw.date, live.dateText].join('\n'));
         result.push(live);
     });
@@ -284,7 +285,7 @@ function liveItemHTML(live, terms) {
     const interludes = live.interludes.length
         ? `<h3>幕間映像</h3>
            <ul class="interludes">${live.interludes.map(t =>
-               `<li${hit(t) ? ' class="hit"' : ''}>${esc(t)}</li>`).join('')}</ul>`
+            `<li${hit(t) ? ' class="hit"' : ''}>${esc(t)}</li>`).join('')}</ul>`
         : '';
 
     return `
@@ -299,6 +300,7 @@ function liveItemHTML(live, terms) {
                     <h3>セットリスト</h3>
                     ${setlist}
                     ${interludes}
+                    ${live.source ? `<h3>出典元</h3><p class="live-source">${esc(live.source)}</p>` : ''}
                     ${live.note ? `<h3>メモ</h3><p class="live-note">${esc(live.note)}</p>` : ''}
                 </div>
             </details>
@@ -396,8 +398,8 @@ function songGroupHTML(group) {
             <h3 class="song-group-title">${group.label}<small>${group.rows.length}曲（披露あり ${played}曲）</small></h3>
             ${group.hint ? `<p class="song-group-hint">${group.hint}</p>` : ''}
             <ul class="song-stats">${group.rows.length
-                ? group.rows.map(r => songRowHTML(r.st, r.perfs, max)).join('')
-                : '<li class="empty">該当する曲がありません。</li>'}</ul>
+            ? group.rows.map(r => songRowHTML(r.st, r.perfs, max)).join('')
+            : '<li class="empty">該当する曲がありません。</li>'}</ul>
         </section>`;
 }
 
