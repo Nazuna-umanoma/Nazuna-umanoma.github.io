@@ -54,7 +54,7 @@ const QUESTION100_DATA = {
       type: "set",
       questions: [
         "人生で一番印象に残っているライブ・イベントは？",
-        "そのときの思い出は？。"
+        "そのときの思い出は？"
       ]
     },
     {
@@ -62,7 +62,7 @@ const QUESTION100_DATA = {
       type: "set",
       questions: [
         "一番好きな観光地は？",
-        "それにまつわるこだわりはある？"
+        "そこにまつわるこだわりはある？"
       ]
     },
     {
@@ -85,7 +85,7 @@ const QUESTION100_DATA = {
       id: "set-08",
       type: "set",
       questions: [
-        "推しているキャラクター・人物がいたら教えてください。",
+        "推しを一人選ぶとしたら？",
         "その推しを好きになったきっかけは何ですか？"
       ]
     },
@@ -94,7 +94,7 @@ const QUESTION100_DATA = {
       type: "set",
       questions: [
         "もし1つだけ魔法や特殊能力が使えるなら、どんな力が欲しい？",
-        "その能力を手に入れたら最初に何に使いますか？"
+        "その能力を手に入れたら最初に何に使う？"
       ]
     },
     {
@@ -141,7 +141,7 @@ const QUESTION100_DATA = {
       id: "set-15",
       type: "set",
       questions: [
-        "今年中に達成したい小さな目標を1つ教えてください。",
+        "今年中に達成したい大きな目標を1つ教えてください。",
         "そのためにまず何から始めますか？"
       ]
     },
@@ -161,7 +161,39 @@ const QUESTION100_DATA = {
         "その作品のおすすめポイントは？"
       ]
     },
+        {
+      id: "set-18",
+      type: "set",
+      questions: [
+        "一番好きな曲は？",
+        "その曲を知ったきっかけは？"
+      ]
+    },
     //     {
+    //   id: "set-",
+    //   type: "set",
+    //   questions: [
+    //     "",
+    //     ""
+    //   ]
+    // },
+        //     {
+    //   id: "set-",
+    //   type: "set",
+    //   questions: [
+    //     "",
+    //     ""
+    //   ]
+    // },
+        //     {
+    //   id: "set-",
+    //   type: "set",
+    //   questions: [
+    //     "",
+    //     ""
+    //   ]
+    // },
+        //     {
     //   id: "set-",
     //   type: "set",
     //   questions: [
@@ -208,7 +240,7 @@ const QUESTION100_DATA = {
     { id: "q-035", type: "single", text: "小さな幸せを感じる瞬間はどんなとき？" },
     { id: "q-036", type: "single", text: "もし100万円が急に手に入ったら何に使う？" },
     { id: "q-037", type: "single", text: "もし1週間お休みがもらえたらどう過ごす？" },
-    { id: "q-038", type: "single", text: "タイムマシンがあったら過去と未来どっちに行きたい？" },
+    { id: "q-038", type: "single", text: "高校時代に戻ったら何をしたい？" },
     { id: "q-039", type: "single", text: "無人島に1つだけ持っていけるとしたら何を持っていく？" },
     { id: "q-040", type: "single", text: "生まれ変わるとしたら何になりたい？" },
     { id: "q-041", type: "single", text: "今年中に達成したい小さな目標を1つ教えてください。" },
@@ -218,7 +250,7 @@ const QUESTION100_DATA = {
     { id: "q-045", type: "single", text: "今までに一番頑張ったと思うことは何ですか？" },
     { id: "q-046", type: "single", text: "今、新しく始めてみたいことや学んでみたいことは？" },
     { id: "q-047", type: "single", text: "特技やちょっとした自慢があれば教えてください。" },
-    { id: "q-048", type: "single", text: "逆に、どうしても苦手なことや克服したいことは？" },
+    { id: "q-048", type: "single", text: "どうしても苦手なことや克服したいことは？" },
     { id: "q-049", type: "single", text: "一番落ち着く場所はどこですか？" },
     { id: "q-050", type: "single", text: "部屋のインテリアやデスク周りでこだわっている点は？" },
     { id: "q-051", type: "single", text: "ついつい集めてしまうコレクションはありますか？" },
@@ -250,7 +282,7 @@ const QUESTION100_DATA = {
     { id: "q-077", type: "single", text: "一番好きな曜日とその理由は？" },
     { id: "q-078", type: "single", text: "今、一番会いたい人は誰ですか？" },
     { id: "q-079", type: "single", text: "尊敬している人や憧れの人はいますか？" },
-    { id: "q-080", type: "single", text: "今年中に達成したい小さな目標を1つ教えてください。" },
+    { id: "q-080", type: "single", text: "幼少期好きだったものは？" },
     { id: "q-081", type: "single", text: "遊園地はよく行く？好きな場所やアトラクションは？" },
     { id: "q-082", type: "single", text: "ちょっとした「自分のマイルール」を1つ教えてください。" },
     { id: "q-083", type: "single", text: "最近覚えた豆知識や、へぇ〜と思ったことは？" },
@@ -265,13 +297,19 @@ const QUESTION100_DATA = {
     { id: "q-092", type: "single", text: "好きな言葉や座右の銘は？" },
     { id: "q-093", type: "single", text: "朝起きて最初にすることは何ですか？" },
     { id: "q-094", type: "single", text: "今、目の前にあるものを1つ教えてください。" },
-    { id: "q-095", type: "single", text: "今日の調子を100点満点で表すと何点？" }
-    // { id: "q-096", type: "single", text: "" },
-    // { id: "q-097", type: "single", text: "" },
-    // { id: "q-098", type: "single", text: "" },
-    // { id: "q-099", type: "single", text: "" },
-    // { id: "q-100", type: "single", text: "" },
-    // { id: "q-101", type: "single", text: "" },
+    { id: "q-095", type: "single", text: "今日の調子を100点満点で表すと何点？" },
+    { id: "q-096", type: "single", text: "記憶を一つ消せるとしたら何をする？" },
+    { id: "q-097", type: "single", text: "あなたにとっての今年の漢字は何？" },
+    { id: "q-098", type: "single", text: "好きな漢字は？" },
+    { id: "q-099", type: "single", text: "自分を動物に例えると？" },
+    { id: "q-100", type: "single", text: "好きなお菓子は？" },
+    { id: "q-101", type: "single", text: "好きな技の名前は？" },
+    { id: "q-102", type: "single", text: "好きな歌詞は？" },
+    // { id: "q-103", type: "single", text: "" },
+    // { id: "q-104", type: "single", text: "" },
+    // { id: "q-105", type: "single", text: "" },
+    // { id: "q-106", type: "single", text: "" },
+    // { id: "q-107", type: "single", text: "" },
 
   ]
 };
