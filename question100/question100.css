@@ -18,8 +18,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --accent: #6ea8e5;
-    --accent-heading: #f0f8ff
-    --header-hover: #3b6ea5;
+    --accent-heading: #f0f8ff;
+    -header-hover: 3b6ea5;
     --hero-color: #90bef0;
     --badge-bg: rgba(110, 168, 229, 0.16);
     --btn-primary: #4a83be;
@@ -86,7 +86,7 @@
   line-height: 1.75;
 }
 
-.rule-list li + li {
+.rule-list li+li {
   margin-top: 0.35rem;
 }
 
