@@ -1,0 +1,289 @@
+/* 100の質問 専用スタイル（common.css の変数を拡張・上書き） */
+:root {
+  --accent: #3b6ea5;
+  --accent-heading: #2a5280;
+  --header-hover: #3b6ea5;
+  --hero-color: #2a5280;
+  --hero-spacing: 0.04em;
+  --badge-bg: #eef4fb;
+  --btn-primary: #3b6ea5;
+  --btn-primary-hover: #2f5987;
+  --ghost-border: #c5d4e5;
+  --ghost-hover: #f3f7fc;
+  --focus-ring: rgba(59, 110, 165, 0.35);
+  --danger: #c0392b;
+  --danger-hover: #a53023;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #6ea8e5;
+    --accent-heading: #90bef0;
+    --header-hover: #6ea8e5;
+    --hero-color: #90bef0;
+    --badge-bg: rgba(110, 168, 229, 0.16);
+    --btn-primary: #4a83be;
+    --btn-primary-hover: #5c95cf;
+    --ghost-border: #3b4b5c;
+    --ghost-hover: rgba(110, 168, 229, 0.12);
+    --focus-ring: rgba(110, 168, 229, 0.4);
+    --danger: #e05c4f;
+    --danger-hover: #c94b3f;
+  }
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--accent-heading);
+}
+
+.field-group {
+  margin-bottom: 1.25rem;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+  color: var(--heading);
+}
+
+.text-input,
+.text-area {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.text-input:focus,
+.text-area:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.text-area {
+  resize: vertical;
+  min-height: 5.5rem;
+}
+
+.rule-list {
+  margin: 0 0 1.5rem;
+  padding-left: 1.25rem;
+  color: var(--text);
+  font-size: 0.94rem;
+  line-height: 1.75;
+}
+
+.rule-list li + li {
+  margin-top: 0.35rem;
+}
+
+/* 進捗表示 */
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.progress-count {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--accent-heading);
+  font-variant-numeric: tabular-nums;
+}
+
+.question-tag {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--badge-bg);
+  color: var(--accent-heading);
+}
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 1.4rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.question-text {
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1.65;
+  color: var(--heading);
+  margin: 0 0 0.75rem;
+}
+
+.set-note {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: var(--accent-heading);
+  background: var(--badge-bg);
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+}
+
+.input-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.35rem;
+  min-height: 1.25rem;
+}
+
+.form-error {
+  font-size: 0.85rem;
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.char-count {
+  margin-left: auto;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.quiz-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.skip-info {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0.75rem 0 0;
+}
+
+.quiz-footer-actions {
+  margin-top: 1.25rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.text-link-btn {
+  background: none;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.text-link-btn:hover {
+  color: var(--heading);
+}
+
+.inline-confirm {
+  margin-top: 0.9rem;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.inline-confirm p {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+}
+
+.inline-confirm-btns {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.btn-sm {
+  padding: 0.45rem 1rem;
+  font-size: 0.88rem;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger);
+}
+
+.btn-danger:hover {
+  background: var(--danger-hover);
+}
+
+/* 結果画面 */
+.result-lead {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  margin: 0 0 1.25rem;
+}
+
+.name-update-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.name-update-row .text-input {
+  flex: 1;
+}
+
+.result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.copy-toast {
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent-heading);
+  margin: 0 0 1rem;
+}
+
+.image-preview-wrap {
+  margin: 1rem 0 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f8fafc;
+}
+
+.result-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}

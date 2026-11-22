@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>100の質問 - 凪不凪（ナズナ）</title>
+  <link rel="stylesheet" href="../common/common.css?v=2">
+  <link rel="stylesheet" href="question100.css?v=1">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="home-link">
+      <img src="../nazuna.webp" alt="">凪不凪（ナズナ）
+    </a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="badge" id="pool-badge">質問データ読込中…</span>
+      <h1>100の質問</h1>
+      <p>100個の質問に答えて、回答入りの記念画像を生成できます。</p>
+    </section>
+
+    <!-- スタート画面 -->
+    <section class="card" id="view-start">
+      <h2>はじめに</h2>
+      <div class="field-group">
+        <label for="user-name" class="field-label">お名前（任意・画像に表示されます）</label>
+        <input
+          type="text"
+          id="user-name"
+          class="text-input"
+          maxlength="40"
+          placeholder="例：ナズナ（未入力でもOK）"
+          autocomplete="nickname"
+        >
+      </div>
+
+      <ul class="rule-list">
+        <li>全部で <strong>100問</strong> 出題されます（最初の5問と最後の1問は毎回固定、間はランダムです）。</li>
+        <li>答えたくない質問は <strong>スキップ</strong> できます。スキップした分は別の質問が追加され、合計100問になります。</li>
+        <li>質問によっては、前の質問に関連する質問が <strong>セットで連続出題</strong> されます。</li>
+        <li>回答が終わると、質問と回答をまとめた <strong>1枚の画像（PNG）</strong> を保存できます。</li>
+      </ul>
+
+      <div class="btn-area">
+        <button type="button" class="btn btn-primary" id="btn-start">100の質問を始める</button>
+      </div>
+    </section>
+
+    <!-- 回答画面 -->
+    <section class="card" id="view-quiz" hidden>
+      <div class="progress-header">
+        <span class="progress-count" id="progress-count">1 / 100</span>
+        <span class="question-tag" id="question-tag">固定質問</span>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-bar" id="progress-bar" style="width: 1%;"></div>
+      </div>
+
+      <p class="question-text" id="question-text" aria-live="polite"></p>
+      <p class="set-note" id="set-note" hidden></p>
+
+      <div class="field-group">
+        <label for="answer-input" class="visually-hidden">回答を入力</label>
+        <textarea
+          id="answer-input"
+          class="text-area"
+          rows="3"
+          maxlength="200"
+          placeholder="ここに回答を入力してください（200文字まで）"
+        ></textarea>
+        <div class="input-meta">
+          <span class="form-error" id="form-error" role="alert" hidden></span>
+          <span class="char-count" id="char-count">0 / 200</span>
+        </div>
+      </div>
+
+      <div class="btn-area quiz-actions">
+        <button type="button" class="btn btn-primary" id="btn-next">次へ進む</button>
+        <button type="button" class="btn btn-ghost" id="btn-skip">スキップして別の質問へ</button>
+      </div>
+
+      <p class="skip-info" id="skip-info"></p>
+
+      <div class="quiz-footer-actions">
+        <button type="button" class="text-link-btn" id="btn-reset-confirm">最初からやり直す</button>
+      </div>
+
+      <div class="inline-confirm" id="reset-confirm-box" hidden>
+        <p>これまでの回答をリセットして最初に戻りますか？</p>
+        <div class="inline-confirm-btns">
+          <button type="button" class="btn btn-ghost btn-sm" id="btn-reset-cancel">続ける</button>
+          <button type="button" class="btn btn-danger btn-sm" id="btn-reset-exec">リセットする</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 完了・画像生成画面 -->
+    <section class="card" id="view-result" hidden>
+      <h2>100問回答おつかれさまでした！</h2>
+      <p class="result-lead">下の画像を長押し、またはダウンロードボタンから保存できます。</p>
+
+      <div class="field-group result-name-edit">
+        <label for="result-name-input" class="field-label">画像に表示するお名前（変更すると画像を再作成します）</label>
+        <div class="name-update-row">
+          <input
+            type="text"
+            id="result-name-input"
+            class="text-input"
+            maxlength="40"
+            placeholder="未入力でもOK"
+          >
+          <button type="button" class="btn btn-ghost btn-sm" id="btn-regenerate">反映</button>
+        </div>
+      </div>
+
+      <div class="btn-area result-actions">
+        <button type="button" class="btn btn-primary" id="btn-download">画像を保存する（PNG）</button>
+        <button type="button" class="btn btn-ghost" id="btn-copy-text">テキストをコピー</button>
+      </div>
+      <p class="copy-toast" id="copy-toast" role="status" hidden></p>
+
+      <div class="image-preview-wrap">
+        <img id="result-image" class="result-image" alt="100の質問の回答結果画像">
+      </div>
+
+      <div class="btn-area">
+        <button type="button" class="btn btn-ghost" id="btn-restart">もう一度最初から答える</button>
+      </div>
+    </section>
+
+    <div class="btn-area">
+      <a href="../index.html" class="btn btn-ghost">プロフィールに戻る</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span class="copyright-year">2026</span> 凪不凪（ナズナ）</p>
+  </footer>
+
+  <script src="../common/site.js?v=1"></script>
+  <script src="data.js?v=1"></script>
+  <script src="question100.js?v=1"></script>
+</body>
+</html>
