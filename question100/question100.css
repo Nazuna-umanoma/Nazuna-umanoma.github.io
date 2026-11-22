@@ -1,7 +1,7 @@
 /* 100の質問 専用スタイル（common.css の変数を拡張・上書き） */
 :root {
   --accent: #3b6ea5;
-  --accent-heading: #2a5280;
+  --accent-heading: #f0f8ff;
   --header-hover: #3b6ea5;
   --hero-color: #2a5280;
   --hero-spacing: 0.04em;
